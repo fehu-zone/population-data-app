@@ -1,4 +1,3 @@
-// App.vue
 <template>
   <div class="app">
     <!-- Header -->
@@ -14,17 +13,38 @@
       </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-content">
-        <h2>GERÇEK ZAMANLI DÜNYA NÜFUS VERİLERİ</h2>
-        <p>
-          Dünya bazlı verilerin dünyanın dört bir yanındaki en güncel verilerinden oluşmuştur. 
-          Büyüme, ölümler ve göç hareketlerini kaynakları göstererek sağlarız.
+      <div class="hero-left">
+        <h1 class="hero-title">GERÇEK ZAMANLI DÜNYA NÜFUS VERİLERİ</h1>
+
+        <div class="hero-map-img-container">
+          <img class="hero-map" src="@/img/deneme.svg" alt="Dünya Haritası" />
+        </div>
+
+        <h2 class="hero-section-h2">İNTERAKTİF PANELLERİ KEŞFEDİN</h2>
+      </div>
+
+      <div class="hero-right">
+        <div class="social-icons">
+          <a href="#" class="icon">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="icon">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="#" class="icon">
+            <i class="fa-solid fa-share-nodes"></i>
+          </a>
+        </div>
+
+        <p class="hero-text">
+          Dünya nüfus verilerini dakikalar önce güncellenen en güncel verilerimizle inceleyebilir,
+          doğumlar, ölümler ve göç hareketlerini interaktif grafiklerle takip edebilirsiniz.
         </p>
+
         <div class="button-group">
-          <button class="btn primary">Dünya bazlı nüfus verileri</button>
-          <button class="btn secondary">Ülke bazlı nüfus verileri</button>
+          <button class="primary-btn">Dünya Bazlı Nüfus Verileri</button>
+          <button class="secondary-btn">Ülke Bazlı Nüfus Verileri</button>
         </div>
       </div>
     </section>
@@ -56,7 +76,7 @@
       <h2>AÇIK KAYNAK BİLDİRİMİ</h2>
       <div class="tech-grid">
         <div v-for="tech in technologies" :key="tech.name" class="tech-item">
-          <img :src="tech.icon" :alt="tech.name">
+          <img :src="tech.icon" :alt="tech.name" />
           <p>{{ tech.name }}</p>
         </div>
       </div>
@@ -66,11 +86,7 @@
     <section class="faq">
       <h2>PROJE HAKKINDA BİLMENİZ GEREKENLER</h2>
       <div class="faq-list">
-        <button 
-          v-for="(faq, index) in faqs" 
-          :key="index"
-          class="faq-item"
-        >
+        <button v-for="(faq, index) in faqs" :key="index" class="faq-item">
           <span>{{ faq.question }}</span>
           <span class="arrow">→</span>
         </button>
@@ -109,6 +125,8 @@
 </template>
 
 <script>
+import '@/assets/style.css' // Tüm CSS kurallarını buradan içe aktarıyoruz
+
 export default {
   name: 'App',
   data() {
@@ -123,250 +141,10 @@ export default {
         { question: 'Bu proje ne işe yarıyor?' },
         { question: 'Veriler Nasıl Güncelleniyor?' },
         { question: 'Bu Proje Açık Kaynak mı?' },
-      ]
+      ],
     }
-  }
+  },
 }
 </script>
 
-<style>
-:root {
-  --primary-color: #1a1f2c;
-  --secondary-color: #2d3748;
-  --accent-color: #3182ce;
-  --text-color: #ffffff;
-  --text-secondary: #a0aec0;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  line-height: 1.6;
-}
-
-.app {
-  min-height: 100vh;
-}
-
-/* Header Styles */
-header {
-  padding: 1.5rem 2rem;
-}
-
-nav {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-links a {
-  color: var(--text-color);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: var(--text-secondary);
-}
-
-/* Hero Section */
-.hero {
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.hero-content {
-  max-width: 800px;
-}
-
-.hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.hero p {
-  color: var(--text-secondary);
-  margin-bottom: 2rem;
-}
-
-.button-group {
-  display: flex;
-  gap: 1rem;
-}
-
-.btn {
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s;
-}
-
-.btn.primary {
-  background-color: var(--accent-color);
-  color: white;
-}
-
-.btn.secondary {
-  background-color: transparent;
-  border: 1px solid var(--accent-color);
-  color: white;
-}
-
-/* Data Cards Section */
-.data-cards {
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.data-cards h2 {
-  font-size: 2rem;
-  margin-bottom: 3rem;
-}
-
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.card {
-  background-color: var(--secondary-color);
-  padding: 2rem;
-  border-radius: 0.5rem;
-}
-
-.icon-box {
-  width: 3rem;
-  height: 3rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-/* Technologies Section */
-.technologies {
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.tech-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  text-align: center;
-}
-
-.tech-item img {
-  width: 4rem;
-  height: 4rem;
-  margin-bottom: 1rem;
-}
-
-/* FAQ Section */
-.faq {
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.faq-list {
-  max-width: 800px;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.faq-item {
-  width: 100%;
-  background-color: var(--secondary-color);
-  padding: 1rem;
-  border: none;
-  border-radius: 0.5rem;
-  color: var(--text-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  text-align: left;
-}
-
-.faq-item:hover {
-  background-color: rgba(45, 55, 72, 0.8);
-}
-
-/* Footer */
-footer {
-  background-color: var(--secondary-color);
-  padding: 3rem 2rem;
-  margin-top: 4rem;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.footer-section h4 {
-  margin-bottom: 1rem;
-}
-
-.footer-section ul {
-  list-style: none;
-}
-
-.footer-section ul li {
-  color: var(--text-secondary);
-  margin-bottom: 0.5rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .nav-links {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .hero h2 {
-    font-size: 2rem;
-  }
-  
-  .button-group {
-    flex-direction: column;
-  }
-  
-  .footer-content {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
+<style></style>
