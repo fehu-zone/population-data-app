@@ -1,13 +1,15 @@
 <template>
-<section class="hero">
+  <!-- Hero Section -->
+  <section class="hero">
     <div class="hero-left">
-      <h1 class="hero-title">GERÇEK ZAMANLI <br/> DÜNYA NÜFUS VERİLERİ</h1>
+      <h1 class="hero-title">GERÇEK ZAMANLI DÜNYA NÜFUS VERİLERİ</h1>
 
       <div class="hero-map-img-container">
         <img class="hero-map" src="@/img/deneme.svg" alt="Dünya Haritası" />
       </div>
 
-      <h2 class="hero-section-h2">İNTERAKTİF PANELLERİ KEŞFEDİN</h2>
+      <!-- Görselin tam altında yer alacak başlık -->
+      <h2 class="interactive-panels-title">İnteraktif Panelleri Keşfedin</h2>
     </div>
 
     <div class="hero-right">
@@ -18,14 +20,13 @@
         <a href="#" class="icon">
           <i class="fa-brands fa-github"></i>
         </a>
-        <a href="#" class="icon">
-          <i class="fa-solid fa-share-nodes"></i>
-        </a>
+        <a href="#" class="icon"> <i class="fa-solid fa-share-from-square"></i> </a>
       </div>
 
+      <!-- İkonlar ile butonlar arasında yer alan metin -->
       <p class="hero-text">
-        Dünya nüfus verilerini dakikalar önce güncellenen en güncel verilerimizle inceleyebilir,
-        doğumlar, ölümler ve göç hareketlerini interaktif grafiklerle takip edebilirsiniz.
+        Dünya nüfus verilerini dakikalar önce güncellenen en güncel verilerimizle. Doğumlar, ölümler
+        ve göç hareketlerini interaktif grafiklerle keşfedin.
       </p>
 
       <div class="button-group">
@@ -35,35 +36,46 @@
     </div>
   </section>
 
-  <!-- Data Cards Section -->
-  <section class="data-cards">
-    <h2>ANLIK DÜNYA NÜFUS AKIŞI</h2>
-    <div class="cards-grid">
-      <div class="card">
-        <div class="icon-box">📊</div>
-        <h3>Küresel Veri</h3>
-        <p>Dünya nüfus değişimlerinin günle birlikte nasıl değiştiğini gösterir.</p>
-      </div>
-      <div class="card">
-        <div class="icon-box">🌍</div>
-        <h3>Ülke Analizi</h3>
-        <p>Her ülkenin bazlı nüfus değişimlerinin detaylı grafikleri ile gösterilir.</p>
-      </div>
-      <div class="card">
-        <div class="icon-box">📱</div>
-        <h3>Açık Kaynak Kodu</h3>
-        <p>Açık kaynak kodlarının kullanımı ve örnekleri bulunan.</p>
-      </div>
+  <!-- ANLIK DÜNYA NÜFUS AKIŞI Bölümü -->
+  <section class="equal-boxes">
+    <div class="section-header">
+      <h1>ANLIK DÜNYA NÜFUS AKIŞI</h1>
+      <p class="section-description">
+        Dakikalar önce güncellenen en güncel verilerimizle, dünya genelindeki nüfus dinamiklerini
+        anlık olarak takip edin.
+      </p>
     </div>
-  </section>
 
-  <!-- Technologies Section -->
-  <section class="technologies">
-    <h2>AÇIK KAYNAK BİLDİRİMİ</h2>
-    <div class="tech-grid">
-      <div v-for="tech in technologies" :key="tech.name" class="tech-item">
-        <img :src="tech.icon" :alt="tech.name" />
-        <p>{{ tech.name }}</p>
+    <div class="boxes-grid">
+      <!-- Kutucuk 1 -->
+      <div class="box">
+        <div class="box-icon-box">
+          <!-- Örnek ikon: Font Awesome kullanıyorsanız -->
+          <i class="fa-solid fa-globe"></i>
+        </div>
+        <h3>Küresel Veri</h3>
+        <p>Dünya nüfus değişimlerini anlık olarak takip edin ve analiz edin.</p>
+        <button class="box-button">Dünya Bazlı Nüfus Verileri</button>
+      </div>
+
+      <!-- Kutucuk 2 -->
+      <div class="box">
+        <div class="box-icon-box">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <h3>Ülke Analizi</h3>
+        <p>Her ülkenin nüfus değişimlerini detaylı grafiklerle inceleyin.</p>
+        <button class="box-button">Ülke Bazlı Nüfus Verileri</button>
+      </div>
+
+      <!-- Kutucuk 3 -->
+      <div class="box">
+        <div class="box-icon-box">
+          <i class="fa-solid fa-code"></i>
+        </div>
+        <h3>Açık Kaynak Kod</h3>
+        <p>Açık kaynak kodlarını inceleyin ve projeye katkıda bulunun.</p>
+        <button class="box-button">Açık Kaynak Kod</button>
       </div>
     </div>
   </section>
@@ -78,98 +90,86 @@
       </button>
     </div>
   </section>
-
 </template>
 
 <script>
 export default {
-    name: 'AppHome',
-};
+  name: 'AppHome',
+}
 </script>
 
 <style scoped>
-
 /* ================== HERO SECTION ================== */
 
 .hero {
   display: grid;
-  grid-template-columns: 1fr 0.7fr; /* Ekranı ikiye böl */
-  align-items: center;
-  background-color: #000;
+  grid-template-columns: 60% 55%;
   color: #fff;
-  height: 100vh; /* Tüm ekranı kaplasın */
+  background: ffff;
+  height: 100vh;
+  padding: 2.5rem;
+  align-items: stretch;
 }
 
+.hero-left,
 .hero-right {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 2rem;
-  max-width: 500px;
-  margin-top: 300px; /* Added margin-top to move it down */
+  /* Dağılımı her iki kolonda da eşitlemek için */
+  justify-content: space-between;
 }
 
 .hero-left {
-  display: grid;
-  grid-template-columns: 1fr; /* Tek sütun */
-  justify-items: start; /* Sola hizala */
-  gap: 1.5rem; /* Elemanlar arası boşluk */
+  align-items: flex-start;
+  margin-bottom: 6rem;
+  /* İsteğe bağlı: elemanlar arasında belirli bir boşluk varsa gap eklenebilir */
+}
+
+.hero-right {
+  align-items: flex-end;
+  margin-left: 12rem;
+  margin-bottom: 3rem;
+}
+
+/* Yeni eklenen metin stili */
+.hero-text {
+  color: #fff;
+  font-size: 1.22rem;
+  margin: 0;
+}
+
+.interactive-panels-title {
+  font-size: 2.4rem;
+  color: #fff;
+  font-weight: SemiBold;
+  text-align: center;
 }
 
 .hero-title {
-  font-size: 3.9rem;
+  font-size: 3rem;
   font-weight: bold;
   text-align: left;
   letter-spacing: 0.5px;
-  margin-bottom: 1.2rem;
-  margin-right: -80px; /* Negatif margin ile sağa uzatıldı */
-  margin-left: 20px; /* Sol taraftan boşluk eklendi */
 }
-.hero-subtitle {
-  font-size: 2rem;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.hero-section-h2 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600; /* Semibold */
-  font-size: 2rem;
-  color: #ffffff;
-  margin-top:  -1rem; /* Negatif margin ile yukarı çektim */
-  margin-left: -2rem;
-  text-align: center;
-  width: 100%; /* Tam genişlik almasını sağladım */
-}
-
-
 
 .hero-map-img-container {
-  width: 100%; /* Kapsayıcıyı tam genişlik yap */
+  width: 100%;
   display: flex;
-  justify-content: flex-start; /* Görseli sola hizala */
-  margin-left: -70px; /* Sola doğru negatif margin ekle */
+  justify-content: flex-start;
+  margin-left: -4.375rem;
 }
 
 .hero-map {
-  width: 100%; /* Görselin tam genişlik kaplamasını sağla */
-  height: 90% ;
-  object-fit: contain; /* Görselin bozulmadan sığmasını sağla */
-  margin-left: 60px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .social-icons {
-  position: absolute;
-  right: 160px;
-  top:180px;
-  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  align-items: center;
+  align-items: flex-start;
+  gap: 2rem;
 }
 
 .icon {
@@ -186,57 +186,27 @@ export default {
   transition: background 0.3s ease;
 }
 
-.icon-wrapper {
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.icon-wrapper:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
-
 .icon:hover {
   background: rgba(255, 255, 255, 0.3);
 }
 
-.hero-text {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: -90px;
-  text-align: left;
-  margin-top: 136px;
-}
-
-/* Butonlar */
 .button-group {
   display: flex;
   gap: 1.5rem;
-  width: 100%;
-  padding-top: 100px; /* Reduced padding to account for hero-text spacing */
-  margin-top: -20px; /* Negative margin to move buttons up */
-
+  margin-bottom: 3rem;
 }
 
 .primary-btn,
 .secondary-btn {
-  flex-grow: 1;
-  padding: 0.75rem 2rem; /* Reduced vertical padding to make buttons thinner */
-  font-size: 0.9rem; /* Slightly smaller font */
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
   font-weight: bold;
   border: none;
-  border-radius: 25px; /* Reduced border radius for thinner look */
-  cursor: pointer;
+  border-radius: 25px;
   text-align: center;
   transition: all 0.3s ease;
-  max-width: 250px; /* Added max-width to make buttons longer but not too wide */
+  max-width: 250px;
 }
 
 .primary-btn {
@@ -255,21 +225,6 @@ export default {
 .secondary-btn:hover {
   background: rgba(255, 255, 255, 0.4);
 }
-/* 1440px ve altı için düzeltmeler */
-@media (max-width: 1440px) {
-  .hero {
-    grid-template-columns: 1.8fr 1fr;
-  }
-  .hero-left {
-    margin-left: -50px;
-  }
-  .hero-title {
-    font-size: 4rem;
-  }
-  .hero-map {
-    max-width: 90%;
-  }
-}
 
 /* 768px ve altı için düzeltmeler (mobil) */
 @media (max-width: 768px) {
@@ -279,11 +234,11 @@ export default {
     padding: 2rem;
   }
   .hero-left {
+    align-items: center;
     margin-left: 0;
   }
   .hero-right {
     align-items: center;
-    padding-left: 0;
   }
   .hero-title {
     font-size: 3rem;
@@ -294,42 +249,142 @@ export default {
 }
 
 /* ================== DİĞER BÖLÜMLER ================== */
-.data-cards {
-  padding: 4rem 2rem;
+
+/* ================== EŞİT KUTUCUKLAR ================== */
+.equal-boxes {
+  padding: 4rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+  background: var(--background-color); /* Arka plan renginiz */
 }
 
-.data-cards h2 {
-  font-size: 2rem;
+/* Başlık ve açıklama alanı */
+.equal-boxes .section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
   margin-bottom: 3rem;
-  font-weight: 600; /* Semibold */
 }
 
-.cards-grid {
+.equal-boxes .section-header h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+  max-width: 12ch;
+  white-space: normal;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.equal-boxes .section-header .section-description {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 400px;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+/* Kutucukları 3 sütunda tutan grid */
+.boxes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  align-items: stretch;
+  margin-top: 3.7rem;
 }
 
-.card {
-  background-color: var(--secondary-color);
+/* Her kutucuk */
+.box {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
   padding: 2rem;
-  border-radius: 0.5rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+  display: flex;
+  flex-direction: column; /* Butonun en altta kalabilmesi için */
 }
 
-.icon-box {
-  width: 3rem;
-  height: 3rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 0.5rem;
+.box:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* İkon kutusu */
+.box-icon-box {
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 24px;
+  color: #fff;
+  margin: 0 auto 1rem; /* Ortalar ve alt boşluk ekler */
+}
+
+/* Başlık ve metin */
+.box h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
   margin-bottom: 1rem;
 }
 
-/* Technologies Section */
+.box p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Buton */
+.box-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto; /* İçerik az olsa bile buton en altta kalsın */
+}
+
+.box-button:hover {
+  background: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive (mobil) düzen */
+@media (max-width: 768px) {
+  .boxes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .equal-boxes .section-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .equal-boxes .section-header h1,
+  .equal-boxes .section-header .section-description {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+/* ================== EŞİT KUTUCUKLAR END ================== */
+
+/* ================== DATA CARDS SECTION END ================== */
+
 .technologies {
   padding: 4rem 2rem;
   max-width: 1200px;
@@ -349,7 +404,6 @@ export default {
   margin-bottom: 1rem;
 }
 
-/* FAQ Section */
 .faq {
   padding: 4rem 2rem;
   max-width: 1200px;
