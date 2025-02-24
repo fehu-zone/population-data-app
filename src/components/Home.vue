@@ -1,5 +1,5 @@
 <template>
-  <!-- Hero Section -->
+  <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-left">
       <h1 class="hero-title">GERÇEK ZAMANLI DÜNYA NÜFUS VERİLERİ</h1>
@@ -20,7 +20,9 @@
         <a href="#" class="icon">
           <i class="fa-brands fa-github"></i>
         </a>
-        <a href="#" class="icon"> <i class="fa-solid fa-share-from-square"></i> </a>
+        <a href="#" class="icon">
+          <i class="fa-solid fa-share-from-square"></i>
+        </a>
       </div>
 
       <!-- İkonlar ile butonlar arasında yer alan metin -->
@@ -50,7 +52,6 @@
       <!-- Kutucuk 1 -->
       <div class="box">
         <div class="box-icon-box">
-          <!-- Örnek ikon: Font Awesome kullanıyorsanız -->
           <i class="fa-solid fa-globe"></i>
         </div>
         <h3>Küresel Veri</h3>
@@ -80,14 +81,126 @@
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="faq">
-    <h2>PROJE HAKKINDA BİLMENİZ GEREKENLER</h2>
-    <div class="faq-list">
-      <button v-for="(faq, index) in faqs" :key="index" class="faq-item">
-        <span>{{ faq.question }}</span>
-        <span class="arrow">→</span>
-      </button>
+  <!-- AÇIK KAYNAK BİLDİRİMİ BÖLÜMÜ -->
+  <section class="open-source-section">
+    <div class="open-source-header">
+      <h1>AÇIK KAYNAK BİLDİRİMİ</h1>
+      <p class="open-source-description">
+        Projemizde kullandığımız açık kaynak teknolojiler ile dünya nüfus verilerini gerçek zamanlı
+        takip ediyoruz.
+      </p>
+    </div>
+
+    <div class="open-source-grid">
+      <!-- Kutucuk 1: Worldometer -->
+      <div class="open-source-box">
+        <div class="open-source-icon-box">
+          <img src="@/img/Worldometer.svg" alt="Worldometer" width="64" height="64" />
+        </div>
+        <h3>Worldometer</h3>
+        <p>
+          Worldometer dünya nüfus verilerini gerçek zamanlı ve güvenilir şekilde sürekli olarak
+          sunmaktadır
+        </p>
+      </div>
+
+      <!-- Kutucuk 2: Elasticsearch -->
+      <div class="open-source-box">
+        <div class="open-source-icon-box">
+          <img src="@/img/Elasticsearch.svg" alt="Elasticsearch" width="64" height="64" />
+        </div>
+        <h3>Elasticsearch</h3>
+        <p>
+          Veri sorgulama ve analiz süreçlerinde Elasticsearch olağanüstü yüksek performans ile
+          sürekli sağlanmaktadır
+        </p>
+      </div>
+
+      <!-- Kutucuk 3: Kibana -->
+      <div class="open-source-box">
+        <div class="open-source-icon-box">
+          <img src="@/img/Kibana.svg" alt="Kibana" width="64" height="64" />
+        </div>
+        <h3>Kibana</h3>
+        <p>
+          Kibana, Nüfus verilerinin dinamik görselleştirilmesinde ve interaktif grafikler oluşturmak
+          üzere titizlikle kullanılmıştır
+        </p>
+      </div>
+
+      <!-- Kutucuk 4: Docker -->
+      <div class="open-source-box">
+        <div class="open-source-icon-box">
+          <img src="@/img/Dockerr.svg" alt="Docker" width="64" height="64" />
+        </div>
+        <h3>Docker</h3>
+        <p>
+          Projenin dağıtım ve izolasyon süreci Docker ile başarıyla sağlanarak ortam bağımsızlığı
+          garantilenmiştir
+        </p>
+      </div>
+
+      <!-- Kutucuk 5: Vue -->
+      <div class="open-source-box">
+        <div class="open-source-icon-box">
+          <img src="@/img/Vue.svg" alt="Vue" width="64" height="64" />
+        </div>
+        <h3>Vue</h3>
+        <p>
+          Yaptığımız bu web sitesi, modern yeni nesil JavaScript çerçevesi Vue ile geliştirilmiştir
+        </p>
+      </div>
+
+      <!-- Kutucuk 6: Python -->
+      <div class="open-source-box">
+        <div class="open-source-icon-box">
+          <img src="@/img/Python.svg" alt="Python" width="64" height="64" />
+        </div>
+        <h3>Python</h3>
+        <p>
+          Veri işleme ve analiz süreçleri, Python'un güçlü kütüphane desteğiyle etkin şekilde
+          desteklenmektedir
+        </p>
+      </div>
+    </div>
+
+    <div class="open-source-button-wrapper">
+      <button class="open-source-button">Açık Kaynak Kodları İncelemek İçin Tıklayın</button>
+    </div>
+  </section>
+
+  <section class="project-faq">
+    <div class="faq-container">
+      <!-- Üst Kısım: Başlık & Description Yan Yana -->
+      <div class="faq-header-row">
+        <h1 class="faq-title">PROJE HAKKINDA BİLMENİZ GEREKENLER</h1>
+        <p class="faq-subtitle">
+          Nüfus verileri ve proje hakkında en merak edilen soruların yanıtlarını burada
+          bulabilirsiniz.
+        </p>
+      </div>
+
+      <!-- Alt Kısım: SSS (Sol) + Görsel (Sağ) -->
+      <div class="faq-content-row">
+        <div class="faq-list">
+          <div class="faq-item">
+            <span class="faq-question">Bu proje ne işe yarıyor?</span>
+            <span class="faq-icon">&rarr;</span>
+          </div>
+          <div class="faq-item">
+            <span class="faq-question">Veriler Nasıl Güncelleniyor?</span>
+            <span class="faq-icon">&rarr;</span>
+          </div>
+          <div class="faq-item">
+            <span class="faq-question">Bu Proje Açık Kaynak mı?</span>
+            <span class="faq-icon">&rarr;</span>
+          </div>
+        </div>
+
+        <div class="faq-right">
+          <img src="@/img/Faq.webp" alt="Proje Görseli" class="faq-image" />
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -95,6 +208,17 @@
 <script>
 export default {
   name: 'AppHome',
+  // Eğer FAQ'ları Vue ile dinamik aç/kapa yapmak isterseniz
+  data() {
+    return {
+      openFaq: null,
+    }
+  },
+  methods: {
+    toggleFaq(index) {
+      this.openFaq = this.openFaq === index ? null : index
+    },
+  },
 }
 </script>
 
@@ -105,7 +229,7 @@ export default {
   display: grid;
   grid-template-columns: 60% 55%;
   color: #fff;
-  background: ffff;
+  background: #000; /* Örnek arka plan */
   height: 100vh;
   padding: 2.5rem;
   align-items: stretch;
@@ -115,14 +239,12 @@ export default {
 .hero-right {
   display: flex;
   flex-direction: column;
-  /* Dağılımı her iki kolonda da eşitlemek için */
   justify-content: space-between;
 }
 
 .hero-left {
   align-items: flex-start;
   margin-bottom: 6rem;
-  /* İsteğe bağlı: elemanlar arasında belirli bir boşluk varsa gap eklenebilir */
 }
 
 .hero-right {
@@ -131,7 +253,6 @@ export default {
   margin-bottom: 3rem;
 }
 
-/* Yeni eklenen metin stili */
 .hero-text {
   color: #fff;
   font-size: 1.22rem;
@@ -141,7 +262,7 @@ export default {
 .interactive-panels-title {
   font-size: 2.4rem;
   color: #fff;
-  font-weight: SemiBold;
+  font-weight: 600;
   text-align: center;
 }
 
@@ -226,12 +347,12 @@ export default {
   background: rgba(255, 255, 255, 0.4);
 }
 
-/* 768px ve altı için düzeltmeler (mobil) */
 @media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;
     text-align: center;
     padding: 2rem;
+    height: auto;
   }
   .hero-left {
     align-items: center;
@@ -239,27 +360,27 @@ export default {
   }
   .hero-right {
     align-items: center;
+    margin-left: 0;
   }
   .hero-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   .hero-map {
     max-width: 80%;
   }
 }
 
-/* ================== DİĞER BÖLÜMLER ================== */
+/* ================== ANLIK DÜNYA NÜFUS AKIŞI (DATA CARD) ================== */
 
-/* ================== EŞİT KUTUCUKLAR ================== */
 .equal-boxes {
   padding: 4rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
   font-family: 'Poppins', sans-serif;
-  background: var(--background-color); /* Arka plan renginiz */
+  background: #000000;
+  align-items: center;
 }
 
-/* Başlık ve açıklama alanı */
 .equal-boxes .section-header {
   display: flex;
   align-items: flex-end;
@@ -280,13 +401,12 @@ export default {
 .equal-boxes .section-header .section-description {
   font-size: 1rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.8);
+  color: #fbfbff;
   max-width: 400px;
   line-height: 1.6;
   margin-bottom: 3rem;
 }
 
-/* Kutucukları 3 sütunda tutan grid */
 .boxes-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -295,9 +415,8 @@ export default {
   margin-top: 3.7rem;
 }
 
-/* Her kutucuk */
 .box {
-  background: rgba(255, 255, 255, 0.1);
+  background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   padding: 2rem;
@@ -307,15 +426,14 @@ export default {
     transform 0.3s ease,
     background 0.3s ease;
   display: flex;
-  flex-direction: column; /* Butonun en altta kalabilmesi için */
+  flex-direction: column;
 }
 
 .box:hover {
   transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.11);
 }
 
-/* İkon kutusu */
 .box-icon-box {
   width: 64px;
   height: 64px;
@@ -326,10 +444,9 @@ export default {
   justify-content: center;
   font-size: 24px;
   color: #fff;
-  margin: 0 auto 1rem; /* Ortalar ve alt boşluk ekler */
+  margin: 0 auto 1rem;
 }
 
-/* Başlık ve metin */
 .box h3 {
   font-size: 1.5rem;
   font-weight: 500;
@@ -343,7 +460,6 @@ export default {
   margin-bottom: 2rem;
 }
 
-/* Buton */
 .box-button {
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.4);
@@ -354,7 +470,7 @@ export default {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: auto; /* İçerik az olsa bile buton en altta kalsın */
+  margin-top: auto;
 }
 
 .box-button:hover {
@@ -362,7 +478,6 @@ export default {
   border-color: rgba(255, 255, 255, 0.6);
 }
 
-/* Responsive (mobil) düzen */
 @media (max-width: 768px) {
   .boxes-grid {
     grid-template-columns: 1fr;
@@ -381,58 +496,232 @@ export default {
     margin-bottom: 2rem;
   }
 }
-/* ================== EŞİT KUTUCUKLAR END ================== */
 
-/* ================== DATA CARDS SECTION END ================== */
+/* ================== AÇIK KAYNAK BİLDİRİMİ SECTION ================== */
 
-.technologies {
-  padding: 4rem 2rem;
+.open-source-section {
+  padding: 4rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+  background: #000000;
+  align-items: center;
 }
 
-.tech-grid {
+.open-source-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.open-source-header h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+  max-width: 12ch;
+  white-space: normal;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.open-source-header .open-source-description {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fbfbff;
+  max-width: 400px;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+.open-source-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  text-align: center;
+  align-items: stretch;
+  margin-top: 3.7rem;
 }
 
-.tech-item img {
-  width: 4rem;
-  height: 4rem;
+.open-source-box {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.open-source-box:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.11);
+}
+
+.open-source-icon-box {
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.open-source-box h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
   margin-bottom: 1rem;
 }
 
-.faq {
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+.open-source-box p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 2rem;
 }
 
+.open-source-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.open-source-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.open-source-button:hover {
+  background: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 768px) {
+  .open-source-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .open-source-header h1,
+  .open-source-header .open-source-description {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .open-source-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Genel SSS Bölümü */
+.project-faq {
+  background: #000;
+  padding: 3rem 1rem;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif; /* Tüm metinlerde Poppins kullanılacak */
+}
+
+/* Ana kapsayıcı (üst ve alt satırları tutar) */
+.faq-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* Üstte "header-row", altta "content-row" */
+  gap: 3rem;
+}
+
+/* ============ ÜST KISIM: Başlık & Description Yan Yana ============ */
+.faq-header-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr; /* Sol: Başlık, Sağ: Description */
+  gap: 3rem;
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+
+/* Başlık (Poppins Bold) */
+.faq-title {
+  font-size: 3rem;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 700; /* Bold */
+}
+
+/* Description (Poppins Semi-Bold) */
+.faq-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600; /* Semi-Bold */
+  max-width: 450px; /* Genişliğini sınırlamak isterseniz */
+  margin-top: 2rem;
+}
+
+/* ============ ALT KISIM: SSS (Sol) + Görsel (Sağ) ============ */
+.faq-content-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Sol: SSS, Sağ: Görsel */
+  gap: 2rem;
+}
+
+/* SSS listesi */
 .faq-list {
-  max-width: 800px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
+/* Tek bir SSS kutusu */
 .faq-item {
-  width: 100%;
-  background-color: var(--secondary-color);
-  padding: 1rem;
-  border: none;
-  border-radius: 0.5rem;
-  color: var(--text-color);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.07);
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s;
-  text-align: left;
 }
 
 .faq-item:hover {
-  background-color: rgba(45, 55, 72, 0.8);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* SSS sorusu (Poppins Semi-Bold) */
+.faq-question {
+  font-size: 1.1rem;
+  font-weight: 600; /* Semi-Bold */
+}
+
+/* Ok veya ikonu temsil eden kısım */
+.faq-icon {
+  font-size: 1.3rem;
+  margin-left: 1rem;
+  opacity: 0.8;
+}
+
+/* Görsel tarafı */
+.faq-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faq-image {
+  margin-bottom: 3rem;
 }
 </style>
