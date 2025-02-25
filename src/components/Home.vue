@@ -27,8 +27,8 @@
 
       <!-- İkonlar ile butonlar arasında yer alan metin -->
       <p class="hero-text">
-        Dünya nüfus verilerini dakikalar önce güncellenen en güncel verilerimizle. Doğumlar, ölümler
-        ve göç hareketlerini interaktif grafiklerle keşfedin.
+        Dünya nüfus verilerini dakikalar önce güncellenen en güncel verilerimizle inceleyin.
+        Doğumlar, ölümler ve göç hareketlerini interaktif grafiklerle keşfedin.
       </p>
 
       <div class="button-group">
@@ -195,10 +195,18 @@
             <span class="faq-question">Bu Proje Açık Kaynak mı?</span>
             <span class="faq-icon">&rarr;</span>
           </div>
+          <div class="faq-item">
+            <span class="faq-question">Bu Proje Açık Kaynak mı?</span>
+            <span class="faq-icon">&rarr;</span>
+          </div>
+          <div class="faq-item">
+            <span class="faq-question">Bu Proje Açık Kaynak mı?</span>
+            <span class="faq-icon">&rarr;</span>
+          </div>
         </div>
 
         <div class="faq-right">
-          <img src="@/img/Faq.webp" alt="Proje Görseli" class="faq-image" />
+          <img src="@/img/Faq img.png" alt="Proje Görseli" class="faq-image" />
         </div>
       </div>
     </div>
@@ -650,7 +658,6 @@ export default {
   display: grid;
   grid-template-columns: 1.4fr 1fr; /* Sol: Başlık, Sağ: Description */
   gap: 3rem;
-  align-items: flex-start;
   margin-top: 2rem;
 }
 
@@ -674,8 +681,8 @@ export default {
 /* ============ ALT KISIM: SSS (Sol) + Görsel (Sağ) ============ */
 .faq-content-row {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Sol: SSS, Sağ: Görsel */
-  gap: 2rem;
+  grid-template-columns: 1.2fr 1fr; /* Sol: SSS, Sağ: Görsel */
+  gap: 5rem;
 }
 
 /* SSS listesi */
@@ -691,7 +698,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   background-color: rgba(255, 255, 255, 0.07);
-  padding: 1rem 1.2rem;
+  padding: 1rem 1.3rem;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -716,12 +723,14 @@ export default {
 
 /* Görsel tarafı */
 .faq-right {
-  display: flex;
+  display: grid;
   justify-content: center;
-  align-items: center;
 }
 
 .faq-image {
-  margin-bottom: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 10px rgba(0, 0, 0, 0.3);
+  width: 27rem;
+  height: 25rem;
 }
 </style>
