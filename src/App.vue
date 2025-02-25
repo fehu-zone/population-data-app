@@ -1,8 +1,8 @@
 <template>
   <div class="app">
-   <AppHeader/>
-   <AppHome/>
-   <AppFooter/>
+    <AppHeader />
+    <AppHome />
+    <AppFooter />
   </div>
 </template>
 
@@ -18,7 +18,7 @@ export default {
     AppHeader,
     AppHome,
     AppFooter,
-     // Header komponentini burada tanımlıyoruz
+    // Header komponentini burada tanımlıyoruz
   },
   data() {
     return {
