@@ -1,6 +1,6 @@
 <template>
-<!-- Header -->
- <header>
+  <!-- Header -->
+  <header>
     <nav>
       <h1>FEHU.POPULATION</h1>
       <div class="nav-links">
@@ -15,12 +15,13 @@
 
 <script>
 export default {
-  name: 'AppHeader'
+  name: 'AppHeader',
 }
 </script>
 <style scoped>
 header {
   padding: 1.5rem 2rem;
+  margin-top: 1rem;
 }
 
 nav {
@@ -46,5 +47,4 @@ nav {
 .nav-links a:hover {
   color: var(--text-secondary);
 }
-
 </style>

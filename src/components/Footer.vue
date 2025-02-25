@@ -15,14 +15,20 @@
       <div class="footer-section">
         <h4>LİNKLER</h4>
         <ul>
+          <li>Anasayfa</li>
           <li>Dünya Bazlı Veriler</li>
           <li>Ülke Bazlı Veriler</li>
           <li>Açık Kaynak</li>
+          <li>Açık Kaynak Bildirimi</li>
         </ul>
       </div>
       <div class="footer-section">
-        <h4>HAKKIMIZDAKİ VE KAYNAKLAR</h4>
-        <p>Bu proje verilerin dünyayı anlaşılır şekilde sunmak için tasarlanmıştır.</p>
+        <h4>HAKKIMIZDA VE KAYNAKLAR</h4>
+        <p>
+          Bu proje, Worldometer'in sağladığı güncel nüfus verilerini kullanarak dünya ve ülke bazlı
+          analizler sunar. Açık kaynak olarak geliştirilen projemize katkıda bulunmak için bizimle
+          iletişime geçebilirsiniz!
+        </p>
       </div>
     </div>
   </footer>
