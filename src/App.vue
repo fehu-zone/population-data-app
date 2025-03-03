@@ -1,24 +1,23 @@
 <template>
   <div class="app">
     <AppHeader />
-    <RouterView />
-    <!-- AppHome yerine dinamik sayfa yükleme -->
+    <main>
+      <router-view />
+    </main>
     <AppFooter />
   </div>
 </template>
 
 <script>
-import { RouterView } from 'vue-router' // Sayfa bileşenleri için
-import AppHeader from '@/components/Header.vue' // Header component
-import AppFooter from '@/components/Footer.vue' // Footer component
-import '@/assets/global.css' // CSS dosyası
+import AppHeader from '@/components/AppHeader.vue'
+import AppFooter from '@/components/AppFooter.vue'
+import '@/assets/global.css'
 
 export default {
   name: 'App',
   components: {
     AppHeader,
     AppFooter,
-    RouterView, // Vue Router bileşenini kullanıyoruz
   },
   data() {
     return {
@@ -38,4 +37,17 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+/* Ana sayfa düzeni */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* İçerik alanı */
+main {
+  flex: 1;
+  padding: 2rem;
+}
+</style>

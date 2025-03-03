@@ -1,0 +1,55 @@
+/* HomeResponsive.css - Home.vue için responsive ayarlar */
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 2rem;
+    height: auto;
+  }
+  .hero-left,
+  .hero-right {
+    align-items: center;
+    margin-left: 0;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-map {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .boxes-grid {
+    grid-template-columns: 1fr;
+  }
+  .equal-boxes .section-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+  .equal-boxes .section-header h1,
+  .equal-boxes .section-header .section-description {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .open-source-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+  .open-source-header h1,
+  .open-source-header .open-source-description {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  .open-source-grid {
+    grid-template-columns: 1fr;
+  }
+}

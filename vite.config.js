@@ -12,4 +12,9 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  server: {
+    host: '0.0.0.0', // Tüm cihazlardan erişime izin verir
+    port: 5173, // Vite'nin çalıştığı port
+    strictPort: true, // Belirtilen portun kullanılmasını garanti eder
+  },
 })

@@ -86,7 +86,7 @@ export default {
 .faq-right {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Ortalamayı kaldırıp üst hizalamaya çektik */
 }
 .faq-image {
   max-width: 100%;

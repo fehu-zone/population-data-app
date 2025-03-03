@@ -22,13 +22,13 @@
             <i class="fa-brands fa-github"></i>
           </a>
           <a href="#" class="icon">
-            <i class="fa-solid fa-share-from-square"></i>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         </div>
         <!-- İkonlar ile butonlar arasında yer alan metin -->
         <p class="hero-text">
-          Dünya nüfus verilerini dakikalar önce güncellenen en güncel verilerimizle inceleyin.
-          Doğumlar, ölümler ve göç hareketlerini interaktif grafiklerle keşfedin.
+          Dünya nüfus verilerini dakikalar önce güncellenen en yeni verilerle keşfedin. Doğumlar,
+          ölümler ve göç hareketlerini interaktif grafiklerle detaylı inceleyin.
         </p>
         <div class="button-group">
           <button class="primary-btn">Dünya Bazlı Nüfus Verileri</button>
@@ -183,17 +183,18 @@ export default {
 }
 </script>
 
+<!-- Base stiller: responsive medya sorguları bu dosyadan kaldırılmıştır -->
 <style scoped>
 /* ================== HERO SECTION ================== */
+
 .hero {
   display: grid;
-  grid-template-columns: 60% 55%;
+  grid-template-columns: 58% 40%;
   color: #fff;
   background: #000;
   height: 100vh;
-  padding: 3.8rem;
-  align-items: stretch;
-  margin-top: 1.5rem;
+  padding: 2.8rem;
+  margin-left: 2rem;
 }
 .hero-left,
 .hero-right {
@@ -203,40 +204,42 @@ export default {
 }
 .hero-left {
   align-items: flex-start;
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
 }
 .hero-right {
   align-items: flex-end;
-  margin-left: 12rem;
-  margin-bottom: 3rem;
+  margin-left: 6rem;
+  margin-bottom: 4rem;
 }
 .hero-title {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: bold;
   text-align: left;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.2px;
+  line-height: 1.3;
 }
 .hero-map-img-container {
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  margin-left: -4.375rem;
+  margin-right: 1.5rem;
 }
 .hero-map {
-  width: 100%;
+  width: 40rem;
   height: auto;
   object-fit: contain;
 }
 .interactive-panels-title {
-  font-size: 2.4rem;
+  font-size: 2.3rem;
   color: #fff;
   font-weight: 600;
   text-align: center;
+  margin-bottom: 4rem;
 }
 .hero-text {
   color: #fff;
-  font-size: 1.22rem;
-  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 .social-icons {
   display: flex;
@@ -250,15 +253,19 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
   border-radius: 50%;
   color: white;
   font-size: 1.2rem;
   text-decoration: none;
-  transition: background 0.3s ease;
+  transition:
+    background 0.5s ease,
+    transform 0.3s ease,
+    box-shadow 0.5s ease;
 }
 .icon:hover {
-  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.2);
+  box-shadow: 0 8px 26px rgba(12, 54, 103, 0.8);
 }
 .button-group {
   display: flex;
@@ -290,25 +297,6 @@ export default {
 .primary-btn:hover,
 .secondary-btn:hover {
   background: rgba(255, 255, 255, 0.4);
-}
-@media (max-width: 768px) {
-  .hero {
-    grid-template-columns: 1fr;
-    text-align: center;
-    padding: 2rem;
-    height: auto;
-  }
-  .hero-left,
-  .hero-right {
-    align-items: center;
-    margin-left: 0;
-  }
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  .hero-map {
-    max-width: 80%;
-  }
 }
 
 /* ================== ANLIK DÜNYA NÜFUS AKIŞI ================== */
@@ -405,22 +393,6 @@ export default {
 .box-button:hover {
   background: rgba(255, 255, 255, 0.4);
   border-color: rgba(255, 255, 255, 0.6);
-}
-@media (max-width: 768px) {
-  .boxes-grid {
-    grid-template-columns: 1fr;
-  }
-  .equal-boxes .section-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-  }
-  .equal-boxes .section-header h1,
-  .equal-boxes .section-header .section-description {
-    max-width: 100%;
-    margin-bottom: 2rem;
-  }
 }
 
 /* ================== AÇIK KAYNAK BİLDİRİMİ ================== */
@@ -520,20 +492,7 @@ export default {
   background: rgba(255, 255, 255, 0.4);
   border-color: rgba(255, 255, 255, 0.6);
 }
-@media (max-width: 768px) {
-  .open-source-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-  }
-  .open-source-header h1,
-  .open-source-header .open-source-description {
-    max-width: 100%;
-    margin-bottom: 2rem;
-  }
-  .open-source-grid {
-    grid-template-columns: 1fr;
-  }
-}
 </style>
+
+<!-- Responsive ayarlar HomeResponsive.css dosyasından import ediliyor -->
+<style src="@/assets/Responsive/HomeResponsive.css"></style>
