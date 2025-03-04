@@ -1,0 +1,59 @@
+{
+  "home": {
+    "title": "ДАННЫЕ НАСЕЛЕНИЯ МИРА В РЕАЛЬНОМ ВРЕМЕНИ",
+    "subtitle": "Интерактивные Дашборды",
+    "description": "Анализируйте рождаемость, смертность и миграцию с обновленными данными."
+  },
+  "menu": {
+    "home": "Главная",
+    "countryData": "Данные по Странам",
+    "worldData": "Глобальные Данные",
+    "openSource": "Открытый Код",
+    "openSourceStatement": "Заявление об Открытом Коде"
+  },
+  "livePopulation": {
+    "title": "ОБНОВЛЕНИЕ НАСЕЛЕНИЯ В РЕЖИМЕ РЕАЛЬНОГО ВРЕМЕНИ",
+    "description": "Отслеживание динамики населения в реальном времени.",
+    "globalData": "Глобальные Данные",
+    "countryAnalysis": "Анализ по Странам",
+    "countryData": "Данные по Странам"
+  },
+  "opensource": {
+    "title": "ЗАЯВЛЕНИЕ ОБ ОТКРЫТОМ КОДЕ",
+    "description": "Отслеживание с использованием open source технологий.",
+    "technologies": [
+      "Worldometer предоставляет актуальные данные.",
+      "Elasticsearch обеспечивает высокую производительность.",
+      "Kibana создает динамические визуализации.",
+      "Docker управляет развертыванием.",
+      "Сайт разработан на Vue.js.",
+      "Python обрабатывает данные эффективно."
+    ],
+    "viewSource": "Просмотр Исходного Кода"
+  },
+  "faq": {
+    "title": "Частые Вопросы",
+    "questions": {
+      "technologies": "Какие технологии используются?",
+      "security": "Как обеспечивается безопасность?",
+      "contribute": "Как внести вклад?",
+      "updateFrequency": "Частота обновлений?",
+      "dashboards": "Как работают дашборды?"
+    },
+    "answers": {
+      "technologies": "Vue.js 3, Python Selenium, Elasticsearch, AWS и Tailwind CSS.",
+      "security": "Защита через безопасное соединение и AWS.",
+      "contribute": "Открытый код на GitHub: issues и pull requests.",
+      "updateFrequency": "Обновление каждые 5-15 минут через AWS.",
+      "dashboards": "Kibana визуализирует данные Elasticsearch."
+    }
+  },
+  "contact": { "title": "КОНТАКТЫ", "email": "Эл. почта", "phone": "Телефон" },
+  "about": {
+    "title": "О ПРОЕКТЕ & РЕСУРСЫ",
+    "description": "Использует данные Worldometer. Присоединяйтесь!"
+  },
+  "footer": {
+    "copyright": "© 2025 Ahmet Karadaş | Все Права Защищены | Некоммерческий Проект"
+  }
+}

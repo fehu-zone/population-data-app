@@ -8,7 +8,7 @@
       <!-- Logo ve İletişim -->
       <div class="footer-section">
         <h3 class="logo-text">FEHU.POPULATION</h3>
-        <p>İletişim: contact@fehu.population</p>
+        <p>İletişim: ahmett.karadas@icloud.com</p>
       </div>
 
       <!-- İletişim -->

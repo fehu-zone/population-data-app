@@ -1,0 +1,59 @@
+{
+  "home": {
+    "title": "WELTBEVÖLKERUNG IN ECHTZEIT",
+    "subtitle": "Interaktive Dashboards erkunden",
+    "description": "Analysieren Sie Geburten, Todesfälle und Migrationsströme mit minutenaktuellen Daten."
+  },
+  "menu": {
+    "home": "Startseite",
+    "countryData": "Länderspezifische Daten",
+    "worldData": "Globale Daten",
+    "openSource": "Open Source",
+    "openSourceStatement": "Open-Source-Erklärung"
+  },
+  "livePopulation": {
+    "title": "LIVE BEVÖLKERUNGSENTWICKLUNG",
+    "description": "Echtzeit-Verfolgung der globalen Bevölkerungsdynamik.",
+    "globalData": "Globale Daten",
+    "countryAnalysis": "Länderanalyse",
+    "countryData": "Länderspezifische Daten"
+  },
+  "opensource": {
+    "title": "OPEN-SOURCE-ERKLÄRUNG",
+    "description": "Echtzeit-Tracking mit Open-Source-Technologien.",
+    "technologies": [
+      "Worldometer liefert minutenaktuelle Bevölkerungsdaten.",
+      "Elasticsearch gewährleistet Hochleistungs-Datenabfragen.",
+      "Kibana ermöglicht dynamische Datenvisualisierung.",
+      "Docker sorgt für isolierte Bereitstellung.",
+      "Entwickelt mit Vue.js JavaScript-Framework.",
+      "Python-Bibliotheken verarbeiten Daten effizient."
+    ],
+    "viewSource": "Quellcode anzeigen"
+  },
+  "faq": {
+    "title": "Häufige Fragen",
+    "questions": {
+      "technologies": "Welche Technologien werden verwendet?",
+      "security": "Wie wird Datensicherheit gewährleistet?",
+      "contribute": "Wie kann ich mitwirken?",
+      "updateFrequency": "Aktualisierungsintervall?",
+      "dashboards": "Funktionsweise der Dashboards?"
+    },
+    "answers": {
+      "technologies": "Vue.js 3 Composition API, Python Selenium, Elasticsearch, AWS und Tailwind CSS.",
+      "security": "Sichere Verbindung zu Elasticsearch, AWS-Sicherheitsmaßnahmen.",
+      "contribute": "Open Source auf GitHub: Issues und Pull Requests.",
+      "updateFrequency": "Aktualisierung alle 5-15 Minuten via AWS.",
+      "dashboards": "Kibana visualisiert Elasticsearch-Daten interaktiv."
+    }
+  },
+  "contact": { "title": "KONTAKT", "email": "E-Mail", "phone": "Telefon" },
+  "about": {
+    "title": "ÜBER UNS & QUELLEN",
+    "description": "Projekt verwendet Worldometer-Daten. Beiträge willkommen!"
+  },
+  "footer": {
+    "copyright": "© 2025 Ahmet Karadaş | Alle Rechte vorbehalten | Nicht-kommerziell"
+  }
+}

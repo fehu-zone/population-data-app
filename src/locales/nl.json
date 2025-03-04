@@ -1,0 +1,59 @@
+{
+  "home": {
+    "title": "REALTIME WERELDBEVOLKINGSDATA",
+    "subtitle": "Interactieve Dashboards Ontdekken",
+    "description": "Analyseer geboorten, sterfgevallen en migratiestromen met data die minuten geleden is bijgewerkt."
+  },
+  "menu": {
+    "home": "Home",
+    "countryData": "Landenspecifieke Data",
+    "worldData": "Wereldwijde Data",
+    "openSource": "Open Source",
+    "openSourceStatement": "Open Source Verklaring"
+  },
+  "livePopulation": {
+    "title": "LIVE BEVOLKINGSAANGROEI",
+    "description": "Volg wereldwijde bevolkingsdynamiek in realtime.",
+    "globalData": "Wereldwijde Data",
+    "countryAnalysis": "Landanalyse",
+    "countryData": "Landenspecifieke Bevolkingsdata"
+  },
+  "opensource": {
+    "title": "OPEN SOURCE VERKLARING",
+    "description": "Realtime tracking met open source technologieën.",
+    "technologies": [
+      "Worldometer levert betrouwbare bevolkingsdata.",
+      "Elasticsearch zorgt voor snelle dataverwerking.",
+      "Kibana maakt dynamische visualisaties mogelijk.",
+      "Docker regelt geïsoleerde implementatie.",
+      "Ontwikkeld met Vue.js framework.",
+      "Python verwerkt data efficiënt."
+    ],
+    "viewSource": "Bekijk Broncode"
+  },
+  "faq": {
+    "title": "Veelgestelde Vragen",
+    "questions": {
+      "technologies": "Welke technologieën worden gebruikt?",
+      "security": "Hoe wordt databeveiliging gegarandeerd?",
+      "contribute": "Hoe kan ik bijdragen?",
+      "updateFrequency": "Updatefrequentie?",
+      "dashboards": "Hoe werken dashboards?"
+    },
+    "answers": {
+      "technologies": "Vue.js 3, Python Selenium, Elasticsearch, AWS en Tailwind CSS.",
+      "security": "Beveiligde verbinding met Elasticsearch en AWS.",
+      "contribute": "Open source op GitHub: issues en pull requests.",
+      "updateFrequency": "Elke 5-15 minuten bijgewerkt via AWS.",
+      "dashboards": "Kibana maakt interactieve visualisaties."
+    }
+  },
+  "contact": { "title": "CONTACT", "email": "E-mail", "phone": "Telefoon" },
+  "about": {
+    "title": "OVER ONS & BRONNEN",
+    "description": "Gebruikt Worldometer-data. Bijdragen welkom!"
+  },
+  "footer": {
+    "copyright": "© 2025 Ahmet Karadaş | Alle Rechten Voorbehouden | Niet-commercieel"
+  }
+}

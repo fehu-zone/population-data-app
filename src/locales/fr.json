@@ -1,0 +1,59 @@
+{
+  "home": {
+    "title": "DONNÉES DEMOGRAPHIQUES EN TEMPS RÉEL",
+    "subtitle": "Tableaux de bord interactifs",
+    "description": "Analysez naissances, décès et migrations avec des données actualisées."
+  },
+  "menu": {
+    "home": "Accueil",
+    "countryData": "Données par pays",
+    "worldData": "Données mondiales",
+    "openSource": "Open Source",
+    "openSourceStatement": "Déclaration Open Source"
+  },
+  "livePopulation": {
+    "title": "FLUX DEMOGRAPHIQUE EN DIRECT",
+    "description": "Suivi en temps réel des dynamiques de population.",
+    "globalData": "Données globales",
+    "countryAnalysis": "Analyse par pays",
+    "countryData": "Données nationales"
+  },
+  "opensource": {
+    "title": "DECLARATION OPEN SOURCE",
+    "description": "Suivi en temps réel avec technologies open source.",
+    "technologies": [
+      "Worldometer fournit des données démographiques fiables.",
+      "Elasticsearch pour requêtes haute performance.",
+      "Kibana permet la visualisation dynamique.",
+      "Docker gère le déploiement isolé.",
+      "Développé avec Vue.js.",
+      "Traitement de données via Python."
+    ],
+    "viewSource": "Voir le code source"
+  },
+  "faq": {
+    "title": "FAQ",
+    "questions": {
+      "technologies": "Technologies utilisées?",
+      "security": "Sécurité des données?",
+      "contribute": "Comment contribuer?",
+      "updateFrequency": "Fréquence de mise à jour?",
+      "dashboards": "Fonctionnement des tableaux?"
+    },
+    "answers": {
+      "technologies": "Vue.js 3, Python Selenium, Elasticsearch, AWS, Tailwind CSS.",
+      "security": "Connexion sécurisée et mesures AWS.",
+      "contribute": "Projet open source sur GitHub.",
+      "updateFrequency": "Actualisation toutes les 5-15 minutes.",
+      "dashboards": "Kibana crée des visualisations interactives."
+    }
+  },
+  "contact": { "title": "CONTACT", "email": "Email", "phone": "Téléphone" },
+  "about": {
+    "title": "À PROPOS & RESSOURCES",
+    "description": "Utilise les données de Worldometer. Contributions bienvenues!"
+  },
+  "footer": {
+    "copyright": "© 2025 Ahmet Karadaş | Tous droits réservés | Non commercial"
+  }
+}

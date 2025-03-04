@@ -1,6 +1,7 @@
 <template>
   <div class="app">
     <AppHeader />
+    <!-- Dil seçici burada olacak -->
     <main>
       <router-view />
     </main>

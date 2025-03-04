@@ -1,0 +1,63 @@
+{
+  "home": {
+    "title": "GERÇEK ZAMANLI DÜNYA NÜFUS VERİLERİ",
+    "subtitle": "İnteraktif Panelleri Keşfedin",
+    "description": "Dünya nüfus verilerini dakikalar önce güncellenen en yeni verilerle keşfedin. Doğumlar, ölümler ve göç hareketlerini interaktif grafiklerle detaylı inceleyin."
+  },
+  "menu": {
+    "home": "Anasayfa",
+    "countryData": "Ülke Bazlı Veriler",
+    "worldData": "Dünya Bazlı Veriler",
+    "openSource": "Açık Kaynak",
+    "openSourceStatement": "Açık Kaynak Bildirimi"
+  },
+  "livePopulation": {
+    "title": "ANLIK DÜNYA NÜFUS AKIŞI",
+    "description": "Dakikalar önce güncellenen en güncel verilerimizle, dünya genelindeki nüfus dinamiklerini anlık olarak takip edin.",
+    "globalData": "Küresel Veri",
+    "countryAnalysis": "Ülke Analizi",
+    "countryData": "Ülke Bazlı Nüfus Verileri"
+  },
+  "opensource": {
+    "title": "AÇIK KAYNAK BİLDİRİMİ",
+    "description": "Projemizde kullandığımız açık kaynak teknolojiler ile dünya nüfus verilerini gerçek zamanlı takip ediyoruz.",
+    "technologies": [
+      "Worldometer dünya nüfus verilerini, gerçek zamanlı ve güvenilir şekilde sürekli olarak sunmaktadır.",
+      "Veri sorgulama ve analiz süreçlerinde Elasticsearch olağanüstü yüksek performans ile süreklilik sağlamaktadır.",
+      "Kibana, nüfus verilerinin dinamik görselleştirilmesinde ve interaktif grafiklerin oluşturulmasında titizlikle kullanılmıştır.",
+      "Projenin dağıtım ve izolasyon süreci, Docker ile başarıyla sağlanarak ortam bağımsızlığı garantilenmiştir.",
+      "Bu web sitesi, modern JavaScript çerçevesi Vue ile geliştirilmiştir.",
+      "Veri işleme ve analiz süreçleri, Python'un güçlü kütüphane desteğiyle etkin şekilde desteklenmektedir."
+    ],
+    "viewSource": "Açık Kaynak Kodları İncelemek İçin Tıklayın"
+  },
+  "faq": {
+    "title": "Sıkça Sorulan Sorular",
+    "questions": {
+      "technologies": "Proje hangi teknolojileri kullanıyor?",
+      "security": "Veri güvenliği nasıl sağlanıyor?",
+      "contribute": "Nasıl katkıda bulunabilirim?",
+      "updateFrequency": "Verilerin Güncelleme sıklığı nedir?",
+      "dashboards": "Dashboardlar nasıl çalışıyor?"
+    },
+    "answers": {
+      "technologies": "Proje, Vue.js 3 Composition API ile geliştirildi. Veri kazıması için Python Selenium kullanılıyor ve veriler Elasticsearch'e aktarılıyor. AWS, veri akışı ve sunucu ihtiyacını karşılamak için kullanılıyor. Tailwind CSS ile stil yönetimi sağlanıyor.",
+      "security": "Veriler, güvenli bir bağlantı üzerinden Elasticsearch'e aktarılıyor ve yetkisiz erişime karşı AWS güvenlik önlemleri ile korunuyor.",
+      "contribute": "Projemiz açık kaynaklıdır. GitHub deposundan issue açabilir veya pull request gönderebilirsiniz.",
+      "updateFrequency": "Veriler, AWS üzerinde sürekli çalışan bir Python kodu sayesinde 5-15 dakika aralığında yenilenir.",
+      "dashboards": "Kibana, Elasticsearch verilerini kullanarak dinamik ve etkileşimli görselleştirmeler oluşturur. Kullanıcılar farklı paneller arasında filtreleme yaparak verileri detaylı inceleyebilir."
+    }
+  },
+  "contact": {
+    "title": "İLETİŞİM",
+    "email": "Email",
+    "phone": "Telefon"
+  },
+  "about": {
+    "title": "HAKKIMIZDA VE KAYNAKLAR",
+    "description": "Bu proje, Worldometer'in sağladığı güncel nüfus verilerini kullanarak dünya ve ülke bazlı analizler sunar. Açık kaynak olarak geliştirilen projemize katkıda bulunmak için bizimle iletişime geçebilirsiniz!"
+  },
+  "footer": {
+    "copyright": "2025 © Ahmet Karadaş | Tüm Hakları Saklıdır | Bu Site Ticari Amaç Gütmez"
+  }
+}

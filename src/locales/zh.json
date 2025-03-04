@@ -1,0 +1,59 @@
+{
+  "home": {
+    "title": "实时全球人口数据",
+    "subtitle": "探索交互式仪表板",
+    "description": "通过几分钟前更新的数据，分析出生、死亡和迁移趋势。"
+  },
+  "menu": {
+    "home": "首页",
+    "countryData": "国家数据",
+    "worldData": "全球数据",
+    "openSource": "开源",
+    "openSourceStatement": "开源声明"
+  },
+  "livePopulation": {
+    "title": "实时人口流动",
+    "description": "追踪几分钟前更新的全球人口动态。",
+    "globalData": "全球数据",
+    "countryAnalysis": "国家分析",
+    "countryData": "国家人口数据"
+  },
+  "opensource": {
+    "title": "开源声明",
+    "description": "使用开源技术进行实时追踪。",
+    "technologies": [
+      "Worldometer提供实时可靠的人口数据。",
+      "Elasticsearch确保高性能数据查询。",
+      "Kibana实现动态可视化。",
+      "Docker管理隔离部署。",
+      "使用Vue.js框架开发。",
+      "Python库高效处理数据。"
+    ],
+    "viewSource": "查看源代码"
+  },
+  "faq": {
+    "title": "常见问题",
+    "questions": {
+      "technologies": "项目使用哪些技术？",
+      "security": "如何确保数据安全？",
+      "contribute": "如何贡献？",
+      "updateFrequency": "数据更新频率？",
+      "dashboards": "仪表板如何工作？"
+    },
+    "answers": {
+      "technologies": "使用Vue.js 3、Python Selenium、Elasticsearch、AWS和Tailwind CSS。",
+      "security": "通过安全连接和AWS措施保护数据。",
+      "contribute": "在GitHub提交Issue或PR。",
+      "updateFrequency": "通过AWS每5-15分钟更新。",
+      "dashboards": "Kibana从Elasticsearch创建可视化。"
+    }
+  },
+  "contact": { "title": "联系方式", "email": "电子邮件", "phone": "电话" },
+  "about": {
+    "title": "关于与资源",
+    "description": "使用Worldometer数据。欢迎贡献！"
+  },
+  "footer": {
+    "copyright": "© 2025 Ahmet Karadaş | 版权所有 | 非商业项目"
+  }
+}

@@ -1,27 +1,90 @@
 <template>
-  <header>
-    <nav>
-      <h1>FEHU.POPULATION</h1>
+  <header class="fehu-header">
+    <nav class="fehu-nav">
+      <!-- Logo (solda) -->
+      <h1 class="fehu-logo">FEHU.POPULATION</h1>
 
-      <!-- Hamburger -->
-      <button class="hamburger" :class="{ active: isMenuOpen }" @click="toggleMenu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <!-- Sağ Kısım: Masaüstü Menü + Dil Dropdown + Mobil Butonlar -->
+      <div class="fehu-nav-right">
+        <!-- Masaüstü Menü Linkleri -->
+        <div class="fehu-desktop-links desktop-only">
+          <router-link to="/" exact class="fehu-link">Anasayfa</router-link>
+          <router-link to="/country-data" class="fehu-link">Ülke Bazlı Veriler</router-link>
+          <router-link to="/world-data" class="fehu-link">Dünya Bazlı Veriler</router-link>
+          <router-link to="/open-source" class="fehu-link">Açık Kaynak</router-link>
+        </div>
 
-      <!-- Kapanma için tıklanacak overlay -->
-      <div class="nav-overlay" :class="{ active: isMenuOpen }" @click="closeMenu"></div>
+        <!-- Masaüstü Dil Dropdown (desktop-only) -->
+        <div class="fehu-language-dropdown desktop-only">
+          <button aria-label="Select Language" @click="toggleLanguageDropdown">
+            <span class="globe-icon">🌐</span>
+            <span class="arrow" :class="{ open: isLanguageDropdownOpen }"></span>
+          </button>
+          <ul v-if="isLanguageDropdownOpen" class="fehu-language-menu">
+            <li @click="changeLanguage('tr')">🇹🇷 Türkçe</li>
+            <li @click="changeLanguage('en')">🇬🇧 English</li>
+            <li @click="changeLanguage('de')">🇩🇪 Deutsch</li>
+            <li @click="changeLanguage('fr')">🇫🇷 Français</li>
+            <li @click="changeLanguage('es')">🇪🇸 Español</li>
+            <li @click="changeLanguage('nl')">🇳🇱 Nederlands</li>
+            <li @click="changeLanguage('ja')">🇯🇵 日本語</li>
+            <li @click="changeLanguage('zh')">🇨🇳 中文</li>
+            <li @click="changeLanguage('ru')">🇷🇺 Русский</li>
+          </ul>
+        </div>
 
-      <!-- Mobil menü -->
-      <div class="nav-links" :class="{ active: isMenuOpen }">
-        <!-- Kapatma butonu (sadece mobil/tablette gözükecek) -->
-        <button class="close-btn" @click="closeMenu">×</button>
+        <!-- Mobil/Tablet: Hamburger Menü Butonu -->
+        <button
+          class="fehu-hamburger mobile-only"
+          :class="{ active: isMenuOpen }"
+          @click="toggleMenu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-        <router-link to="/" @click="closeMenu">Anasayfa</router-link>
-        <router-link to="/country-data" @click="closeMenu">Ülke Bazlı Veriler</router-link>
-        <router-link to="/world-data" @click="closeMenu">Dünya Bazlı Veriler</router-link>
-        <router-link to="/open-source" @click="closeMenu">Açık Kaynak</router-link>
+        <!-- Mobil/Tablet: Dil Paneli Butonu -->
+        <button
+          class="fehu-language-mobile-icon mobile-only"
+          :class="{ active: isLanguagePanelOpen }"
+          @click="toggleLanguagePanel"
+        >
+          <span class="globe-icon">🌐</span>
+        </button>
+      </div>
+
+      <!-- Overlay'lar (her panel için ayrı) -->
+      <div class="fehu-nav-overlay" v-if="isMenuOpen" @click="closeMenu"></div>
+      <div class="fehu-lang-overlay" v-if="isLanguagePanelOpen" @click="closeLanguagePanel"></div>
+
+      <!-- Mobil/Tablet Yan Menü (Hamburger) -->
+      <div class="fehu-nav-links mobile-only" :class="{ active: isMenuOpen }">
+        <button class="fehu-close-btn" @click="closeMenu">✕</button>
+        <router-link to="/" exact class="fehu-link" @click="closeMenu">Anasayfa</router-link>
+        <router-link to="/country-data" class="fehu-link" @click="closeMenu"
+          >Ülke Bazlı Veriler</router-link
+        >
+        <router-link to="/world-data" class="fehu-link" @click="closeMenu"
+          >Dünya Bazlı Veriler</router-link
+        >
+        <router-link to="/open-source" class="fehu-link" @click="closeMenu"
+          >Açık Kaynak</router-link
+        >
+      </div>
+
+      <!-- Mobil/Tablet Dil Paneli -->
+      <div class="fehu-language-panel mobile-only" :class="{ active: isLanguagePanelOpen }">
+        <button class="fehu-close-btn" @click="closeLanguagePanel">✕</button>
+        <div @click="changeLanguage('tr')">🇹🇷 Türkçe</div>
+        <div @click="changeLanguage('en')">🇬🇧 English</div>
+        <div @click="changeLanguage('de')">🇩🇪 Deutsch</div>
+        <div @click="changeLanguage('fr')">🇫🇷 Français</div>
+        <div @click="changeLanguage('es')">🇪🇸 Español</div>
+        <div @click="changeLanguage('nl')">🇳🇱 Nederlands</div>
+        <div @click="changeLanguage('ja')">🇯🇵 日本語</div>
+        <div @click="changeLanguage('zh')">🇨🇳 中文</div>
+        <div @click="changeLanguage('ru')">🇷🇺 Русский</div>
       </div>
     </nav>
   </header>
@@ -29,23 +92,58 @@
 
 <script>
 export default {
-  name: 'AppHeader',
+  name: 'FehuHeader',
   data() {
     return {
-      isMenuOpen: false,
+      isMenuOpen: false, // Hamburger menü (mobil/tablet) açık mı
+      isLanguageDropdownOpen: false, // Masaüstü dil dropdown açık mı
+      isLanguagePanelOpen: false, // Mobil/Tablet dil paneli açık mı
     }
   },
   methods: {
+    toggleLanguageDropdown() {
+      this.isLanguageDropdownOpen = !this.isLanguageDropdownOpen
+    },
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen
+      if (this.isMenuOpen) {
+        document.body.classList.add('menu-open')
+        this.isLanguagePanelOpen = false
+      } else {
+        document.body.classList.remove('menu-open')
+      }
+      this.isLanguageDropdownOpen = false
     },
     closeMenu() {
       this.isMenuOpen = false
+      document.body.classList.remove('menu-open')
+    },
+    toggleLanguagePanel() {
+      this.isLanguagePanelOpen = !this.isLanguagePanelOpen
+      if (this.isLanguagePanelOpen) {
+        document.body.classList.add('menu-open')
+        this.isMenuOpen = false
+      } else {
+        document.body.classList.remove('menu-open')
+      }
+      this.isLanguageDropdownOpen = false
+    },
+    closeLanguagePanel() {
+      this.isLanguagePanelOpen = false
+      document.body.classList.remove('menu-open')
+    },
+    changeLanguage(lang) {
+      console.log('Dil değiştirildi:', lang)
+      // Mobil/Tablet panelinde dil seçildikten sonra kapat
+      this.closeMenu()
+      this.closeLanguagePanel()
+      this.isLanguageDropdownOpen = false
     },
     handleClickOutside(event) {
-      // nav dışında bir yere tıklanınca menüyü kapat
-      if (!event.target.closest('nav') && this.isMenuOpen) {
-        this.isMenuOpen = false
+      if (!event.target.closest('.fehu-nav')) {
+        this.closeMenu()
+        this.closeLanguagePanel()
+        this.isLanguageDropdownOpen = false
       }
     },
   },
@@ -59,102 +157,119 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap');
+/* Renk Değişkenleri */
+:root {
+  --fehu-background-color: #000;
+  --fehu-text-color: #fff; /* Beyaz */
+  --fehu-border-color: #333;
+  --fehu-hover-color: #222;
+}
 
-/* Header Genel Ayarlar */
-header {
-  padding: 1.5rem 2rem;
-  margin-top: 1rem;
+/* Body: Menü açıkken kaydırmayı kapat */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Header */
+.fehu-header {
+  background-color: var(--fehu-background-color);
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
   position: relative;
 }
 
-nav {
+/* Nav */
+.fehu-nav {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 /* Logo */
-h1 {
+.fehu-logo {
   font-family: 'Saira Stencil One', sans-serif;
-  font-size: 1.8rem;
+  color: var(--fehu-text-color);
   transition: font-size 0.3s;
   z-index: 2;
+  font-size: 1.6rem;
 }
 
-/* Masaüstü Linkler */
-.nav-links {
+/* Sağ kısım: Menü + Dil ikonu + Mobil butonlar */
+.fehu-nav-right {
   display: flex;
-  gap: 2rem;
-  transition: all 0.3s;
+  align-items: center;
+  gap: 1rem;
 }
 
-/* Linkler */
-.nav-links a {
-  color: var(--text-color);
-  text-decoration: none;
-  transition: color 0.3s;
-  font-weight: 500;
-  white-space: nowrap;
-  position: relative;
-  padding: 0.5rem 0;
+/* Masaüstü Menü Linkleri */
+.fehu-desktop-links {
+  display: flex;
+  gap: 1rem;
 }
 
-/* Hover Efekti (alt çizgi) */
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: var(--text-color);
-  transition: width 0.3s;
-}
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-/* Aktif Sayfa Alt Çizgi */
-.nav-links a.router-link-exact-active {
-  border-bottom: 2px solid var(--text-color);
-}
-
-/* Hamburger */
-.hamburger {
+/* desktop-only ve mobile-only */
+.desktop-only {
   display: none;
-  background: none;
-  border: none;
+}
+.mobile-only {
+  display: block;
+}
+@media (min-width: 1281px) {
+  .desktop-only {
+    display: flex !important;
+  }
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+/* Hamburger Buton (mobil/tablet) */
+.fehu-hamburger {
+  background: #000;
+  border: 1px solid var(--fehu-border-color);
+  border-radius: 4px;
   cursor: pointer;
-  padding: 10px;
+  padding: 6px 8px;
   z-index: 3;
   transition: transform 0.3s;
+  outline: none;
 }
-.hamburger span {
+.fehu-hamburger span {
   display: block;
-  width: 28px;
+  width: 24px;
   height: 3px;
-  background: var(--text-color);
-  margin: 5px 0;
+  background: var(--fehu-text-color);
+  margin: 4px 0;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
-.hamburger.active span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+.fehu-hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
 }
-.hamburger.active span:nth-child(2) {
+.fehu-hamburger.active span:nth-child(2) {
   opacity: 0;
 }
-.hamburger.active span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+.fehu-hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Overlay */
-.nav-overlay {
-  display: none;
+/* Mobil/Tablet Dil Butonu */
+.fehu-language-mobile-icon {
+  background: none;
+  border: 1px solid var(--fehu-border-color);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 6px 8px;
+  color: var(--fehu-text-color);
+  z-index: 3;
+  outline: none;
+}
+
+/* Overlay'lar */
+.fehu-nav-overlay,
+.fehu-lang-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -164,185 +279,207 @@ h1 {
   z-index: 10;
 }
 
-/* Mobil Menü Ayarları */
-@media (max-width: 1024px) {
-  .hamburger {
-    display: block;
-  }
-  .nav-links {
-    position: fixed;
-    top: 0;
-    right: -300px; /* İlk başta görünmez */
-    height: 100vh;
-    width: 300px; /* Sabit genişlik */
-    background: linear-gradient(135deg, #1a1a1a, #2e2e2e);
-    flex-direction: column;
-    transition: all 0.4s ease-in-out;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    z-index: 11;
-    padding: 4rem 2rem;
-    align-items: flex-start;
-    text-align: left;
-  }
-  .nav-links.active {
-    right: 0;
-  }
-  .nav-overlay.active {
-    display: block;
-  }
-  .close-btn {
-    display: block;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 2rem;
-    cursor: pointer;
-  }
+/* Mobil/Tablet Yan Menü (Hamburger) - arka plan siyaha yakın gri (#111) */
+.fehu-nav-links {
+  position: fixed;
+  top: 0;
+  right: -280px;
+  height: 100vh;
+  width: 280px;
+  background: #111;
+  flex-direction: column;
+  transition: all 0.4s ease-in-out;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+  z-index: 11;
+  padding: 3rem 1rem;
+  display: flex;
+  align-items: flex-start;
+}
+.fehu-nav-links.active {
+  right: 0;
+}
+/* Menü linkleri arasında ince çizgi */
+.fehu-nav-links .fehu-link:not(:last-child) {
+  border-bottom: 1px solid var(--fehu-border-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Masaüstünde Kapatma Butonu Gizli */
-@media (min-width: 1025px) {
-  .close-btn {
-    display: none !important;
-  }
+/* Mobil/Tablet Dil Paneli - arka plan siyaha yakın gri (#111) */
+.fehu-language-panel {
+  position: fixed;
+  top: 0;
+  right: -280px;
+  height: 100vh;
+  width: 280px;
+  background: #111;
+  flex-direction: column;
+  transition: all 0.4s ease-in-out;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+  z-index: 11;
+  padding: 3rem 1rem;
+  display: flex;
+  align-items: flex-start;
+}
+.fehu-language-panel.active {
+  right: 0;
+}
+/* Dil paneli seçenekleri arasında çizgi */
+.fehu-language-panel > div:not(:last-child) {
+  border-bottom: 1px solid var(--fehu-border-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Mobilde Linkler Arası Çizgi */
+/* Kapatma Butonu (X) */
+.fehu-close-btn {
+  background: none;
+  border: none;
+  color: var(--fehu-text-color);
+  font-size: 1.5rem;
+  align-self: flex-end;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+/* Menü Linkleri */
+.fehu-link {
+  white-space: nowrap;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--fehu-text-color);
+  transition:
+    color 0.3s,
+    background-color 0.3s;
+  padding: 0.5rem 0;
+}
+
+/*
+  Linklerin üstüne gelindiğinde (hover) metin beyaz olsun
+  (zaten var(--fehu-text-color) #fff tanımlıysa, yine de açıkça color: #fff diyebilirsiniz).
+*/
+.fehu-link:hover {
+  background-color: var(--fehu-hover-color);
+  border-radius: 4px;
+  color: #fff; /* Veya color: var(--fehu-text-color); */
+}
+
+.fehu-link.router-link-exact-active {
+  border-bottom: 2px solid #fff;
+}
+
+/* Masaüstü Dil Dropdown */
+.fehu-language-dropdown {
+  position: relative;
+}
+.fehu-language-dropdown button {
+  background: none;
+  border: none;
+  color: var(--fehu-text-color);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.4rem 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.fehu-language-dropdown button:hover {
+  background: var(--fehu-hover-color);
+  border-radius: 4px;
+}
+.arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid var(--fehu-text-color);
+  transition: transform 0.3s ease;
+}
+.arrow.open {
+  transform: rotate(180deg);
+}
+.fehu-language-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #000;
+  border: 1px solid var(--fehu-border-color);
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  padding: 0;
+  list-style: none;
+  min-width: 140px;
+  z-index: 1000;
+  margin: 0;
+}
+.fehu-language-menu li {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--fehu-text-color);
+}
+.fehu-language-menu li:hover {
+  background: var(--fehu-hover-color);
+  color: #fff; /* Hover’da beyaz */
+}
+
+/* Küçük ekranlarda logo ve link boyutlarını küçültme */
 @media (max-width: 768px) {
-  .nav-links a + a {
-    border-top: 1px solid #666;
-    margin-top: 1rem;
-    padding-top: 1rem;
-  }
-}
-
-/* Tablet ve Mobilde Yazı Boyutları */
-@media (max-width: 1024px) {
-  .nav-links a {
-    font-size: 1.2rem;
-  }
-}
-@media (max-width: 768px) {
-  h1 {
+  .fehu-logo {
     font-size: 1.4rem;
   }
-  .nav-links a {
-    font-size: 1.3rem;
+  .fehu-link {
+    font-size: 1rem;
   }
 }
 @media (max-width: 480px) {
-  h1 {
+  .fehu-logo {
     font-size: 1.2rem;
   }
-  .nav-links {
-    width: 80%;
-    right: -80%;
+  .fehu-link {
+    font-size: 0.9rem;
   }
-  .nav-links.active {
+  .fehu-hamburger span {
+    width: 20px;
+    margin: 3px 0;
+  }
+  .fehu-nav-links,
+  .fehu-language-panel {
+    width: 70%;
+    right: -70%;
+  }
+  .fehu-nav-links.active,
+  .fehu-language-panel.active {
     right: 0;
   }
-  .nav-links a {
-    font-size: 1.4rem;
-  }
 }
 
-/* Responsive Ayarlar: Full HD, QHD, 4K UHD, 8K UHD */
-@media (min-width: 1920px) {
-  header {
-    padding: 2rem 3rem;
+/* Daha büyük ekranlar (1281px ve üstü) */
+@media (min-width: 1281px) {
+  .fehu-header {
+    margin-top: 1.5rem;
   }
-  nav {
-    max-width: 1600px;
-  }
-  h1 {
-    font-size: 2.4rem;
-  }
-  .nav-links {
-    gap: 2.5rem;
-  }
-  .nav-links a {
-    font-size: 1.6rem;
-    padding: 0.6rem 0;
-  }
-  .hamburger span {
-    width: 32px;
-    height: 4px;
-    margin: 6px 0;
-  }
-}
-
-@media (min-width: 2560px) {
-  header {
-    padding: 2.5rem 3.5rem;
-  }
-  nav {
-    max-width: 2000px;
-  }
-  h1 {
-    font-size: 3rem;
-  }
-  .nav-links {
-    gap: 3rem;
-  }
-  .nav-links a {
+  .fehu-logo {
     font-size: 1.8rem;
-    padding: 0.7rem 0;
   }
-  .hamburger span {
-    width: 36px;
-    height: 4px;
-    margin: 7px 0;
+  .fehu-link {
+    font-size: 1rem;
   }
 }
 
-@media (min-width: 3840px) {
-  header {
-    padding: 3rem 4rem;
+/* Full HD (1920px) ve üstü */
+@media (min-width: 1920px) {
+  .fehu-header {
+    margin-top: 2rem;
   }
-  nav {
-    max-width: 2800px;
+  .fehu-logo {
+    font-size: 1.6rem;
   }
-  h1 {
-    font-size: 3.5rem;
-  }
-  .nav-links {
-    gap: 3.5rem;
-  }
-  .nav-links a {
-    font-size: 2rem;
-    padding: 0.8rem 0;
-  }
-  .hamburger span {
-    width: 40px;
-    height: 5px;
-    margin: 8px 0;
-  }
-}
-
-@media (min-width: 7680px) {
-  header {
-    padding: 4rem 5rem;
-  }
-  nav {
-    max-width: 4000px;
-  }
-  h1 {
-    font-size: 4.5rem;
-  }
-  .nav-links {
-    gap: 4.5rem;
-  }
-  .nav-links a {
-    font-size: 2.5rem;
-    padding: 1rem 0;
-  }
-  .hamburger span {
-    width: 50px;
-    height: 6px;
-    margin: 10px 0;
+  .fehu-link {
+    font-size: 0.95rem;
   }
 }
 </style>

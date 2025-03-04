@@ -31,8 +31,8 @@
           ölümler ve göç hareketlerini interaktif grafiklerle detaylı inceleyin.
         </p>
         <div class="button-group">
-          <button class="primary-btn">Dünya Bazlı Nüfus Verileri</button>
-          <button class="secondary-btn">Ülke Bazlı Nüfus Verileri</button>
+          <button class="primary-btn">Ülke Bazlı Nüfus Verileri</button>
+          <button class="secondary-btn">Dünya Bazlı Nüfus Verileri</button>
         </div>
       </div>
     </section>
@@ -94,7 +94,7 @@
           </div>
           <h3>Worldometer</h3>
           <p>
-            Worldometer dünya nüfus verilerini gerçek zamanlı ve güvenilir şekilde sürekli olarak
+            Worldometer dünya nüfus verilerini, gerçek zamanlı ve güvenilir şekilde sürekli olarak
             sunmaktadır.
           </p>
         </div>
@@ -106,7 +106,7 @@
           <h3>Elasticsearch</h3>
           <p>
             Veri sorgulama ve analiz süreçlerinde Elasticsearch olağanüstü yüksek performans ile
-            sürekli sağlanmaktadır.
+            süreklilik sağlamaktadır.
           </p>
         </div>
         <!-- Kutucuk 3: Kibana -->
@@ -116,8 +116,8 @@
           </div>
           <h3>Kibana</h3>
           <p>
-            Kibana, nüfus verilerinin dinamik görselleştirilmesinde ve interaktif grafikler
-            oluşturmak üzere titizlikle kullanılmıştır.
+            Kibana, nüfus verilerinin dinamik görselleştirilmesinde ve interaktif grafiklerin
+            oluşturulmasında titizlikle kullanılmıştır.
           </p>
         </div>
         <!-- Kutucuk 4: Docker -->
@@ -127,7 +127,7 @@
           </div>
           <h3>Docker</h3>
           <p>
-            Projenin dağıtım ve izolasyon süreci Docker ile başarıyla sağlanarak ortam bağımsızlığı
+            Projenin dağıtım ve izolasyon süreci, Docker ile başarıyla sağlanarak ortam bağımsızlığı
             garantilenmiştir.
           </p>
         </div>

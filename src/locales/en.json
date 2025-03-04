@@ -1,0 +1,63 @@
+{
+  "home": {
+    "title": "REAL-TIME WORLD POPULATION DATA",
+    "subtitle": "Explore Interactive Dashboards",
+    "description": "Discover global population data with updates from minutes ago. Analyze births, deaths, and migration trends through interactive charts."
+  },
+  "menu": {
+    "home": "Home",
+    "countryData": "Country-Specific Data",
+    "worldData": "Global Data",
+    "openSource": "Open Source",
+    "openSourceStatement": "Open Source Statement"
+  },
+  "livePopulation": {
+    "title": "LIVE WORLD POPULATION FLOW",
+    "description": "Track global population dynamics in real-time with our data updated minutes ago.",
+    "globalData": "Global Data",
+    "countryAnalysis": "Country Analysis",
+    "countryData": "Country-Specific Population Data"
+  },
+  "opensource": {
+    "title": "OPEN SOURCE DECLARATION",
+    "description": "We track world population data in real-time using open-source technologies.",
+    "technologies": [
+      "Worldometer provides real-time and reliable world population data continuously.",
+      "Elasticsearch ensures exceptional performance for data querying and analysis.",
+      "Kibana is rigorously used for dynamic visualization of population data.",
+      "Docker successfully handles deployment and isolation with environment independence.",
+      "This website is developed with Vue.js modern JavaScript framework.",
+      "Python's powerful libraries efficiently support data processing."
+    ],
+    "viewSource": "Click to View Source Code"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "questions": {
+      "technologies": "What technologies does the project use?",
+      "security": "How is data security ensured?",
+      "contribute": "How can I contribute?",
+      "updateFrequency": "What is the data update frequency?",
+      "dashboards": "How do dashboards work?"
+    },
+    "answers": {
+      "technologies": "Project uses Vue.js 3 Composition API. Python Selenium for web scraping, Elasticsearch for data storage. AWS handles data flow and server needs. Tailwind CSS manages styling.",
+      "security": "Data transferred via secure connection to Elasticsearch, protected by AWS security measures.",
+      "contribute": "Our project is open source. Open issues or send pull requests via GitHub.",
+      "updateFrequency": "Data refreshes every 5-15 minutes via Python code running on AWS.",
+      "dashboards": "Kibana creates dynamic visualizations from Elasticsearch data. Users can filter across panels."
+    }
+  },
+  "contact": {
+    "title": "CONTACT",
+    "email": "Email",
+    "phone": "Phone"
+  },
+  "about": {
+    "title": "ABOUT & RESOURCES",
+    "description": "This project uses Worldometer's population data for global/country analysis. Contact us to contribute!"
+  },
+  "footer": {
+    "copyright": "© 2025 Ahmet Karadaş | All Rights Reserved | Non-Commercial Project"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "home": {
+    "title": "リアルタイム世界人口データ",
+    "subtitle": "インタラクティブダッシュボード",
+    "description": "数分前に更新されたデータで出生、死亡、移住を分析。"
+  },
+  "menu": {
+    "home": "ホーム",
+    "countryData": "国別データ",
+    "worldData": "世界データ",
+    "openSource": "オープンソース",
+    "openSourceStatement": "オープンソース声明"
+  },
+  "livePopulation": {
+    "title": "リアルタイム人口フロー",
+    "description": "数分前に更新されたデータで人口動態を追跡。",
+    "globalData": "世界データ",
+    "countryAnalysis": "国別分析",
+    "countryData": "国別人口データ"
+  },
+  "opensource": {
+    "title": "オープンソース声明",
+    "description": "オープンソース技術を使用したリアルタイム追跡。",
+    "technologies": [
+      "Worldometerは信頼できる人口データを提供。",
+      "Elasticsearchが高性能データ処理を保証。",
+      "Kibanaで動的可視化を実現。",
+      "Dockerで分離された環境を構築。",
+      "Vue.jsで開発されたウェブサイト。",
+      "Pythonライブラリで効率的なデータ処理。"
+    ],
+    "viewSource": "ソースコードを表示"
+  },
+  "faq": {
+    "title": "よくある質問",
+    "questions": {
+      "technologies": "使用技術は？",
+      "security": "データ保護は？",
+      "contribute": "貢献方法は？",
+      "updateFrequency": "更新頻度は？",
+      "dashboards": "ダッシュボードの仕組みは？"
+    },
+    "answers": {
+      "technologies": "Vue.js 3、Python Selenium、Elasticsearch、AWS、Tailwind CSSを使用。",
+      "security": "安全な接続とAWS対策で保護。",
+      "contribute": "GitHubでIssueやPRを送信。",
+      "updateFrequency": "5〜15分ごとにAWSで更新。",
+      "dashboards": "KibanaがElasticsearchデータを可視化。"
+    }
+  },
+  "contact": { "title": "連絡先", "email": "メール", "phone": "電話" },
+  "about": {
+    "title": "概要とリソース",
+    "description": "Worldometerデータを使用。貢献をお待ちしています！"
+  },
+  "footer": {
+    "copyright": "© 2025 Ahmet Karadaş | 全著作権所有 | 非営利プロジェクト"
+  }
+}

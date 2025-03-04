@@ -5,6 +5,12 @@
 
 /* --- Renk Paleti ve Değişkenler --- */
 :root {
+  --fehu-background-color: #000;
+  --fehu-text-color: var(--color-text);
+  --fehu-hover-color: var(--color-background-soft);
+  --fehu-active-tab-color: var(--color-border-hover);
+  --fehu-border-color: var(--vt-c-black-soft);
+
   /* Base Color Palette from base.css */
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;
@@ -45,6 +51,20 @@
   --accent-color: #3182ce;
   --text-color: #ffffff;
   --text-secondary: #a0aec0;
+}
+
+.fehu-link.router-link-exact-active {
+  background: none;
+  border-bottom: 2px solid #fff;
+  border-radius: 0;
+}
+
+.fehu-hamburger {
+  border: 1px solid var(--fehu-border-color); /* #333 */
+}
+
+.fehu-language-dropdown button {
+  border: 1px solid var(--fehu-border-color); /* #333 */
 }
 
 /* Dark Mode Ayarları */
