@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- HERO SECTION -->
+    <!-- ================== HERO SECTION ================== -->
     <section class="hero">
       <div class="hero-left">
         <h1 class="hero-title">
@@ -37,7 +37,7 @@
       </div>
     </section>
 
-    <!-- ANLIK DÜNYA NÜFUS AKIŞI -->
+    <!-- ================== ANLIK DÜNYA NÜFUS AKIŞI SECTION ================== -->
     <section class="equal-boxes">
       <div class="section-header">
         <h1>ANLIK DÜNYA NÜFUS AKIŞI</h1>
@@ -77,7 +77,7 @@
       </div>
     </section>
 
-    <!-- AÇIK KAYNAK BİLDİRİMİ -->
+    <!-- ================== AÇIK KAYNAK BİLDİRİMİ SECTION ================== -->
     <section class="open-source-section">
       <div class="open-source-header">
         <h1>AÇIK KAYNAK BİLDİRİMİ</h1>
@@ -156,7 +156,7 @@
       </div>
     </section>
 
-    <!-- FAQ Bölümü -->
+    <!-- ================== FAQ SECTION ================== -->
     <FaqSection
       title="PROJE HAKKINDA BİLMENİZ GEREKENLER"
       subtitle="Nüfus verileri ve proje hakkında en merak edilen soruların yanıtlarını burada bulabilirsiniz."
@@ -180,13 +180,32 @@ export default {
       faqs,
     }
   },
+  mounted() {
+    if (window.innerWidth <= 768) {
+      // Hedeflenen elemanlar; DOM sıralaması mobilde hero-title, button-group, hero-text, social-icons şeklinde olacak
+      const fadeElements = document.querySelectorAll(
+        '.hero-title, .button-group, .hero-text, .social-icons',
+      )
+      // Her eleman viewport’a girdiğinde fade animasyonunu uyguluyoruz.
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('fade-in')
+            }
+          })
+        },
+        { threshold: 0.5 },
+      )
+      fadeElements.forEach((el) => observer.observe(el))
+    }
+  },
 }
 </script>
 
-<!-- Base stiller: responsive medya sorguları bu dosyadan kaldırılmıştır -->
+<!-- ================== BASE STİLLER & ÖZEL BÖLÜM STİLLERİ ================== -->
 <style scoped>
 /* ================== HERO SECTION ================== */
-
 .hero {
   display: grid;
   grid-template-columns: 58% 40%;
@@ -299,7 +318,148 @@ export default {
   background: rgba(255, 255, 255, 0.4);
 }
 
-/* ================== ANLIK DÜNYA NÜFUS AKIŞI ================== */
+/* ================== HERO SECTION (MOBİL AYARLARI) ================== */
+
+/* ================== IPHONE 12 ================== */
+@media only screen and (min-width: 390px) and (max-width: 844px) {
+  /* Hero ana kapsayıcı */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* İçerikleri ortalıyoruz */
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto; /* Varsayılan margin değerlerini sıfırlayıp ortalıyoruz */
+  }
+
+  /* Başlık */
+  .hero-title {
+    font-size: 4.3rem; /* Daha büyük ve göz alıcı başlık */
+    line-height: 1.1;
+    font-weight: 700;
+    margin-top: 30vh;
+
+    opacity: 0; /* Animasyon başlangıcı */
+    transform: translateY(20px);
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s ease;
+  }
+
+  /* Bu kısımları tamamen gizledik */
+  .hero-map-img-container,
+  .interactive-panels-title {
+    display: none;
+  }
+
+  /* Tanıtım metni */
+  .hero-text {
+    font-size: 1.4rem;
+    font-weight: 500; /* Kalınlık azaltıldı */
+    line-height: 1.3;
+    margin-right: 25%;
+    margin-bottom: 0.1rem;
+    opacity: 0; /* Animasyon başlangıcı */
+    transform: translateY(20px);
+    transition:
+      opacity 0.6s ease 0.4s,
+      transform 0.6s ease 0.4s;
+  }
+
+  .button-group {
+    /* Flex düzeni etkinleştiriyoruz */
+    display: flex;
+    /* Butonları yatayda ortalıyoruz */
+    justify-content: center;
+    /* Dikeyde ortalıyoruz */
+    align-items: center;
+
+    margin: 3rem 1rem 5rem;
+
+    /* ::after pseudo-element için konumlandırma */
+  }
+
+  .button-group::after {
+    position: absolute;
+    transform: translateX(-50%);
+    height: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    /* Genişlik vermek isterseniz: width: 80%; gibi */
+  }
+
+  .button-group button {
+    /* Genişliği otomatik olsun ki flex ile yan yana gelsin */
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    border-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    /* Önceden var olan margin-right'ı kaldırıyoruz */
+    margin-left: 0;
+  }
+
+  /* Geri kalan buton stilleriniz değişmeden kalabilir */
+  .primary-btn {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    color: #fff;
+    margin-left: 5rem;
+
+    box-shadow:
+      0 6px 20px rgba(0, 0, 0, 0.08),
+      inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  }
+
+  .secondary-btn {
+    background: linear-gradient(135deg, #faf9f6 0%, #f8f8f8 100%);
+    color: #2d2d2d;
+    margin-right: 5rem;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow:
+      0 6px 30px rgba(0, 0, 0, 0.06),
+      inset 0 -1px 2px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Hover & Active States */
+  .button-group button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .button-group button:active {
+    transform: translateY(1px);
+    transition-duration: 0.1s;
+  }
+
+  .primary-btn:hover {
+    background: linear-gradient(135deg, #262626 0%, #141414 100%);
+  }
+
+  .secondary-btn:hover {
+    background: linear-gradient(135deg, #fdfdfd 0%, #eaeaea 100%);
+    border-color: rgba(0, 0, 0, 0.12);
+    box-shadow:
+      0 8px 35px rgba(0, 0, 0, 0.08),
+      inset 0 -2px 2px rgba(0, 0, 0, 0.04);
+  }
+  .button-group button:hover::before {
+    opacity: 1;
+  }
+  /* Sosyal ikonlar */
+  .social-icons {
+    display: none;
+  } /* Fade-in aktif olduğunda animasyonu tetikleyen sınıf */
+
+  .fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================== ANLIK DÜNYA NÜFUS AKIŞI SECTION ================== */
 .equal-boxes {
   padding: 4rem 1rem;
   max-width: 1200px;
@@ -395,7 +555,7 @@ export default {
   border-color: rgba(255, 255, 255, 0.6);
 }
 
-/* ================== AÇIK KAYNAK BİLDİRİMİ ================== */
+/* ================== AÇIK KAYNAK BİLDİRİMİ SECTION ================== */
 .open-source-section {
   padding: 4rem 1rem;
   max-width: 1200px;
@@ -493,6 +653,3 @@ export default {
   border-color: rgba(255, 255, 255, 0.6);
 }
 </style>
-
-<!-- Responsive ayarlar HomeResponsive.css dosyasından import ediliyor -->
-<style src="@/assets/Responsive/HomeResponsive.css"></style>

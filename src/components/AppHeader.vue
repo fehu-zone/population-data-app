@@ -160,7 +160,7 @@ export default {
 /* Renk Değişkenleri */
 :root {
   --fehu-background-color: #000;
-  --fehu-text-color: #fff; /* Beyaz */
+  --fehu-text-color: #fff;
   --fehu-border-color: #333;
   --fehu-hover-color: #222;
 }
@@ -200,13 +200,13 @@ body.menu-open {
 .fehu-nav-right {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.7rem;
 }
 
 /* Masaüstü Menü Linkleri */
 .fehu-desktop-links {
   display: flex;
-  gap: 1rem;
+  gap: 1.7rem;
 }
 
 /* desktop-only ve mobile-only */
@@ -289,7 +289,6 @@ body.menu-open {
   background: #111;
   flex-direction: column;
   transition: all 0.4s ease-in-out;
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
   z-index: 11;
   padding: 3rem 1rem;
   display: flex;
@@ -353,17 +352,11 @@ body.menu-open {
     background-color 0.3s;
   padding: 0.5rem 0;
 }
-
-/*
-  Linklerin üstüne gelindiğinde (hover) metin beyaz olsun
-  (zaten var(--fehu-text-color) #fff tanımlıysa, yine de açıkça color: #fff diyebilirsiniz).
-*/
 .fehu-link:hover {
   background-color: var(--fehu-hover-color);
   border-radius: 4px;
-  color: #fff; /* Veya color: var(--fehu-text-color); */
+  color: #fff;
 }
-
 .fehu-link.router-link-exact-active {
   border-bottom: 2px solid #fff;
 }
@@ -423,18 +416,29 @@ body.menu-open {
 }
 .fehu-language-menu li:hover {
   background: var(--fehu-hover-color);
-  color: #fff; /* Hover’da beyaz */
+  color: #fff;
 }
 
 /* Küçük ekranlarda logo ve link boyutlarını küçültme */
 @media (max-width: 768px) {
+  /* Header logo boyutunu büyüt ve üstten boşluk ekle */
   .fehu-logo {
-    font-size: 1.4rem;
+    font-size: 1.8rem; /* Önceki 1.4rem'den büyütüldü */
+    margin-top: 0.5rem; /* Üst boşluk eklendi */
   }
-  .fehu-link {
-    font-size: 1rem;
+
+  /* Hamburger menü boyutunu artır */
+  .fehu-hamburger {
+    padding: 8px 10px; /* Daha geniş ve yüksek tıklanabilir alan */
+  }
+
+  .fehu-hamburger span {
+    width: 28px; /* Hamburger çizgilerinin genişliği artırıldı */
+    height: 4px; /* Çizgi kalınlığı hafif artırıldı */
+    margin: 5px 0; /* Çizgiler arasına biraz boşluk eklendi */
   }
 }
+
 @media (max-width: 480px) {
   .fehu-logo {
     font-size: 1.2rem;
@@ -456,7 +460,6 @@ body.menu-open {
     right: 0;
   }
 }
-
 /* Daha büyük ekranlar (1281px ve üstü) */
 @media (min-width: 1281px) {
   .fehu-header {
@@ -469,7 +472,6 @@ body.menu-open {
     font-size: 1rem;
   }
 }
-
 /* Full HD (1920px) ve üstü */
 @media (min-width: 1920px) {
   .fehu-header {
@@ -480,6 +482,61 @@ body.menu-open {
   }
   .fehu-link {
     font-size: 0.95rem;
+  }
+}
+
+/* Eklenen HomeResponsive.css responsive ayarları */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 2rem;
+    height: auto;
+  }
+  .hero-left,
+  .hero-right {
+    align-items: center;
+    margin-left: 0;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-map {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .boxes-grid {
+    grid-template-columns: 1fr;
+  }
+  .equal-boxes .section-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+  .equal-boxes .section-header h1,
+  .equal-boxes .section-header .section-description {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .open-source-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+  .open-source-header h1,
+  .open-source-header .open-source-description {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  .open-source-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>
