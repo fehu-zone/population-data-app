@@ -47,51 +47,5 @@ export default {
 }
 </script>
 
-<style scoped>
-.project-faq {
-  padding: 3rem 1rem;
-  background: #000;
-  font-family: 'Poppins', sans-serif;
-}
-.faq-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.faq-header-row {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 2rem;
-  align-items: flex-start;
-  margin-bottom: 2rem;
-}
-.faq-title {
-  font-size: 3rem;
-  line-height: 1.2;
-  font-weight: 700;
-}
-.faq-subtitle {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0;
-  font-weight: 600;
-  max-width: 450px;
-  margin-left: 2.5rem;
-  margin-top: 1.2rem;
-}
-.faq-content-row {
-  display: grid;
-  grid-template-columns: 1fr 0.8fr;
-  gap: 6rem;
-}
-.faq-right {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; /* Ortalamayı kaldırıp üst hizalamaya çektik */
-}
-.faq-image {
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  margin-left: 5rem;
-}
-</style>
+<!-- Merkezi CSS dosyasını import ediyoruz -->
+<style src="@/components/Design and Responsive/faq.css"></style>

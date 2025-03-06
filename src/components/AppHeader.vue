@@ -170,12 +170,19 @@ body.menu-open {
   overflow: hidden;
 }
 
-/* Header */
+/* Header: Tüm ekranlarda tam siyah arka plan */
 .fehu-header {
-  background-color: var(--fehu-background-color);
+  background-color: #000 !important;
   margin-top: 0.5rem;
   padding: 0.5rem 1rem;
   position: relative;
+}
+
+/* HDR ekranlarda tam siyah koruması */
+@media (color-gamut: p3) {
+  .fehu-header {
+    background-color: #000 !important;
+  }
 }
 
 /* Nav */
@@ -421,21 +428,17 @@ body.menu-open {
 
 /* Küçük ekranlarda logo ve link boyutlarını küçültme */
 @media (max-width: 768px) {
-  /* Header logo boyutunu büyüt ve üstten boşluk ekle */
   .fehu-logo {
-    font-size: 1.8rem; /* Önceki 1.4rem'den büyütüldü */
-    margin-top: 0.5rem; /* Üst boşluk eklendi */
+    font-size: 1.8rem;
+    margin-top: 0.5rem;
   }
-
-  /* Hamburger menü boyutunu artır */
   .fehu-hamburger {
-    padding: 8px 10px; /* Daha geniş ve yüksek tıklanabilir alan */
+    padding: 8px 10px;
   }
-
   .fehu-hamburger span {
-    width: 28px; /* Hamburger çizgilerinin genişliği artırıldı */
-    height: 4px; /* Çizgi kalınlığı hafif artırıldı */
-    margin: 5px 0; /* Çizgiler arasına biraz boşluk eklendi */
+    width: 28px;
+    height: 4px;
+    margin: 5px 0;
   }
 }
 
@@ -460,6 +463,7 @@ body.menu-open {
     right: 0;
   }
 }
+
 /* Daha büyük ekranlar (1281px ve üstü) */
 @media (min-width: 1281px) {
   .fehu-header {
@@ -472,7 +476,8 @@ body.menu-open {
     font-size: 1rem;
   }
 }
-/* Full HD (1920px) ve üstü */
+
+/* Full HD (1920px ve üstü) */
 @media (min-width: 1920px) {
   .fehu-header {
     margin-top: 2rem;
@@ -482,6 +487,20 @@ body.menu-open {
   }
   .fehu-link {
     font-size: 0.95rem;
+  }
+}
+
+/* 2K (2560px ve üstü) */
+@media (min-width: 2560px) {
+  .fehu-nav {
+    max-width: 1400px;
+  }
+}
+
+/* 4K (3840px ve üstü) */
+@media (min-width: 3840px) {
+  .fehu-nav {
+    max-width: 1600px;
   }
 }
 
