@@ -1,3 +1,10 @@
+html,
+body {
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+}
+
 /* Global Fade Animasyonu */
 @keyframes fadeIn {
   from {
@@ -104,9 +111,9 @@
   font-size: 1.2rem;
   text-decoration: none;
   transition:
-    background 0.5s ease,
+    background 0.3s ease,
     transform 0.3s ease,
-    box-shadow 0.5s ease;
+    box-shadow 0.1s ease;
 }
 
 .icon:hover {
@@ -288,7 +295,6 @@
   font-size: 1rem;
   font-weight: 600;
   color: #fbfbff;
-  max-width: 400px;
   line-height: 1.6;
   margin-bottom: 3rem;
 }
@@ -369,178 +375,11 @@
 
 /* ================== RESPONSİVE AYARLARI  ================== */
 
-/* ================== IPHONE 12 ================== */
-@media only screen and (min-width: 390px) and (max-width: 844px) {
-  /* Hero ana kapsayıcı */
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  .hero-title {
-    font-size: 4.3rem;
-    line-height: 1.1;
-    font-weight: 700;
-    margin-top: 30vh;
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.6s ease,
-      transform 0.6s ease;
-  }
-
-  .hero-map-img-container,
-  .interactive-panels-title {
-    display: none;
-  }
-
-  .hero-text {
-    font-size: 1.4rem;
-    font-weight: 500;
-    line-height: 1.3;
-    margin-right: 25%;
-    margin-bottom: 0.1rem;
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.6s ease 0.4s,
-      transform 0.6s ease 0.4s;
-  }
-
-  .button-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 3rem 1rem 5rem;
-  }
-
-  .button-group::after {
-    position: absolute;
-    transform: translateX(-50%);
-    height: 4px;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
-  }
-
-  .button-group button {
-    font-size: 1.15rem;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    border-radius: 12px;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    margin-left: 0;
-  }
-
-  .primary-btn {
-    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-    color: #fff;
-    margin-left: 5rem;
-    box-shadow:
-      0 6px 20px rgba(0, 0, 0, 0.08),
-      inset 0 1px 1px rgba(255, 255, 255, 0.1);
-  }
-
-  .secondary-btn {
-    background: linear-gradient(135deg, #faf9f6 0%, #f8f8f8 100%);
-    color: #2d2d2d;
-    margin-right: 5rem;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow:
-      0 6px 30px rgba(0, 0, 0, 0.06),
-      inset 0 -1px 2px rgba(0, 0, 0, 0.03);
-    transition: all 0.3s ease-in-out;
-  }
-
-  .button-group button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  }
-
-  .button-group button:active {
-    transform: translateY(1px);
-    transition-duration: 0.1s;
-  }
-
-  .primary-btn:hover {
-    background: linear-gradient(135deg, #262626 0%, #141414 100%);
-  }
-
-  .secondary-btn:hover {
-    background: linear-gradient(135deg, #fdfdfd 0%, #eaeaea 100%);
-    border-color: rgba(0, 0, 0, 0.12);
-    box-shadow:
-      0 8px 35px rgba(0, 0, 0, 0.08),
-      inset 0 -2px 2px rgba(0, 0, 0, 0.04);
-  }
-
-  .button-group button:hover::before {
-    opacity: 1;
-  }
-
-  .social-icons {
-    display: none;
-  }
-
-  /* HERO SECTION END */
-
-  /* CURRENT WORLD POPULATION FLOW START */
-  .equal-boxes {
-    padding: 2rem 1rem;
-    margin-top: 8rem;
-  }
-
-  .equal-boxes .section-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .equal-boxes .section-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .equal-boxes .section-header .section-description {
-    font-size: 0.9rem;
-    max-width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  .boxes-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .box {
-    padding: 1.5rem;
-  }
-
-  .box h3 {
-    font-size: 1.25rem;
-  }
-
-  .box p {
-    font-size: 0.9rem;
-  }
-
-  .box-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  /* AÇIK KAYNAK BİLDİRİMİ SECTION START */
-  .open-source-section {
-    padding: 2rem 1rem;
-    margin-top: 2rem;
-  }
-
+/* ========= Mobil Responsive Ayarlamaları (max-width: 768px) ========= */
+/* ---------- Extra Small Devices (max-width: 360px) ---------- */
+@media only screen and (max-width: 360px) {
+  /* Header alanlarını alt alta yerleştirin */
+  .equal-boxes .section-header,
   .open-source-header {
     display: flex;
     flex-direction: column;
@@ -548,279 +387,6 @@
     text-align: center;
   }
 
-  .open-source-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .open-source-description {
-    font-size: 0.9rem;
-    max-width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  .open-source-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .open-source-box {
-    padding: 1.5rem;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
-  .open-source-box h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .open-source-box p {
-    font-size: 0.9rem;
-  }
-
-  .open-source-icon-box {
-    margin-bottom: 1rem;
-  }
-
-  .open-source-button-wrapper {
-    text-align: center;
-    margin-top: 2rem;
-  }
-
-  .open-source-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-}
-
-/* ================== iPhone 12/13/14 Pro Max ================== */
-@media only screen and (min-width: 428px) and (max-width: 926px) {
-  /* HERO SECTION */
-  .hero {
-    align-items: center;
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  .hero-title {
-    font-size: 4.7rem;
-    line-height: 1.3;
-    font-weight: 200;
-    margin-top: 1vh; /* Küçük cihazlarda 1vh idi, burada biraz artırdık */
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.6s ease,
-      transform 0.6s ease;
-  }
-
-  .hero-map-img-container,
-  .interactive-panels-title {
-    display: none;
-  }
-
-  .hero-text {
-    font-size: 1.3rem;
-    font-weight: 500;
-    line-height: 1.3;
-    padding-right: 15%; /* Küçük cihazlarda 25% idi, bu boyutta orantısal olarak azalttık */
-    margin-bottom: 0.5rem;
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.6s ease 0.4s,
-      transform 0.6s ease 0.4s;
-  }
-
-  .button-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 3rem 1rem 5rem; /* Daha ferah */
-    position: relative;
-  }
-
-  .button-group::after {
-    content: '';
-    position: absolute;
-    transform: translateX(-50%);
-    height: 4px;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
-    width: 80%;
-    left: 50%;
-    bottom: -1rem;
-  }
-
-  .button-group button {
-    font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    border-radius: 12px;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    margin-left: 0;
-  }
-
-  .primary-btn {
-    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-    color: #fff;
-    margin-right: 2rem;
-    box-shadow:
-      0 6px 20px rgba(0, 0, 0, 0.08),
-      inset 0 1px 1px rgba(255, 255, 255, 0.1);
-  }
-
-  .secondary-btn {
-    background: linear-gradient(135deg, #faf9f6 0%, #f8f8f8 100%);
-    color: #2d2d2d;
-    margin-right: 0;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow:
-      0 6px 30px rgba(0, 0, 0, 0.06),
-      inset 0 -1px 2px rgba(0, 0, 0, 0.03);
-    transition: all 0.3s ease-in-out;
-  }
-
-  .button-group button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  }
-
-  .button-group button:active {
-    transform: translateY(1px);
-    transition-duration: 0.1s;
-  }
-
-  .primary-btn:hover {
-    background: linear-gradient(135deg, #262626 0%, #141414 100%);
-  }
-
-  .secondary-btn:hover {
-    background: linear-gradient(135deg, #fdfdfd 0%, #eaeaea 100%);
-    border-color: rgba(0, 0, 0, 0.12);
-    box-shadow:
-      0 8px 35px rgba(0, 0, 0, 0.08),
-      inset 0 -2px 2px rgba(0, 0, 0, 0.04);
-  }
-
-  .social-icons {
-    display: none;
-  }
-
-  /* CURRENT WORLD POPULATION FLOW START */
-  .equal-boxes {
-    padding: 2rem 1rem;
-    margin-top: 6rem; /* Küçük ekranda 0, iPhone12'de 8rem idi */
-  }
-
-  .equal-boxes .section-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .equal-boxes .section-header h1 {
-    font-size: 2.3rem; /* Küçük ekranda 2rem idi */
-    margin-bottom: 1rem;
-  }
-
-  .equal-boxes .section-header .section-description {
-    font-size: 0.9rem;
-    max-width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  .boxes-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .box {
-    padding: 1.2rem;
-  }
-
-  .box h3 {
-    font-size: 1.2rem;
-  }
-
-  .box p {
-    font-size: 0.9rem;
-  }
-
-  .box-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  /* AÇIK KAYNAK BİLDİRİMİ SECTION START */
-  .open-source-section {
-    padding: 2rem 1rem;
-    margin-top: 2rem;
-  }
-
-  .open-source-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .open-source-header h1 {
-    font-size: 2.3rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .open-source-description {
-    font-size: 0.9rem;
-    max-width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  .open-source-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .open-source-box {
-    padding: 1.2rem;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
-  .open-source-box h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .open-source-box p {
-    font-size: 0.9rem;
-  }
-
-  .open-source-icon-box {
-    margin-bottom: 1rem;
-  }
-
-  .open-source-button-wrapper {
-    text-align: center;
-    margin-top: 2rem;
-  }
-
-  .open-source-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-}
-
-/* ================== Samsung Galaxy S20/S21 ================== */
-@media only screen and (min-width: 360px) and (max-width: 800px) {
   .hero {
     display: flex;
     flex-direction: column;
@@ -829,613 +395,104 @@
     text-align: center;
     margin: 0 auto;
   }
-
-  .hero-title {
-    font-size: 4rem;
-    line-height: 1.1;
-    font-weight: 700;
-    margin-top: 6vh; /* Küçük ekranda 1vh idi */
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.6s ease,
-      transform 0.6s ease;
-  }
-
-  .hero-map-img-container,
-  .interactive-panels-title {
-    display: none;
-  }
-
-  .hero-text {
-    font-size: 1.2rem;
-    font-weight: 500;
-    line-height: 1.3;
-    padding-right: 20%;
-    margin-bottom: 0.2rem;
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.6s ease 0.4s,
-      transform 0.6s ease 0.4s;
-  }
-
-  .button-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 3rem 1rem 2rem;
-    position: relative;
-  }
-
-  .button-group::after {
-    content: '';
-    position: absolute;
-    transform: translateX(-50%);
-    height: 4px;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
-    width: 80%;
-    left: 50%;
-    bottom: -1rem;
-  }
-
-  .button-group button {
-    font-size: 1.05rem;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    border-radius: 12px;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    margin-left: 0;
-  }
-
-  .primary-btn {
-    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-    color: #fff;
-    margin-right: 2rem;
-    box-shadow:
-      0 6px 20px rgba(0, 0, 0, 0.08),
-      inset 0 1px 1px rgba(255, 255, 255, 0.1);
-  }
-
-  .secondary-btn {
-    background: linear-gradient(135deg, #faf9f6 0%, #f8f8f8 100%);
-    color: #2d2d2d;
-    margin-right: 0;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow:
-      0 6px 30px rgba(0, 0, 0, 0.06),
-      inset 0 -1px 2px rgba(0, 0, 0, 0.03);
-    transition: all 0.3s ease-in-out;
-  }
-
-  .button-group button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  }
-
-  .button-group button:active {
-    transform: translateY(1px);
-    transition-duration: 0.1s;
-  }
-
-  .primary-btn:hover {
-    background: linear-gradient(135deg, #262626 0%, #141414 100%);
-  }
-
-  .secondary-btn:hover {
-    background: linear-gradient(135deg, #fdfdfd 0%, #eaeaea 100%);
-    border-color: rgba(0, 0, 0, 0.12);
-    box-shadow:
-      0 8px 35px rgba(0, 0, 0, 0.08),
-      inset 0 -2px 2px rgba(0, 0, 0, 0.04);
-  }
-
-  .social-icons {
-    display: none;
-  }
-
-  /* CURRENT WORLD POPULATION FLOW START */
-  .equal-boxes {
-    padding: 2rem 1rem;
-    margin-top: 5rem;
-  }
-
-  .equal-boxes .section-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .equal-boxes .section-header h1 {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-  }
-
-  .equal-boxes .section-header .section-description {
-    font-size: 0.9rem;
-    max-width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  .boxes-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .box {
-    padding: 1.2rem;
-  }
-
-  .box h3 {
-    font-size: 1.2rem;
-  }
-
-  .box p {
-    font-size: 0.9rem;
-  }
-
-  .box-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  /* AÇIK KAYNAK BİLDİRİMİ SECTION START */
-  .open-source-section {
-    padding: 2rem 1rem;
-    margin-top: 2rem;
-  }
-
-  .open-source-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .open-source-header h1 {
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .open-source-description {
-    font-size: 0.9rem;
-    max-width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  .open-source-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .open-source-box {
-    padding: 1.2rem;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
-  .open-source-box h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .open-source-box p {
-    font-size: 0.9rem;
-  }
-
-  .open-source-icon-box {
-    margin-bottom: 1rem;
-  }
-
-  .open-source-button-wrapper {
-    text-align: center;
-    margin-top: 2rem;
-  }
-
-  .open-source-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-}
-
-/* ================== Google Pixel 4/5 ================== */
-@media only screen and (min-width: 393px) and (max-width: 851px) {
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  .hero-title {
-    font-size: 4rem;
-    line-height: 1.1;
-    font-weight: 700;
-    margin-top: 7vh;
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.6s ease,
-      transform 0.6s ease;
-  }
-
-  .hero-map-img-container,
-  .interactive-panels-title {
-    display: none;
-  }
-
-  .hero-text {
-    font-size: 1.25rem;
-    font-weight: 500;
-    line-height: 1.3;
-    padding-right: 15%;
-    margin-bottom: 0.3rem;
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.6s ease 0.4s,
-      transform 0.6s ease 0.4s;
-  }
-
-  .button-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 3rem 1rem 3rem;
-    position: relative;
-  }
-
-  .button-group::after {
-    content: '';
-    position: absolute;
-    transform: translateX(-50%);
-    height: 4px;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
-    width: 80%;
-    left: 50%;
-    bottom: -1rem;
-  }
-
-  .button-group button {
-    font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    border-radius: 12px;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    margin-left: 0;
-  }
-
-  .primary-btn {
-    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-    color: #fff;
-    margin-right: 2rem;
-    box-shadow:
-      0 6px 20px rgba(0, 0, 0, 0.08),
-      inset 0 1px 1px rgba(255, 255, 255, 0.1);
-  }
-
-  .secondary-btn {
-    background: linear-gradient(135deg, #faf9f6 0%, #f8f8f8 100%);
-    color: #2d2d2d;
-    margin-right: 0;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow:
-      0 6px 30px rgba(0, 0, 0, 0.06),
-      inset 0 -1px 2px rgba(0, 0, 0, 0.03);
-    transition: all 0.3s ease-in-out;
-  }
-
-  .button-group button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  }
-
-  .button-group button:active {
-    transform: translateY(1px);
-    transition-duration: 0.1s;
-  }
-
-  .primary-btn:hover {
-    background: linear-gradient(135deg, #262626 0%, #141414 100%);
-  }
-
-  .secondary-btn:hover {
-    background: linear-gradient(135deg, #fdfdfd 0%, #eaeaea 100%);
-    border-color: rgba(0, 0, 0, 0.12);
-    box-shadow:
-      0 8px 35px rgba(0, 0, 0, 0.08),
-      inset 0 -2px 2px rgba(0, 0, 0, 0.04);
-  }
-
-  .social-icons {
-    display: none;
-  }
-
-  /* CURRENT WORLD POPULATION FLOW START */
-  .equal-boxes {
-    padding: 2rem 1rem;
-    margin-top: 5rem;
-  }
-
-  .equal-boxes .section-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .equal-boxes .section-header h1 {
-    font-size: 2.3rem;
-    margin-bottom: 1rem;
-  }
-
-  .equal-boxes .section-header .section-description {
-    font-size: 0.9rem;
-    max-width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  .boxes-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .box {
-    padding: 1.2rem;
-  }
-
-  .box h3 {
-    font-size: 1.2rem;
-  }
-
-  .box p {
-    font-size: 0.9rem;
-  }
-
-  .box-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  /* AÇIK KAYNAK BİLDİRİMİ SECTION START */
-  .open-source-section {
-    padding: 2rem 1rem;
-    margin-top: 2rem;
-  }
-
-  .open-source-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .open-source-header h1 {
-    font-size: 2.3rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .open-source-description {
-    font-size: 0.9rem;
-    max-width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  .open-source-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .open-source-box {
-    padding: 1.2rem;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
-  .open-source-box h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .open-source-box p {
-    font-size: 0.9rem;
-  }
-
-  .open-source-icon-box {
-    margin-bottom: 1rem;
-  }
-
-  .open-source-button-wrapper {
-    text-align: center;
-    margin-top: 2rem;
-  }
-
-  .open-source-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-}
-
-/* ================== Küçük cihazlar (320px - 480px) ================== */
-@media only screen and (min-width: 320px) and (max-width: 480px) {
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: 0 auto;
-  }
-
   .hero-title {
     font-size: 3.8rem;
     line-height: 1.1;
     font-weight: 700;
-    margin-top: 1vh;
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.6s ease,
-      transform 0.6s ease;
+    margin-top: 8vh;
   }
-
   .hero-map-img-container,
-  .interactive-panels-title {
+  .interactive-panels-title,
+  .social-icons {
     display: none;
   }
-
   .hero-text {
     font-size: 1rem;
     font-weight: 500;
     line-height: 1.3;
-    padding-right: 25%;
-    margin-bottom: 0.1rem;
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.6s ease 0.4s,
-      transform 0.6s ease 0.4s;
+    margin-bottom: 1rem;
+    margin-right: 2rem;
   }
-
   .button-group {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2.7rem 1.7rem 1rem;
+    margin: 2rem 1rem;
+    position: relative;
+    margin-right: 2rem;
   }
-
-  .button-group::after {
-    position: absolute;
-    transform: translateX(-50%);
-    height: 4px;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
-    content: '';
-    width: 80%;
-    left: 5%;
-  }
-
   .button-group button {
     font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    border-radius: 12px;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    margin-left: 0;
+    margin: 0 0.5rem;
   }
-
-  .primary-btn {
-    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-    color: #fff;
-    margin-right: 0rem;
-    box-shadow:
-      0 6px 20px rgba(0, 0, 0, 0.08),
-      inset 0 1px 1px rgba(255, 255, 255, 0.1);
-  }
-
-  .secondary-btn {
-    background: linear-gradient(135deg, #faf9f6 0%, #f8f8f8 100%);
-    color: #2d2d2d;
-    margin-right: 5rem;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow:
-      0 6px 30px rgba(0, 0, 0, 0.06),
-      inset 0 -1px 2px rgba(0, 0, 0, 0.03);
-    transition: all 0.3s ease-in-out;
-  }
-
-  .button-group button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  }
-
-  .button-group button:active {
-    transform: translateY(1px);
-    transition-duration: 0.1s;
-  }
-
-  .primary-btn:hover {
-    background: linear-gradient(135deg, #262626 0%, #141414 100%);
-  }
-
-  .secondary-btn:hover {
-    background: linear-gradient(135deg, #fdfdfd 0%, #eaeaea 100%);
-    border-color: rgba(0, 0, 0, 0.12);
-    box-shadow:
-      0 8px 35px rgba(0, 0, 0, 0.08),
-      inset 0 -2px 2px rgba(0, 0, 0, 0.04);
-  }
-
-  .social-icons {
-    display: none;
-  }
-
-  /* ================== CURRENT WORLD POPULATION FLOW START ================== */
   .equal-boxes {
     padding: 2rem 1rem;
+    margin-top: 4rem;
   }
-
-  .equal-boxes .section-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
   .equal-boxes .section-header h1 {
-    font-size: 2rem; /* iPhone12'de 2.5rem idi */
+    font-size: 2rem;
     margin-bottom: 1rem;
   }
-
   .equal-boxes .section-header .section-description {
-    font-size: 0.85rem; /* iPhone12'de 0.9rem idi */
+    font-size: 1rem;
     max-width: 100%;
     margin-bottom: 2rem;
   }
-
   .boxes-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-top: 2rem;
   }
-
   .box {
-    padding: 1rem; /* iPhone12'de 1.5rem idi */
+    padding: 1.2rem;
   }
-
   .box h3 {
-    font-size: 1.1rem; /* iPhone12'de 1.25rem idi */
+    font-size: 1rem;
   }
-
-  .box p {
-    font-size: 0.85rem; /* iPhone12'de 0.9rem idi */
-  }
-
+  .box p,
   .box-button {
-    padding: 0.4rem 0.8rem; /* iPhone12'de 0.5rem 1rem idi */
-    font-size: 0.85rem; /* iPhone12'de 0.9rem idi */
+    font-size: 0.9rem;
   }
-
-  /* ================== AÇIK KAYNAK BİLDİRİMİ SECTION START ================== */
-  .open-source-section {
-    padding: 2rem 1rem;
+  .open-source-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .open-source-description {
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  .open-source-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
     margin-top: 2rem;
   }
+  .open-source-box {
+    padding: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .open-source-box h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .open-source-box p,
+  .open-source-button {
+    font-size: 0.9rem;
+  }
+  .open-source-icon-box {
+    margin-bottom: 1rem;
+  }
+  .open-source-button-wrapper {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
 
+/* ---------- Small Devices (361px - 480px) ---------- */
+@media only screen and (min-width: 361px) and (max-width: 480px) {
+  .equal-boxes .section-header,
   .open-source-header {
     display: flex;
     flex-direction: column;
@@ -1443,56 +500,6 @@
     text-align: center;
   }
 
-  .open-source-header h1 {
-    font-size: 2rem; /* iPhone12'de 2.5rem idi */
-    margin-bottom: 0.5rem;
-  }
-
-  .open-source-description {
-    font-size: 0.85rem; /* iPhone12'de 0.9rem idi */
-    max-width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  .open-source-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .open-source-box {
-    padding: 1rem; /* iPhone12'de 1.5rem idi */
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
-  .open-source-box h3 {
-    font-size: 1.1rem; /* iPhone12'de 1.25rem idi */
-    margin-bottom: 0.5rem;
-  }
-
-  .open-source-box p {
-    font-size: 0.85rem; /* iPhone12'de 0.9rem idi */
-  }
-
-  .open-source-icon-box {
-    margin-bottom: 1rem;
-  }
-
-  .open-source-button-wrapper {
-    text-align: center;
-    margin-top: 2rem;
-  }
-
-  .open-source-button {
-    padding: 0.4rem 0.8rem; /* iPhone12'de 0.5rem 1rem idi */
-    font-size: 0.85rem; /* iPhone12'de 0.9rem idi */
-  }
-}
-
-/* ================== Orta boy cihazlar (481px - 768px) ================== */
-@media only screen and (min-width: 481px) and (max-width: 768px) {
   .hero {
     display: flex;
     flex-direction: column;
@@ -1501,388 +508,104 @@
     text-align: center;
     margin: 0 auto;
   }
-
   .hero-title {
     font-size: 4rem;
     line-height: 1.1;
     font-weight: 700;
-    margin-top: 8vh;
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.6s ease,
-      transform 0.6s ease;
-  }
-
-  .hero-map-img-container,
-  .interactive-panels-title {
-    display: none;
-  }
-
-  .hero-text {
-    font-size: 1.3rem;
-    font-weight: 500;
-    line-height: 1.3;
-    padding-right: 10%;
-    margin-bottom: 0.3rem;
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.6s ease 0.4s,
-      transform 0.6s ease 0.4s;
-  }
-
-  .button-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 3rem 1rem 3rem;
-    position: relative;
-  }
-
-  .button-group::after {
-    content: '';
-    position: absolute;
-    transform: translateX(-50%);
-    height: 4px;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
-    width: 80%;
-    left: 50%;
-    bottom: -1rem;
-  }
-
-  .button-group button {
-    font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    border-radius: 12px;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    margin-left: 0;
-  }
-
-  .primary-btn {
-    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-    color: #fff;
-    margin-right: 2rem;
-    box-shadow:
-      0 6px 20px rgba(0, 0, 0, 0.08),
-      inset 0 1px 1px rgba(255, 255, 255, 0.1);
-  }
-
-  .secondary-btn {
-    background: linear-gradient(135deg, #faf9f6 0%, #f8f8f8 100%);
-    color: #2d2d2d;
-    margin-right: 0;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow:
-      0 6px 30px rgba(0, 0, 0, 0.06),
-      inset 0 -1px 2px rgba(0, 0, 0, 0.03);
-    transition: all 0.3s ease-in-out;
-  }
-
-  .button-group button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  }
-
-  .button-group button:active {
-    transform: translateY(1px);
-    transition-duration: 0.1s;
-  }
-
-  .primary-btn:hover {
-    background: linear-gradient(135deg, #262626 0%, #141414 100%);
-  }
-
-  .secondary-btn:hover {
-    background: linear-gradient(135deg, #fdfdfd 0%, #eaeaea 100%);
-    border-color: rgba(0, 0, 0, 0.12);
-    box-shadow:
-      0 8px 35px rgba(0, 0, 0, 0.08),
-      inset 0 -2px 2px rgba(0, 0, 0, 0.04);
-  }
-
-  .social-icons {
-    display: none;
-  }
-
-  .equal-boxes {
-    padding: 2rem 1rem;
-    margin-top: 5rem;
-  }
-
-  .equal-boxes .section-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .equal-boxes .section-header h1 {
-    font-size: 2.4rem;
-    margin-bottom: 1rem;
-  }
-
-  .equal-boxes .section-header .section-description {
-    font-size: 0.9rem;
-    max-width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  .boxes-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .box {
-    padding: 1.2rem;
-  }
-
-  .box h3 {
-    font-size: 1.2rem;
-  }
-
-  .box p {
-    font-size: 0.9rem;
-  }
-
-  .box-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  .open-source-section {
-    padding: 2rem 1rem;
-    margin-top: 2rem;
-  }
-
-  .open-source-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .open-source-header h1 {
-    font-size: 2.4rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .open-source-description {
-    font-size: 0.9rem;
-    max-width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  .open-source-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .open-source-box {
-    padding: 1.2rem;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
-  .open-source-box h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .open-source-box p {
-    font-size: 0.9rem;
-  }
-
-  .open-source-icon-box {
-    margin-bottom: 1rem;
-  }
-
-  .open-source-button-wrapper {
-    text-align: center;
-    margin-top: 2rem;
-  }
-
-  .open-source-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-}
-
-/* ================== Büyük cihazlar (769px - 1024px) ================== */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  .hero-title {
-    font-size: 4.3rem;
-    line-height: 1.1;
-    font-weight: 700;
     margin-top: 10vh;
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.6s ease,
-      transform 0.6s ease;
   }
-
-  /* Daha geniş ekranlarda harita vs. görünmesini istiyorsanız display: block yapabilirsiniz */
   .hero-map-img-container,
-  .interactive-panels-title {
-    display: block;
+  .interactive-panels-title,
+  .social-icons {
+    display: none;
   }
-
   .hero-text {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     font-weight: 500;
     line-height: 1.3;
-    padding-right: 5%;
-    margin-bottom: 0.5rem;
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.6s ease 0.4s,
-      transform 0.6s ease 0.4s;
+    margin-bottom: 1rem;
+    margin-right: 3rem;
   }
-
   .button-group {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 3rem 1rem 4rem;
+    margin: 2.5rem 1rem;
     position: relative;
+    margin-right: 3rem;
   }
-
-  .button-group::after {
-    content: '';
-    position: absolute;
-    transform: translateX(-50%);
-    height: 4px;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
-    width: 80%;
-    left: 50%;
-    bottom: -1rem;
-  }
-
   .button-group button {
-    font-size: 1.2rem;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    border-radius: 12px;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    margin-left: 0;
+    font-size: 1rem;
+    margin: 0 0.5rem;
   }
-
-  .primary-btn {
-    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-    color: #fff;
-    margin-right: 2rem;
-    box-shadow:
-      0 6px 20px rgba(0, 0, 0, 0.08),
-      inset 0 1px 1px rgba(255, 255, 255, 0.1);
-  }
-
-  .secondary-btn {
-    background: linear-gradient(135deg, #faf9f6 0%, #f8f8f8 100%);
-    color: #2d2d2d;
-    margin-right: 0;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow:
-      0 6px 30px rgba(0, 0, 0, 0.06),
-      inset 0 -1px 2px rgba(0, 0, 0, 0.03);
-    transition: all 0.3s ease-in-out;
-  }
-
-  .button-group button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  }
-
-  .button-group button:active {
-    transform: translateY(1px);
-    transition-duration: 0.1s;
-  }
-
-  .primary-btn:hover {
-    background: linear-gradient(135deg, #262626 0%, #141414 100%);
-  }
-
-  .secondary-btn:hover {
-    background: linear-gradient(135deg, #fdfdfd 0%, #eaeaea 100%);
-    border-color: rgba(0, 0, 0, 0.12);
-    box-shadow:
-      0 8px 35px rgba(0, 0, 0, 0.08),
-      inset 0 -2px 2px rgba(0, 0, 0, 0.04);
-  }
-
-  .social-icons {
-    display: block; /* Büyük ekranda gösterebilirsiniz */
-  }
-
   .equal-boxes {
     padding: 2rem 1rem;
-    margin-top: 6rem;
+    margin-top: 4rem;
   }
-
-  .equal-boxes .section-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
   .equal-boxes .section-header h1 {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     margin-bottom: 1rem;
   }
-
   .equal-boxes .section-header .section-description {
     font-size: 1rem;
     max-width: 100%;
     margin-bottom: 2rem;
   }
-
   .boxes-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-top: 2rem;
   }
-
   .box {
-    padding: 1.3rem;
+    padding: 1.2rem;
   }
-
   .box h3 {
-    font-size: 1.3rem;
-  }
-
-  .box p {
     font-size: 1rem;
   }
-
+  .box p,
   .box-button {
-    padding: 0.6rem 1.2rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
-
-  .open-source-section {
-    padding: 2rem 1rem;
+  .open-source-header h1 {
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
+  }
+  .open-source-description {
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  .open-source-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
     margin-top: 2rem;
   }
+  .open-source-box {
+    padding: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .open-source-box h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .open-source-box p,
+  .open-source-button {
+    font-size: 0.9rem;
+  }
+  .open-source-icon-box {
+    margin-bottom: 1rem;
+  }
+  .open-source-button-wrapper {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
 
+/* ---------- Medium Devices (481px - 768px) ---------- */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .equal-boxes .section-header,
   .open-source-header {
     display: flex;
     flex-direction: column;
@@ -1890,56 +613,6 @@
     text-align: center;
   }
 
-  .open-source-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .open-source-description {
-    font-size: 1rem;
-    max-width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  .open-source-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .open-source-box {
-    padding: 1.3rem;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
-  .open-source-box h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .open-source-box p {
-    font-size: 1rem;
-  }
-
-  .open-source-icon-box {
-    margin-bottom: 1rem;
-  }
-
-  .open-source-button-wrapper {
-    text-align: center;
-    margin-top: 2rem;
-  }
-
-  .open-source-button {
-    padding: 0.6rem 1.2rem;
-    font-size: 1rem;
-  }
-}
-
-/* ================== Tabletler ve küçük dizüstü bilgisayarlar (1025px - 1200px) ================== */
-@media only screen and (min-width: 1025px) and (max-width: 1200px) {
   .hero {
     display: flex;
     flex-direction: column;
@@ -1948,165 +621,104 @@
     text-align: center;
     margin: 0 auto;
   }
-
   .hero-title {
     font-size: 4.5rem;
     line-height: 1.1;
     font-weight: 700;
     margin-top: 12vh;
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.6s ease,
-      transform 0.6s ease;
   }
-
-  /* Tablet veya dizüstünde harita vs. görünmesini istiyorsanız */
   .hero-map-img-container,
-  .interactive-panels-title {
-    display: block;
+  .interactive-panels-title,
+  .social-icons {
+    display: none;
   }
-
   .hero-text {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 500;
     line-height: 1.3;
-    padding-right: 5%;
     margin-bottom: 1rem;
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.6s ease 0.4s,
-      transform 0.6s ease 0.4s;
+    margin-right: 6rem;
   }
-
   .button-group {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 3rem 1rem 4rem;
+    margin: 3rem 1rem;
     position: relative;
+    margin-right: 6rem;
   }
-
-  .button-group::after {
-    content: '';
-    position: absolute;
-    transform: translateX(-50%);
-    height: 4px;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
-    width: 80%;
-    left: 50%;
-    bottom: -1rem;
-  }
-
   .button-group button {
-    font-size: 1.2rem;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    border-radius: 12px;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    margin-left: 0;
+    font-size: 1.1rem;
+    margin: 0 0.5rem;
   }
-
-  .primary-btn {
-    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-    color: #fff;
-    margin-right: 2rem;
-    box-shadow:
-      0 6px 20px rgba(0, 0, 0, 0.08),
-      inset 0 1px 1px rgba(255, 255, 255, 0.1);
-  }
-
-  .secondary-btn {
-    background: linear-gradient(135deg, #faf9f6 0%, #f8f8f8 100%);
-    color: #2d2d2d;
-    margin-right: 0;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow:
-      0 6px 30px rgba(0, 0, 0, 0.06),
-      inset 0 -1px 2px rgba(0, 0, 0, 0.03);
-    transition: all 0.3s ease-in-out;
-  }
-
-  .button-group button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  }
-
-  .button-group button:active {
-    transform: translateY(1px);
-    transition-duration: 0.1s;
-  }
-
-  .primary-btn:hover {
-    background: linear-gradient(135deg, #262626 0%, #141414 100%);
-  }
-
-  .secondary-btn:hover {
-    background: linear-gradient(135deg, #fdfdfd 0%, #eaeaea 100%);
-    border-color: rgba(0, 0, 0, 0.12);
-    box-shadow:
-      0 8px 35px rgba(0, 0, 0, 0.08),
-      inset 0 -2px 2px rgba(0, 0, 0, 0.04);
-  }
-
-  .social-icons {
-    display: block;
-  }
-
   .equal-boxes {
     padding: 2rem 1rem;
-    margin-top: 6rem;
+    margin-top: 5rem;
   }
-
-  .equal-boxes .section-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
   .equal-boxes .section-header h1 {
     font-size: 2.7rem;
     margin-bottom: 1rem;
   }
-
   .equal-boxes .section-header .section-description {
-    font-size: 1rem;
+    font-size: 1.2rem;
     max-width: 100%;
     margin-bottom: 2rem;
   }
-
   .boxes-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-top: 2rem;
   }
-
   .box {
-    padding: 1.4rem;
+    padding: 1.2rem;
   }
-
   .box h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
-
-  .box p {
-    font-size: 1rem;
-  }
-
+  .box p,
   .box-button {
-    padding: 0.6rem 1.2rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
-
-  .open-source-section {
-    padding: 2rem 1rem;
+  .open-source-header h1 {
+    font-size: 2.6rem;
+    margin-bottom: 0.5rem;
+  }
+  .open-source-description {
+    font-size: 1.2rem !important;
+    font-weight: 500 !important;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  .open-source-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
     margin-top: 2rem;
   }
+  .open-source-box {
+    padding: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .open-source-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .open-source-box p,
+  .open-source-button {
+    font-size: 0.9rem;
+  }
+  .open-source-icon-box {
+    margin-bottom: 1rem;
+  }
+  .open-source-button-wrapper {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
 
+/* ---------- Large Mobile / Small Tablets (769px - 1024px) ---------- */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .equal-boxes .section-header,
   .open-source-header {
     display: flex;
     flex-direction: column;
@@ -2114,50 +726,457 @@
     text-align: center;
   }
 
-  .open-source-header h1 {
-    font-size: 2.7rem;
-    margin-bottom: 0.5rem;
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
   }
-
-  .open-source-description {
-    font-size: 1rem;
+  .hero-title {
+    font-size: 4.8rem;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-top: 14vh;
+  }
+  .hero-map-img-container,
+  .interactive-panels-title,
+  .social-icons {
+    display: none;
+  }
+  .hero-text {
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    margin-right: 8rem;
+  }
+  .button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3.5rem 1rem;
+    position: relative;
+    margin-right: 8rem;
+  }
+  .button-group button {
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+  }
+  .equal-boxes {
+    padding: 2rem 1rem;
+    margin-top: 6rem;
+  }
+  .equal-boxes .section-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  .equal-boxes .section-header .section-description {
+    font-size: 1.3rem;
     max-width: 100%;
     margin-bottom: 2rem;
   }
-
-  .open-source-grid {
-    display: grid;
+  .boxes-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-top: 2rem;
   }
-
+  .box {
+    padding: 1.2rem;
+  }
+  .box h3 {
+    font-size: 1.2rem;
+  }
+  .box p,
+  .box-button {
+    font-size: 0.9rem;
+  }
+  .open-source-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+  }
+  .open-source-description {
+    font-size: 1.3rem !important;
+    font-weight: 500 !important;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  .open-source-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
   .open-source-box {
-    padding: 1.4rem;
+    padding: 1.2rem;
     text-align: center;
     margin-bottom: 2rem;
   }
-
   .open-source-box h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-bottom: 0.5rem;
   }
-
-  .open-source-box p {
-    font-size: 1rem;
+  .open-source-box p,
+  .open-source-button {
+    font-size: 0.9rem;
   }
-
   .open-source-icon-box {
     margin-bottom: 1rem;
   }
-
   .open-source-button-wrapper {
     text-align: center;
     margin-top: 2rem;
   }
+}
+
+/* ================== ================== */
+/* ================== ================== */
+
+/* ================== RESPONSİVE AYARLARI BÜYÜK CİHAZLAR ================== */
+
+/* ================== BASE TASARIM (Büyük Masaüstü: 1600px – 1920px) ================== */
+.hero {
+  display: grid;
+  grid-template-columns: 58% 40%;
+  color: #fff;
+  background: #000;
+  height: 100vh;
+  padding: 2.8rem;
+  margin-left: 2rem;
+}
+
+.hero-left,
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-left {
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+.hero-right {
+  align-items: flex-end;
+  margin-left: 6rem;
+  margin-bottom: 4rem;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: left;
+  letter-spacing: 0.2px;
+  line-height: 1.3;
+}
+
+.hero-map-img-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-right: 1.5rem;
+}
+
+.hero-map {
+  width: 40rem;
+  height: auto;
+  object-fit: contain;
+}
+
+.button-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+/* Benzer şekilde .equal-boxes, .boxes-grid, .open-source-section, .open-source-grid vs. da base tasarımda tanımlı kalıyor... */
+
+/* ================== RESPONSIVE AYARLAR ================== */
+
+/* Laptop (1024px – 1280px) */
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .hero {
+    grid-template-columns: 1fr; /* İki sütun yerine alt alta */
+    padding: 2rem;
+    margin-left: 1rem;
+    height: auto; /* İçeriğe göre yükseklik */
+  }
+  .hero-left,
+  .hero-right {
+    align-items: center;
+    margin: 1rem 0;
+  }
+  .hero-title {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .hero-map-img-container {
+    justify-content: center;
+    margin-right: 0;
+  }
+  .hero-map {
+    width: 100%;
+    max-width: 20rem;
+  }
+  .button-group {
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  /* Box grid’leri alt alta */
+  .boxes-grid,
+  .open-source-grid {
+    grid-template-columns: 1fr;
+  }
+  .equal-boxes,
+  .open-source-section {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Standart Masaüstü (1280px – 1600px) */
+@media (min-width: 1281px) and (max-width: 1600px) {
+  .hero {
+    grid-template-columns: 55% 40%;
+    padding: 2.5rem;
+    margin-left: 1.5rem;
+    height: 100vh;
+  }
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  .hero-map {
+    width: 35rem;
+  }
+  .button-group {
+    margin-bottom: 2.5rem;
+  }
+  /* İki sütunlu box düzeni */
+  .boxes-grid,
+  .open-source-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Büyük Masaüstü (1600px – 1920px) */
+/* Base tasarım değerleri burada uygulanıyor. */
+
+/* 2K Ekranlar (1921px – 2560px) */
+@media (min-width: 1921px) and (max-width: 2560px) {
+  /* --- Hero Section (Dokunulmuyor) --- */
+  .hero {
+    grid-template-columns: 70% 30%;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 7rem;
+    margin-top: 3rem;
+  }
+  .interactive-panels-title {
+    font-size: 4rem;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .hero-text {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  .hero-map {
+    width: 60rem;
+  }
+
+  .icon {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition:
+      background 0.3s ease,
+      transform 0.3s ease,
+      box-shadow 0.1s ease;
+  }
+
+  .button-group {
+    margin-bottom: 4rem;
+    font-size: 1.5rem;
+  }
+
+  .boxes-grid,
+  .open-source-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .equal-boxes {
+    /* Tamamen yayılmaması için bir genişlik sınırı ekledim */
+    max-width: 1400px;
+    margin: 0 auto;
+    /* Fazla boşlukları azaltarak daha kompakt bir görünüm sağladım */
+    padding: 3rem 2rem;
+  }
+
+  .equal-boxes .section-header h1 {
+    /* 7rem yerine biraz daha makul bir değer */
+    font-size: 5.5rem;
+    line-height: 1.2;
+  }
+
+  .box-icon-box {
+    /* 65px -> 60px: Görsel bütünlüğü korurken biraz daha küçük */
+    width: 60px;
+    height: 60px;
+  }
+
+  .box-button {
+    /* 1.5rem -> 1.3rem: Buton metni çok büyük görünmesin */
+    font-size: 1.3rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  /* --- AÇIK KAYNAK BİLDİRİMİ SECTION Güncellemesi --- */
+  .open-source-section {
+    /* Aynı mantıkla genişlik sınırı ve daha az padding */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    margin-bottom: 8rem;
+    margin-top: 8rem;
+  }
+
+  .open-source-header h1 {
+    font-size: 5.5rem;
+    line-height: 1.2;
+  }
+
+  .open-source-icon-box {
+    width: 60px;
+    height: 60px;
+  }
 
   .open-source-button {
-    padding: 0.6rem 1.2rem;
-    font-size: 1rem;
+    font-size: 1.3rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+/* 4K Ekranlar (3840px ve üzeri) */
+@media (min-width: 2561px) {
+  /* --- Hero Section (Dokunulmuyor) --- */
+  .hero {
+    grid-template-columns: 70% 30%;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 7rem;
+    margin-top: 3rem;
+  }
+  .interactive-panels-title {
+    font-size: 4rem;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .hero-text {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  .hero-map {
+    width: 60rem;
+  }
+
+  .icon {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition:
+      background 0.3s ease,
+      transform 0.3s ease,
+      box-shadow 0.1s ease;
+  }
+
+  .button-group {
+    margin-bottom: 4rem;
+    font-size: 1.5rem;
+  }
+
+  .boxes-grid,
+  .open-source-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .equal-boxes {
+    /* Tamamen yayılmaması için bir genişlik sınırı ekledim */
+    max-width: 1400px;
+    margin: 0 auto;
+    /* Fazla boşlukları azaltarak daha kompakt bir görünüm sağladım */
+    padding: 3rem 2rem;
+  }
+
+  .equal-boxes .section-header h1 {
+    /* 7rem yerine biraz daha makul bir değer */
+    font-size: 5.5rem;
+    line-height: 1.2;
+  }
+
+  .box-icon-box {
+    /* 65px -> 60px: Görsel bütünlüğü korurken biraz daha küçük */
+    width: 60px;
+    height: 60px;
+  }
+
+  .box-button {
+    /* 1.5rem -> 1.3rem: Buton metni çok büyük görünmesin */
+    font-size: 1.3rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  /* --- AÇIK KAYNAK BİLDİRİMİ SECTION Güncellemesi --- */
+  .open-source-section {
+    /* Aynı mantıkla genişlik sınırı ve daha az padding */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    margin-bottom: 8rem;
+    margin-top: 8rem;
+  }
+
+  .open-source-header h1 {
+    font-size: 5.5rem;
+    line-height: 1.2;
+  }
+
+  .open-source-icon-box {
+    width: 60px;
+    height: 60px;
+  }
+
+  .open-source-button {
+    font-size: 1.3rem;
+    padding: 0.8rem 1.5rem;
   }
 }

@@ -1,8 +1,9 @@
 <template>
   <div class="world-data-container">
     <iframe
-      src="http://localhost:5601/app/dashboards#/view/1cac334e-75c8-447c-91a9-8ab73a4022f8?embed=true&_g=(refreshInterval%3A(pause%3A!t%2Cvalue%3A60000)%2Ctime%3A(from%3Anow-1M%2Cto%3Anow))&show-top-menu=false&show-query-input=false&show-time-filter=false"
-      style="border: none; outline: none"
+      src="http://localhost:5601/app/dashboards#/view/d123e24c-38a6-46ab-8036-65018c50ed7b?embed=true&_g=(refreshInterval%3A(pause%3A!t%2Cvalue%3A60000)%2Ctime%3A(from%3Anow-3d%2Cto%3Anow))"
+      height="600"
+      width="800"
     ></iframe>
   </div>
 </template>

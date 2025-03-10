@@ -80,7 +80,7 @@
     <!-- ================== AÇIK KAYNAK BİLDİRİMİ SECTION ================== -->
     <section class="open-source-section" v-fade>
       <div class="open-source-header" v-fade>
-        <h1>AÇIK KAYNAK BİLDİRİMİ</h1>
+        <h1>ÖZGÜR VE AÇIK KAYNAK BİLDİRİMİ</h1>
         <p class="open-source-description">
           Projemizde kullandığımız açık kaynak teknolojiler ile dünya nüfus verilerini gerçek
           zamanlı takip ediyoruz.
