@@ -23,7 +23,7 @@ const routes = [
   {
     path: '/world-data',
     name: 'worldData',
-    component: WorldData, // Buradaki 'worldData' tanımını WorldData ile değiştiriyoruz
+    component: WorldData,
   },
 ]
 
