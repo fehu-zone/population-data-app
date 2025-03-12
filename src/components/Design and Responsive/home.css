@@ -934,30 +934,6 @@ body {
   }
 }
 
-/* Standart Masaüstü (1280px – 1600px) */
-@media (min-width: 1281px) and (max-width: 1600px) {
-  .hero {
-    grid-template-columns: 55% 40%;
-    padding: 2.5rem;
-    margin-left: 1.5rem;
-    height: 100vh;
-  }
-  .hero-title {
-    font-size: 3.5rem;
-  }
-  .hero-map {
-    width: 35rem;
-  }
-  .button-group {
-    margin-bottom: 2.5rem;
-  }
-  /* İki sütunlu box düzeni */
-  .boxes-grid,
-  .open-source-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 /* Büyük Masaüstü (1600px – 1920px) */
 /* Base tasarım değerleri burada uygulanıyor. */
 
