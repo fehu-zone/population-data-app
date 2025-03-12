@@ -170,6 +170,7 @@
 <script>
 import fadeDirective from '@/directives.js'
 import '@/components/Design and Responsive/home.css'
+import '@/components/Design and Responsive/open-source-styles.css'
 import FaqSection from '@/components/faq/FaqSection.vue'
 import faqs from '@/components/faq/faqData.js'
 
