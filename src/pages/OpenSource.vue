@@ -73,7 +73,13 @@
       </div>
     </div>
     <div class="open-source-button-wrapper" v-fade>
-      <button class="open-source-button">Açık Kaynak Kodları İncelemek İçin Tıklayın</button>
+      <a
+        href="https://github.com/fehu-zone/population_scraper"
+        target="_blank"
+        class="open-source-button no-style-link"
+      >
+        Açık Kaynak Kodları İncelemek İçin Tıklayın
+      </a>
     </div>
   </section>
 </template>

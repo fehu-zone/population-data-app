@@ -85,12 +85,83 @@ describe('Home Page Tests - 1920x1200 Resolution', () => {
     cy.get('.hero-title').should('have.class', 'fade-in') // hero-title'da fade-in class'ı var mı?
     cy.get('.social-icons').should('have.class', 'fade-in') // social-icons'da fade-in class'ı var mı?
   })
+
+  // SOSYAL MEDYA BAĞLANTILARI TESTİ
+  it('Social Media Links Have Valid URLs', () => {
+    cy.get('.social-icons a').should('have.length', 3)
+    cy.get('.social-icons a').eq(0).should('have.attr', 'href').and('include', 'linkedin.com')
+    cy.get('.social-icons a').eq(1).should('have.attr', 'href').and('include', 'github.com')
+    cy.get('.social-icons a')
+      .eq(2)
+      .should('have.attr', 'href')
+      .and('match', /^https?:\/\//)
+  })
+
+  // GÖRSEL VALİDASYON TESTLERİ
+  it('All Critical Images Load Correctly', () => {
+    const imageSelectors = ['.hero-map', '.open-source-box img', 'img[src="/img/Faq-img.png"]']
+
+    imageSelectors.forEach((selector) => {
+      cy.get(selector)
+        .should('be.visible')
+        .and(($img) => {
+          expect($img[0].naturalWidth).to.be.greaterThan(0)
+        })
+    })
+  })
+
+  // NAVİGASYON TESTLERİ
+  describe('Navigation Tests', () => {
+    it('Country Button Navigates Correctly', () => {
+      cy.get('.primary-btn').click()
+      cy.url().should('include', '/ulkeler')
+      cy.go('back')
+    })
+
+    it('World Data Button Navigates Correctly', () => {
+      cy.get('.secondary-btn').click()
+      cy.url().should('include', '/dunya')
+      cy.go('back')
+    })
+  })
+
+  // AÇIK KAYNAK BUTONU FONKSİYONELLİĞİ
+  it('Open Source Button Links to Repository', () => {
+    cy.get('.open-source-button')
+      .should('have.attr', 'href')
+      .and('eq', 'https://github.com/your-repo-link')
+  })
+
+  // FAQ İNTERAKTİF TESTLERİ
+  it('FAQ Section Interaction', () => {
+    cy.get('.faq-item').first().as('firstQuestion')
+
+    // Başlangıç durumu kontrolü
+    cy.get('@firstQuestion').find('.faq-answer').should('not.be.visible')
+
+    // Genişletme/daraltma fonksiyonelliği
+    cy.get('@firstQuestion').click()
+    cy.get('@firstQuestion')
+      .find('.faq-answer')
+      .should('be.visible')
+      .and('have.css', 'max-height')
+      .then((maxHeight) => {
+        expect(parseInt(maxHeight)).to.be.greaterThan(0)
+      })
+  })
+
+  // META VERİ TESTLERİ
+  it('SEO Meta Tags Validation', () => {
+    cy.get('head meta[name="description"]')
+      .should('have.attr', 'content')
+      .and('include', 'nüfus verileri')
+
+    cy.title().should('include', 'Nüfus Veri Uygulaması')
+  })
 })
 
 describe('Sayfa Yükleme Süresi Testi', () => {
   it('Sayfa Açılış Süresini Ölç', () => {
-    // Sayfa yükleme başlangıcını kaydet
-
     // Sayfayı ziyaret et
     cy.visit('/', {
       onBeforeLoad: () => {
@@ -105,9 +176,6 @@ describe('Sayfa Yükleme Süresi Testi', () => {
     cy.window().then((win) => {
       const [entry] = win.performance.getEntriesByType('navigation')
       const loadTime = entry.duration.toFixed(2) // Milisaniye cinsinden
-
-      // Alternatif: Manuel hesaplama
-      // const loadTime = Date.now() - startTime;
 
       cy.log(`Sayfa tam yükleme süresi: ${loadTime} ms`)
       cy.log(`Detaylı performans verisi:`, entry)

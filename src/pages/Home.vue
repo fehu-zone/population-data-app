@@ -15,13 +15,13 @@
       </div>
       <div class="hero-right">
         <div class="social-icons" v-fade>
-          <a href="#" class="icon">
+          <a href="https://www.linkedin.com/in/ahmetkaradas/" class="icon">
             <i class="fa-brands fa-linkedin-in"></i>
           </a>
-          <a href="#" class="icon">
+          <a href="https://github.com/fehu-zone/population_scraper" class="icon">
             <i class="fa-brands fa-github"></i>
           </a>
-          <a href="#" class="icon">
+          <a href="#" class="icon" id="shareButton">
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         </div>
@@ -31,8 +31,8 @@
           ölümler ve göç hareketlerini interaktif grafiklerle detaylı inceleyin.
         </p>
         <div class="button-group" v-fade>
-          <button class="primary-btn">Ülke Bazlı Nüfus Verileri</button>
-          <button class="secondary-btn">Dünya Bazlı Nüfus Verileri</button>
+          <button class="primary-btn" @click="goToCountryData">Ülke Bazlı Nüfus Verileri</button>
+          <button class="secondary-btn" @click="goToWorldData">Dünya Bazlı Nüfus Verileri</button>
         </div>
       </div>
     </section>
@@ -54,7 +54,7 @@
           </div>
           <h3>Küresel Veri</h3>
           <p>Dünya nüfus değişimlerini anlık olarak takip edin ve analiz edin.</p>
-          <button class="box-button">Dünya Bazlı Nüfus Verileri</button>
+          <button class="box-button" @click="goToWorldData">Dünya Bazlı Nüfus Verileri</button>
         </div>
         <!-- Kutucuk 2 -->
         <div class="box" v-fade>
@@ -63,7 +63,7 @@
           </div>
           <h3>Ülke Analizi</h3>
           <p>Her ülkenin nüfus değişimlerini detaylı grafiklerle inceleyin.</p>
-          <button class="box-button">Ülke Bazlı Nüfus Verileri</button>
+          <button class="box-button" @click="goToCountryData">Ülke Bazlı Nüfus Verileri</button>
         </div>
         <!-- Kutucuk 3 -->
         <div class="box" v-fade>
@@ -72,13 +72,12 @@
           </div>
           <h3>Açık Kaynak Kod</h3>
           <p>Açık kaynak kodlarını inceleyin ve projeye katkıda bulunun.</p>
-          <button class="box-button">Açık Kaynak Kod</button>
+          <button class="box-button" @click="goToOpenSource">Açık Kaynak Kod</button>
         </div>
       </div>
     </section>
-
     <!-- ================== AÇIK KAYNAK BİLDİRİMİ SECTION ================== -->
-    <section class="open-source-section" v-fade>
+    <section class="open-source-section" id="open-source-id" v-fade>
       <div class="open-source-header" v-fade>
         <h1>ÖZGÜR VE AÇIK KAYNAK BİLDİRİMİ</h1>
         <p class="open-source-description">
@@ -152,7 +151,13 @@
         </div>
       </div>
       <div class="open-source-button-wrapper" v-fade>
-        <button class="open-source-button">Açık Kaynak Kodları İncelemek İçin Tıklayın</button>
+        <a
+          href="https://github.com/fehu-zone/population_scraper"
+          target="_blank"
+          class="open-source-button no-style-link"
+        >
+          Açık Kaynak Kodları İncelemek İçin Tıklayın
+        </a>
       </div>
     </section>
 
@@ -173,6 +178,7 @@ import '@/components/Design and Responsive/home.css'
 import '@/components/Design and Responsive/open-source-styles.css'
 import FaqSection from '@/components/faq/FaqSection.vue'
 import faqs from '@/components/faq/faqData.js'
+import { handleShare } from '@/share' // share.js dosyasını import et
 
 export default {
   name: 'AppHome',
@@ -185,6 +191,24 @@ export default {
   data() {
     return {
       faqs,
+    }
+  },
+  methods: {
+    goToCountryData() {
+      this.$router.push({ name: 'countryData' })
+    },
+    goToWorldData() {
+      this.$router.push({ name: 'worldData' })
+    },
+    goToOpenSource() {
+      this.$router.push({ name: 'openSource' })
+    },
+  },
+  mounted() {
+    // Paylaşım butonunun işlevselliği
+    const shareButton = document.getElementById('shareButton')
+    if (shareButton) {
+      shareButton.addEventListener('click', handleShare) // share.js'deki fonksiyonu kullan
     }
   },
 }

@@ -5,6 +5,12 @@ body {
   padding: 0;
 }
 
+.no-style-link {
+  text-decoration: none; /* Alt çizgiyi kaldırır */
+  color: inherit; /* Metin rengini paragrafın rengiyle aynı yapar */
+  cursor: pointer; /* Fare imlecini tıklanabilir yapar */
+}
+
 /* Global Fade Animasyonu */
 @keyframes fadeIn {
   from {
@@ -123,40 +129,40 @@ body {
 
 .button-group {
   display: flex;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
+  gap: 1.5rem; /* Butonlar arası boşluk */
+  margin-bottom: 3rem; /* Alt boşluk */
 }
 
 .primary-btn,
 .secondary-btn {
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 25px;
-  text-align: center;
-  transition: all 0.3s ease;
-  max-width: 250px;
+  padding: 0.75rem 2rem; /* İç boşluk */
+  font-size: 1rem; /* Yazı boyutu */
+  line-height: 1.5rem; /* Satır yüksekliği */
+  font-weight: bold; /* Kalın yazı tipi */
+  border: none; /* Kenarlık kaldır */
+  border-radius: 25px; /* Köşeleri yuvarla */
+  text-align: center; /* Metni ortala */
+  transition: all 0.3s ease; /* Tüm özelliklere geçiş efekti */
+  max-width: 250px; /* Maksimum genişlik */
+  cursor: pointer; /* Fare imlecini tıklanabilir yapar */
 }
 
 .primary-btn {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.2); /* Yarı saydam beyaz arka plan */
+  color: white; /* Beyaz metin rengi */
+  border: 1px solid rgba(255, 255, 255, 0.4); /* Yarı saydam beyaz kenarlık */
 }
 
 .secondary-btn {
-  background: none;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  color: white;
+  background: none; /* Şeffaf arka plan */
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Yarı saydam beyaz kenarlık */
+  color: white; /* Beyaz metin rengi */
 }
 
 .primary-btn:hover,
 .secondary-btn:hover {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.4); /* Fare üzerine gelindiğinde arka plan rengi */
 }
-
 /* ================== ANLIK DÜNYA NÜFUS AKIŞI SECTION ================== */
 .equal-boxes {
   padding: 4rem 1rem;

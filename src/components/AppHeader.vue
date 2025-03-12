@@ -2,8 +2,9 @@
   <header class="fehu-header">
     <nav class="fehu-nav">
       <!-- Logo (solda) -->
-      <h1 class="fehu-logo">FEHU.POPULATION</h1>
-
+      <a href="/" class="fehu-logo">
+        <h1>FEHU.POPULATION</h1>
+      </a>
       <!-- Sağ Kısım: Masaüstü Menü + Dil Dropdown + Mobil Butonlar -->
       <div class="fehu-nav-right">
         <!-- Masaüstü Menü Linkleri -->
@@ -196,11 +197,19 @@ body.menu-open {
 
 /* Logo */
 .fehu-logo {
+  text-decoration: none; /* Alt çizgiyi kaldırır */
+  color: inherit; /* Metin rengini korur */
+  cursor: pointer; /* Fare imlecini tıklanabilir yapar */
   font-family: 'Saira Stencil One', sans-serif;
-  color: var(--fehu-text-color);
+  color: #fff;
   transition: font-size 0.3s;
   z-index: 2;
-  font-size: 1.6rem;
+  font-size: 2rem; /* Örnek olarak 24px */
+}
+
+.fehu-logo h1 {
+  margin: 0; /* Varsayılan margin'i kaldırır */
+  font-size: inherit; /* Ebeveynin font boyutunu miras alır */
 }
 
 /* Sağ kısım: Menü + Dil ikonu + Mobil butonlar */

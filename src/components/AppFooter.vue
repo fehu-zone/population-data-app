@@ -8,15 +8,18 @@
       <!-- Logo ve İletişim -->
       <div class="footer-section">
         <h3 class="logo-text">FEHU.POPULATION</h3>
-        <p>İletişim: ahmett.karadas@icloud.com</p>
       </div>
 
       <!-- İletişim -->
       <div class="footer-section contact-section">
         <h4>İLETİŞİM</h4>
         <ul>
-          <li>Email</li>
-          <li>Telefon</li>
+          <li>
+            <a href="mailto:ahmett.karadas@icloud.com" class="no-style-link">Email</a>
+          </li>
+          <li>
+            <a href="https://wa.me/905078774897" class="no-style-link">Telefon</a>
+          </li>
         </ul>
       </div>
 
@@ -24,11 +27,18 @@
       <div class="footer-section">
         <h4>LİNKLER</h4>
         <ul>
-          <li>Anasayfa</li>
-          <li>Dünya Bazlı Veriler</li>
-          <li>Ülke Bazlı Veriler</li>
-          <li>Açık Kaynak</li>
-          <li>Açık Kaynak Bildirimi</li>
+          <li>
+            <router-link to="/" class="no-style-link">Anasayfa</router-link>
+          </li>
+          <li>
+            <router-link to="/world-data" class="no-style-link">Dünya Bazlı Veriler</router-link>
+          </li>
+          <li>
+            <router-link to="/country-data" class="no-style-link">Ülke Bazlı Veriler</router-link>
+          </li>
+          <li>
+            <router-link to="/open-source" class="no-style-link">Açık Kaynak</router-link>
+          </li>
         </ul>
       </div>
 
@@ -47,16 +57,20 @@
     <!-- Alt Kısım (Metin ve İkonlar) -->
     <div class="footer-bottom">
       <p class="footer-text">
-        2025 © Ahmet Karadaş | Tüm Hakları Saklıdır | Bu Site Ticari Amaç Gütmez
+        2025 ©
+        <a href="https://www.linkedin.com/in/ahmetkaradas/" class="no-style-link" target="_blank"
+          >Ahmet Karadaş</a
+        >
+        | Tüm Hakları Saklıdır | Bu Site Ticari Amaç Gütmez
       </p>
       <div class="footer-bottom-icons">
-        <a href="#" class="icon-bottom">
+        <a href="https://www.linkedin.com/in/ahmetkaradas/" class="icon-bottom" target="_blank">
           <i class="fa-brands fa-linkedin-in"></i>
         </a>
-        <a href="#" class="icon-bottom">
+        <a href="https://github.com/fehu-zone" class="icon-bottom" target="_blank">
           <i class="fa-brands fa-github"></i>
         </a>
-        <a href="#" class="icon-bottom">
+        <a href="#" class="icon-bottom" id="shareButton">
           <i class="fa-solid fa-arrow-up-right-from-square"></i>
         </a>
       </div>
@@ -65,8 +79,17 @@
 </template>
 
 <script>
+import { handleShare } from '@/share' // share.js dosyasını import et
+
 export default {
   name: 'AppFooter',
+  mounted() {
+    // Paylaşım butonunun işlevselliği
+    const shareButton = document.getElementById('shareButton')
+    if (shareButton) {
+      shareButton.addEventListener('click', handleShare) // share.js'deki fonksiyonu kullan
+    }
+  },
 }
 </script>
 
