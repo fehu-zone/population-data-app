@@ -829,9 +829,6 @@ body {
   }
 }
 
-/* ================== ================== */
-/* ================== ================== */
-
 /* ================== RESPONSİVE AYARLARI BÜYÜK CİHAZLAR ================== */
 
 /* ================== BASE TASARIM (Büyük Masaüstü: 1600px – 1920px) ================== */
@@ -898,7 +895,7 @@ body {
 @media (min-width: 1024px) and (max-width: 1280px) {
   .hero {
     grid-template-columns: 1fr; /* İki sütun yerine alt alta */
-    padding: 2rem;
+    margin-top: -8rem;
     margin-left: 1rem;
     height: auto; /* İçeriğe göre yükseklik */
   }
@@ -908,8 +905,19 @@ body {
     margin: 1rem 0;
   }
   .hero-title {
-    font-size: 3rem;
+    font-size: 4rem;
     text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .hero-text {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 3rem;
+    margin-top: 2.3rem;
+    margin-right: 2.5rem;
+    margin-left: 4rem;
   }
   .hero-map-img-container {
     justify-content: center;
@@ -917,11 +925,13 @@ body {
   }
   .hero-map {
     width: 100%;
-    max-width: 20rem;
+    max-width: 35rem;
   }
   .button-group {
     justify-content: center;
     margin-bottom: 2rem;
+    margin-top: 3rem;
+    margin-left: 5rem;
   }
   /* Box grid’leri alt alta */
   .boxes-grid,
