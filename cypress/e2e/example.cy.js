@@ -129,7 +129,7 @@ describe('Home Page Tests - 1920x1200 Resolution', () => {
   it('Open Source Button Links to Repository', () => {
     cy.get('.open-source-button')
       .should('have.attr', 'href')
-      .and('eq', 'https://github.com/your-repo-link')
+      .and('eq', 'https://github.com/fehu-zone/population_scraper')
   })
 
   // FAQ İNTERAKTİF TESTLERİ
