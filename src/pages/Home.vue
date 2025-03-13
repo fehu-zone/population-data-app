@@ -8,7 +8,7 @@
           DÜNYA NÜFUS VERİLERİ
         </h1>
         <div class="hero-map-img-container" v-fade>
-          <img class="hero-map" src="/img/deneme.svg" alt="Dünya Haritası" />
+          <img class="hero-map" src="/img/deneme.svg" alt="Dünya Haritası" loading="lazy" />
         </div>
         <!-- Görselin hemen altında yer alacak başlık -->
         <h2 class="interactive-panels-title" v-fade>İnteraktif Panelleri Keşfedin</h2>
@@ -76,6 +76,7 @@
         </div>
       </div>
     </section>
+
     <!-- ================== AÇIK KAYNAK BİLDİRİMİ SECTION ================== -->
     <section class="open-source-section" id="open-source-id" v-fade>
       <div class="open-source-header" v-fade>
@@ -173,12 +174,13 @@
 </template>
 
 <script>
+import { useHead } from '@vueuse/head'
 import fadeDirective from '@/directives.js'
 import '@/components/Design and Responsive/home.css'
 import '@/components/Design and Responsive/open-source-styles.css'
 import FaqSection from '@/components/faq/FaqSection.vue'
 import faqs from '@/components/faq/faqData.js'
-import { handleShare } from '@/share' // share.js dosyasını import et
+import { handleShare } from '@/share'
 
 export default {
   name: 'AppHome',
@@ -193,6 +195,45 @@ export default {
       faqs,
     }
   },
+  // SEO: useHead ile meta etiketlerini ayarlıyoruz:
+  setup() {
+    useHead({
+      title: 'Gerçek Zamanlı Dünya Nüfus Verileri',
+      meta: [
+        {
+          name: 'description',
+          content:
+            'Dünya nüfus verilerini anlık olarak takip edin. Doğum, ölüm ve göç hareketleri ile ilgili en güncel verilere ulaşın.',
+        },
+        {
+          name: 'keywords',
+          content: 'dünya nüfusu, gerçek zamanlı veri, nüfus analizi, interaktif grafikler',
+        },
+        { name: 'author', content: 'Ahmet Karadaş' },
+        { property: 'og:title', content: 'Gerçek Zamanlı Dünya Nüfus Verileri' },
+        {
+          property: 'og:description',
+          content:
+            'Dünya nüfus verilerini anlık olarak takip edin. Doğum, ölüm ve göç hareketleri ile ilgili en güncel verilere ulaşın.',
+        },
+        { property: 'og:image', content: '/img/Faq-img.png' },
+        { property: 'og:url', content: 'http://localhost:5173/#/' },
+        { property: 'og:type', content: 'website' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: 'Gerçek Zamanlı Dünya Nüfus Verileri' },
+        {
+          name: 'twitter:description',
+          content:
+            'Dünya nüfus verilerini anlık olarak takip edin. Doğum, ölüm ve göç hareketleri ile ilgili en güncel verilere ulaşın.',
+        },
+        { name: 'twitter:image', content: '/img/Faq-img.png' },
+      ],
+      link: [
+        { rel: 'canonical', href: 'http://localhost:5173/#/' },
+        { rel: 'icon', type: 'image/png', href: '/img/favicon.png' },
+      ],
+    })
+  },
   methods: {
     goToCountryData() {
       this.$router.push({ name: 'countryData' })
@@ -205,10 +246,9 @@ export default {
     },
   },
   mounted() {
-    // Paylaşım butonunun işlevselliği
     const shareButton = document.getElementById('shareButton')
     if (shareButton) {
-      shareButton.addEventListener('click', handleShare) // share.js'deki fonksiyonu kullan
+      shareButton.addEventListener('click', handleShare)
     }
   },
 }

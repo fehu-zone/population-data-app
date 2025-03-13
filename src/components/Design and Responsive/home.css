@@ -275,15 +275,6 @@ body {
 /* ========= Mobil Responsive Ayarlamaları (max-width: 768px) ========= */
 /* ---------- Extra Small Devices (max-width: 360px) ---------- */
 @media only screen and (max-width: 360px) {
-  /* Header alanlarını alt alta yerleştirin */
-  .equal-boxes .section-header,
-  .open-source-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
   .hero {
     display: flex;
     flex-direction: column;
@@ -349,41 +340,6 @@ body {
   .box p,
   .box-button {
     font-size: 0.9rem;
-  }
-  .open-source-header h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-  }
-  .open-source-description {
-    font-size: 1rem !important;
-    font-weight: 500 !important;
-    max-width: 100%;
-    margin-bottom: 2rem;
-  }
-  .open-source-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-  .open-source-box {
-    padding: 1.2rem;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  .open-source-box h3 {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  .open-source-box p,
-  .open-source-button {
-    font-size: 0.9rem;
-  }
-  .open-source-icon-box {
-    margin-bottom: 1rem;
-  }
-  .open-source-button-wrapper {
-    text-align: center;
-    margin-top: 2rem;
   }
 }
 
