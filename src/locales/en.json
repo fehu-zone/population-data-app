@@ -59,5 +59,23 @@
   },
   "footer": {
     "copyright": "© 2025 Ahmet Karadaş | All Rights Reserved | Non-Commercial Project"
+  },
+  "header": {
+    "title": "FEHU.POPULATION",
+    "home": "Home",
+    "countryData": "Country Data",
+    "worldData": "World Data",
+    "openSource": "Open Source"
+  },
+  "languages": {
+    "tr": "Turkish",
+    "en": "English",
+    "de": "German",
+    "fr": "French",
+    "es": "Spanish",
+    "nl": "Dutch",
+    "ja": "Japanese",
+    "zh": "Chinese",
+    "ru": "Russian"
   }
 }

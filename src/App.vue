@@ -1,7 +1,6 @@
 <template>
   <div class="app">
     <AppHeader />
-    <!-- Dil seçici burada olacak -->
     <main>
       <router-view />
     </main>
@@ -19,21 +18,6 @@ export default {
   components: {
     AppHeader,
     AppFooter,
-  },
-  data() {
-    return {
-      technologies: [
-        { name: 'Worldometer', icon: '/worldometer-icon.svg' },
-        { name: 'Elasticsearch', icon: '/elasticsearch-icon.svg' },
-        { name: 'Kibana', icon: '/kibana-icon.svg' },
-        { name: 'Python', icon: '/python-icon.svg' },
-      ],
-      faqs: [
-        { question: 'Bu proje ne işe yarıyor?' },
-        { question: 'Veriler Nasıl Güncelleniyor?' },
-        { question: 'Bu Proje Açık Kaynak mı?' },
-      ],
-    }
   },
 }
 </script>

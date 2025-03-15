@@ -1,13 +1,14 @@
 <template>
   <header class="fehu-header">
     <nav class="fehu-nav">
-      <!-- Logo (solda) -->
+      <!-- Logo -->
       <a href="/" class="fehu-logo">
         <h1>FEHU.POPULATION</h1>
       </a>
-      <!-- Sağ Kısım: Masaüstü Menü + Dil Dropdown + Mobil Butonlar -->
+
+      <!-- Sağ Kısım: Masaüstü Menü + Dil Seçici + Mobil Butonlar -->
       <div class="fehu-nav-right">
-        <!-- Masaüstü Menü Linkleri -->
+        <!-- Masaüstü Menü -->
         <div class="fehu-desktop-links desktop-only">
           <router-link to="/" exact class="fehu-link">Anasayfa</router-link>
           <router-link to="/country-data" class="fehu-link">Ülke Bazlı Veriler</router-link>
@@ -15,26 +16,25 @@
           <router-link to="/open-source" class="fehu-link">Açık Kaynak</router-link>
         </div>
 
-        <!-- Masaüstü Dil Dropdown (desktop-only) -->
+        <!-- Masaüstü Dil Seçici -->
         <div class="fehu-language-dropdown desktop-only">
           <button aria-label="Select Language" @click="toggleLanguageDropdown">
             <span class="globe-icon">🌐</span>
             <span class="arrow" :class="{ open: isLanguageDropdownOpen }"></span>
           </button>
           <ul v-if="isLanguageDropdownOpen" class="fehu-language-menu">
-            <li @click="changeLanguage('tr')">🇹🇷 Türkçe</li>
-            <li @click="changeLanguage('en')">🇬🇧 English</li>
-            <li @click="changeLanguage('de')">🇩🇪 Deutsch</li>
-            <li @click="changeLanguage('fr')">🇫🇷 Français</li>
-            <li @click="changeLanguage('es')">🇪🇸 Español</li>
-            <li @click="changeLanguage('nl')">🇳🇱 Nederlands</li>
-            <li @click="changeLanguage('ja')">🇯🇵 日本語</li>
-            <li @click="changeLanguage('zh')">🇨🇳 中文</li>
-            <li @click="changeLanguage('ru')">🇷🇺 Русский</li>
+            <li
+              v-for="lang in availableLanguages"
+              :key="lang.code"
+              @click="changeLanguage(lang.code)"
+              :class="{ active: currentLanguage === lang.code }"
+            >
+              {{ lang.flag }} {{ lang.name }}
+            </li>
           </ul>
         </div>
 
-        <!-- Mobil/Tablet: Hamburger Menü Butonu -->
+        <!-- Mobil Butonlar -->
         <button
           class="fehu-hamburger mobile-only"
           :class="{ active: isMenuOpen }"
@@ -44,8 +44,6 @@
           <span></span>
           <span></span>
         </button>
-
-        <!-- Mobil/Tablet: Dil Paneli Butonu -->
         <button
           class="fehu-language-mobile-icon mobile-only"
           :class="{ active: isLanguagePanelOpen }"
@@ -55,37 +53,34 @@
         </button>
       </div>
 
-      <!-- Overlay'lar (her panel için ayrı) -->
-      <div class="fehu-nav-overlay" v-if="isMenuOpen" @click="closeMenu"></div>
-      <div class="fehu-lang-overlay" v-if="isLanguagePanelOpen" @click="closeLanguagePanel"></div>
+      <!-- Overlay'lar -->
+      <div class="fehu-nav-overlay" v-if="isMenuOpen" @click="closeAll"></div>
+      <div class="fehu-lang-overlay" v-if="isLanguagePanelOpen" @click="closeAll"></div>
 
-      <!-- Mobil/Tablet Yan Menü (Hamburger) -->
+      <!-- Mobil Menü -->
       <div class="fehu-nav-links mobile-only" :class="{ active: isMenuOpen }">
-        <button class="fehu-close-btn" @click="closeMenu">✕</button>
-        <router-link to="/" exact class="fehu-link" @click="closeMenu">Anasayfa</router-link>
-        <router-link to="/country-data" class="fehu-link" @click="closeMenu"
+        <button class="fehu-close-btn" @click="closeAll">✕</button>
+        <router-link to="/" exact class="fehu-link" @click="closeAll">Anasayfa</router-link>
+        <router-link to="/country-data" class="fehu-link" @click="closeAll"
           >Ülke Bazlı Veriler</router-link
         >
-        <router-link to="/world-data" class="fehu-link" @click="closeMenu"
+        <router-link to="/world-data" class="fehu-link" @click="closeAll"
           >Dünya Bazlı Veriler</router-link
         >
-        <router-link to="/open-source" class="fehu-link" @click="closeMenu"
-          >Açık Kaynak</router-link
-        >
+        <router-link to="/open-source" class="fehu-link" @click="closeAll">Açık Kaynak</router-link>
       </div>
 
-      <!-- Mobil/Tablet Dil Paneli -->
+      <!-- Mobil Dil Paneli -->
       <div class="fehu-language-panel mobile-only" :class="{ active: isLanguagePanelOpen }">
-        <button class="fehu-close-btn" @click="closeLanguagePanel">✕</button>
-        <div @click="changeLanguage('tr')">🇹🇷 Türkçe</div>
-        <div @click="changeLanguage('en')">🇬🇧 English</div>
-        <div @click="changeLanguage('de')">🇩🇪 Deutsch</div>
-        <div @click="changeLanguage('fr')">🇫🇷 Français</div>
-        <div @click="changeLanguage('es')">🇪🇸 Español</div>
-        <div @click="changeLanguage('nl')">🇳🇱 Nederlands</div>
-        <div @click="changeLanguage('ja')">🇯🇵 日本語</div>
-        <div @click="changeLanguage('zh')">🇨🇳 中文</div>
-        <div @click="changeLanguage('ru')">🇷🇺 Русский</div>
+        <button class="fehu-close-btn" @click="closeAll">✕</button>
+        <div
+          v-for="lang in availableLanguages"
+          :key="lang.code"
+          @click="changeLanguage(lang.code)"
+          :class="{ active: currentLanguage === lang.code }"
+        >
+          {{ lang.flag }} {{ lang.name }}
+        </div>
       </div>
     </nav>
   </header>
@@ -96,60 +91,99 @@ export default {
   name: 'FehuHeader',
   data() {
     return {
-      isMenuOpen: false, // Hamburger menü (mobil/tablet) açık mı
-      isLanguageDropdownOpen: false, // Masaüstü dil dropdown açık mı
-      isLanguagePanelOpen: false, // Mobil/Tablet dil paneli açık mı
+      isMenuOpen: false,
+      isLanguageDropdownOpen: false,
+      isLanguagePanelOpen: false,
+      availableLanguages: [
+        { code: 'tr', flag: '🇹🇷', name: 'Türkçe' },
+        { code: 'en', flag: '🇬🇧', name: 'English' },
+        { code: 'de', flag: '🇩🇪', name: 'Deutsch' },
+        { code: 'fr', flag: '🇫🇷', name: 'Français' },
+        { code: 'es', flag: '🇪🇸', name: 'Español' },
+        { code: 'nl', flag: '🇳🇱', name: 'Nederlands' },
+        { code: 'ja', flag: '🇯🇵', name: '日本語' },
+        { code: 'zh', flag: '🇨🇳', name: '中文' },
+        { code: 'ru', flag: '🇷🇺', name: 'Русский' },
+      ],
     }
+  },
+  computed: {
+    currentLanguage() {
+      return this.$i18n.locale
+    },
   },
   methods: {
     toggleLanguageDropdown() {
       this.isLanguageDropdownOpen = !this.isLanguageDropdownOpen
+      if (this.isLanguageDropdownOpen) {
+        this.isMenuOpen = false
+        this.isLanguagePanelOpen = false
+      }
     },
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen
-      if (this.isMenuOpen) {
-        document.body.classList.add('menu-open')
-        this.isLanguagePanelOpen = false
-      } else {
-        document.body.classList.remove('menu-open')
-      }
-      this.isLanguageDropdownOpen = false
-    },
-    closeMenu() {
-      this.isMenuOpen = false
-      document.body.classList.remove('menu-open')
+      this.isLanguagePanelOpen = false
+      this.toggleBodyOverflow(this.isMenuOpen)
+      if (this.isMenuOpen) this.isLanguageDropdownOpen = false
     },
     toggleLanguagePanel() {
       this.isLanguagePanelOpen = !this.isLanguagePanelOpen
-      if (this.isLanguagePanelOpen) {
-        document.body.classList.add('menu-open')
-        this.isMenuOpen = false
-      } else {
-        document.body.classList.remove('menu-open')
-      }
-      this.isLanguageDropdownOpen = false
+      this.isMenuOpen = false
+      this.toggleBodyOverflow(this.isLanguagePanelOpen)
+      if (this.isLanguagePanelOpen) this.isLanguageDropdownOpen = false
     },
-    closeLanguagePanel() {
+    closeAll() {
+      this.isMenuOpen = false
       this.isLanguagePanelOpen = false
-      document.body.classList.remove('menu-open')
+      this.isLanguageDropdownOpen = false
+      this.toggleBodyOverflow(false)
+    },
+    toggleBodyOverflow(open) {
+      document.body.classList.toggle('menu-open', open)
+      if (open) {
+        document.documentElement.style.position = 'fixed'
+      } else {
+        document.documentElement.style.position = ''
+      }
     },
     changeLanguage(lang) {
-      console.log('Dil değiştirildi:', lang)
-      // Mobil/Tablet panelinde dil seçildikten sonra kapat
-      this.closeMenu()
-      this.closeLanguagePanel()
-      this.isLanguageDropdownOpen = false
+      // Dil dosyası kontrolü
+      if (!this.$i18n.availableLocales.includes(lang)) {
+        console.error('Dil dosyası bulunamadı:', lang)
+        return
+      }
+      try {
+        // Dil değişikliğini uygula ve kayıt et
+        this.$i18n.locale = lang
+        localStorage.setItem('lang', lang)
+        document.documentElement.lang = lang
+
+        // Açık menüleri kapat
+        this.closeAll()
+
+        // Sayfayı yeniden yükle
+        window.location.reload()
+      } catch (error) {
+        console.error('Dil değiştirme hatası:', error)
+        this.$i18n.locale = 'en'
+      }
     },
     handleClickOutside(event) {
-      if (!event.target.closest('.fehu-nav')) {
-        this.closeMenu()
-        this.closeLanguagePanel()
-        this.isLanguageDropdownOpen = false
+      const headerElement = document.querySelector('.fehu-header')
+      if (!headerElement.contains(event.target)) {
+        this.closeAll()
       }
     },
   },
   mounted() {
+    const savedLang = localStorage.getItem('lang')
+    if (savedLang && this.$i18n.availableLocales.includes(savedLang)) {
+      this.$i18n.locale = savedLang
+    }
     document.addEventListener('click', this.handleClickOutside)
+    document.addEventListener('keyup', (e) => {
+      if (e.key === 'Escape') this.closeAll()
+    })
   },
   beforeUnmount() {
     document.removeEventListener('click', this.handleClickOutside)
@@ -197,19 +231,19 @@ body.menu-open {
 
 /* Logo */
 .fehu-logo {
-  text-decoration: none; /* Alt çizgiyi kaldırır */
-  color: inherit; /* Metin rengini korur */
-  cursor: pointer; /* Fare imlecini tıklanabilir yapar */
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
   font-family: 'Saira Stencil One', sans-serif;
   color: #fff;
   transition: font-size 0.3s;
   z-index: 2;
-  font-size: 2rem; /* Örnek olarak 24px */
+  font-size: 2rem;
 }
 
 .fehu-logo h1 {
-  margin: 0; /* Varsayılan margin'i kaldırır */
-  font-size: inherit; /* Ebeveynin font boyutunu miras alır */
+  margin: 0;
+  font-size: inherit;
 }
 
 /* Sağ kısım: Menü + Dil ikonu + Mobil butonlar */
@@ -295,7 +329,7 @@ body.menu-open {
   z-index: 10;
 }
 
-/* Mobil/Tablet Yan Menü (Hamburger) - arka plan siyaha yakın gri (#111) */
+/* Mobil/Tablet Yan Menü (Hamburger) */
 .fehu-nav-links {
   position: fixed;
   top: 0;
@@ -313,14 +347,13 @@ body.menu-open {
 .fehu-nav-links.active {
   right: 0;
 }
-/* Menü linkleri arasında ince çizgi */
 .fehu-nav-links .fehu-link:not(:last-child) {
   border-bottom: 1px solid var(--fehu-border-color);
   padding-bottom: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
-/* Mobil/Tablet Dil Paneli - arka plan siyaha yakın gri (#111) */
+/* Mobil/Tablet Dil Paneli */
 .fehu-language-panel {
   position: fixed;
   top: 0;
@@ -339,7 +372,6 @@ body.menu-open {
 .fehu-language-panel.active {
   right: 0;
 }
-/* Dil paneli seçenekleri arasında çizgi */
 .fehu-language-panel > div:not(:last-child) {
   border-bottom: 1px solid var(--fehu-border-color);
   padding-bottom: 0.5rem;
