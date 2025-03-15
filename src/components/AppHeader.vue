@@ -3,23 +3,23 @@
     <nav class="fehu-nav">
       <!-- Logo -->
       <a href="/" class="fehu-logo">
-        <h1>FEHU.POPULATION</h1>
+        <h1>{{ t('header.logo') }}</h1>
       </a>
 
       <!-- Sağ Kısım: Masaüstü Menü + Dil Seçici + Mobil Butonlar -->
       <div class="fehu-nav-right">
         <!-- Masaüstü Menü -->
         <div class="fehu-desktop-links desktop-only">
-          <router-link to="/" exact class="fehu-link">Anasayfa</router-link>
-          <router-link to="/country-data" class="fehu-link">Ülke Bazlı Veriler</router-link>
-          <router-link to="/world-data" class="fehu-link">Dünya Bazlı Veriler</router-link>
-          <router-link to="/open-source" class="fehu-link">Açık Kaynak</router-link>
+          <router-link to="/" exact class="fehu-link">{{ t('menu.home') }}</router-link>
+          <router-link to="/country-data" class="fehu-link">{{ t('menu.countryData') }}</router-link>
+          <router-link to="/world-data" class="fehu-link">{{ t('menu.worldData') }}</router-link>
+          <router-link to="/open-source" class="fehu-link">{{ t('menu.openSource') }}</router-link>
         </div>
 
         <!-- Masaüstü Dil Seçici -->
         <div class="fehu-language-dropdown desktop-only">
           <button aria-label="Select Language" @click="toggleLanguageDropdown">
-            <span class="globe-icon">🌐</span>
+            <span class="globe-icon">{{ currentLanguage.flag }}</span>
             <span class="arrow" :class="{ open: isLanguageDropdownOpen }"></span>
           </button>
           <ul v-if="isLanguageDropdownOpen" class="fehu-language-menu">
@@ -27,9 +27,9 @@
               v-for="lang in availableLanguages"
               :key="lang.code"
               @click="changeLanguage(lang.code)"
-              :class="{ active: currentLanguage === lang.code }"
+              :class="{ active: currentLanguage.code === lang.code }"
             >
-              {{ lang.flag }} {{ lang.name }}
+              {{ lang.flag }} {{ t(`languages.${lang.code}`) }}
             </li>
           </ul>
         </div>
@@ -39,6 +39,7 @@
           class="fehu-hamburger mobile-only"
           :class="{ active: isMenuOpen }"
           @click="toggleMenu"
+          :aria-label="t('header.toggleMenu')"
         >
           <span></span>
           <span></span>
@@ -48,8 +49,9 @@
           class="fehu-language-mobile-icon mobile-only"
           :class="{ active: isLanguagePanelOpen }"
           @click="toggleLanguagePanel"
+          :aria-label="t('header.selectLanguage')"
         >
-          <span class="globe-icon">🌐</span>
+          <span class="globe-icon">{{ currentLanguage.flag }}</span>
         </button>
       </div>
 
@@ -59,27 +61,23 @@
 
       <!-- Mobil Menü -->
       <div class="fehu-nav-links mobile-only" :class="{ active: isMenuOpen }">
-        <button class="fehu-close-btn" @click="closeAll">✕</button>
-        <router-link to="/" exact class="fehu-link" @click="closeAll">Anasayfa</router-link>
-        <router-link to="/country-data" class="fehu-link" @click="closeAll"
-          >Ülke Bazlı Veriler</router-link
-        >
-        <router-link to="/world-data" class="fehu-link" @click="closeAll"
-          >Dünya Bazlı Veriler</router-link
-        >
-        <router-link to="/open-source" class="fehu-link" @click="closeAll">Açık Kaynak</router-link>
+        <button class="fehu-close-btn" @click="closeAll">{{ t('header.close') }}</button>
+        <router-link to="/" exact class="fehu-link" @click="closeAll">{{ t('menu.home') }}</router-link>
+        <router-link to="/country-data" class="fehu-link" @click="closeAll">{{ t('menu.countryData') }}</router-link>
+        <router-link to="/world-data" class="fehu-link" @click="closeAll">{{ t('menu.worldData') }}</router-link>
+        <router-link to="/open-source" class="fehu-link" @click="closeAll">{{ t('menu.openSource') }}</router-link>
       </div>
 
       <!-- Mobil Dil Paneli -->
       <div class="fehu-language-panel mobile-only" :class="{ active: isLanguagePanelOpen }">
-        <button class="fehu-close-btn" @click="closeAll">✕</button>
+        <button class="fehu-close-btn" @click="closeAll">{{ t('header.close') }}</button>
         <div
           v-for="lang in availableLanguages"
           :key="lang.code"
           @click="changeLanguage(lang.code)"
-          :class="{ active: currentLanguage === lang.code }"
+          :class="{ active: currentLanguage.code === lang.code }"
         >
-          {{ lang.flag }} {{ lang.name }}
+          {{ lang.flag }} {{ t(`languages.${lang.code}`) }}
         </div>
       </div>
     </nav>
@@ -87,107 +85,105 @@
 </template>
 
 <script>
+import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
 export default {
   name: 'FehuHeader',
-  data() {
-    return {
-      isMenuOpen: false,
-      isLanguageDropdownOpen: false,
-      isLanguagePanelOpen: false,
-      availableLanguages: [
-        { code: 'tr', flag: '🇹🇷', name: 'Türkçe' },
-        { code: 'en', flag: '🇬🇧', name: 'English' },
-        { code: 'de', flag: '🇩🇪', name: 'Deutsch' },
-        { code: 'fr', flag: '🇫🇷', name: 'Français' },
-        { code: 'es', flag: '🇪🇸', name: 'Español' },
-        { code: 'nl', flag: '🇳🇱', name: 'Nederlands' },
-        { code: 'ja', flag: '🇯🇵', name: '日本語' },
-        { code: 'zh', flag: '🇨🇳', name: '中文' },
-        { code: 'ru', flag: '🇷🇺', name: 'Русский' },
-      ],
-    }
-  },
-  computed: {
-    currentLanguage() {
-      return this.$i18n.locale
-    },
-  },
-  methods: {
-    toggleLanguageDropdown() {
-      this.isLanguageDropdownOpen = !this.isLanguageDropdownOpen
-      if (this.isLanguageDropdownOpen) {
-        this.isMenuOpen = false
-        this.isLanguagePanelOpen = false
+  setup() {
+    const i18n = useI18n()
+    const { t } = i18n
+
+    const isMenuOpen = ref(false)
+    const isLanguageDropdownOpen = ref(false)
+    const isLanguagePanelOpen = ref(false)
+
+    const availableLanguages = [
+      { code: 'tr', flag: '🇹🇷' },
+      { code: 'en', flag: '🇬🇧' },
+      { code: 'de', flag: '🇩🇪' },
+      { code: 'fr', flag: '🇫🇷' },
+      { code: 'es', flag: '🇪🇸' },
+      { code: 'nl', flag: '🇳🇱' },
+      { code: 'ja', flag: '🇯🇵' },
+      { code: 'zh', flag: '🇨🇳' },
+      { code: 'ru', flag: '🇷🇺' }
+    ]
+
+    const currentLanguage = computed(() => {
+      return availableLanguages.find(lang => lang.code === i18n.locale.value) || availableLanguages[0]
+    })
+
+    const toggleLanguageDropdown = () => {
+      isLanguageDropdownOpen.value = !isLanguageDropdownOpen.value
+      if (isLanguageDropdownOpen.value) {
+        isMenuOpen.value = false
+        isLanguagePanelOpen.value = false
       }
-    },
-    toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen
-      this.isLanguagePanelOpen = false
-      this.toggleBodyOverflow(this.isMenuOpen)
-      if (this.isMenuOpen) this.isLanguageDropdownOpen = false
-    },
-    toggleLanguagePanel() {
-      this.isLanguagePanelOpen = !this.isLanguagePanelOpen
-      this.isMenuOpen = false
-      this.toggleBodyOverflow(this.isLanguagePanelOpen)
-      if (this.isLanguagePanelOpen) this.isLanguageDropdownOpen = false
-    },
-    closeAll() {
-      this.isMenuOpen = false
-      this.isLanguagePanelOpen = false
-      this.isLanguageDropdownOpen = false
-      this.toggleBodyOverflow(false)
-    },
-    toggleBodyOverflow(open) {
+    }
+
+    const toggleMenu = () => {
+      isMenuOpen.value = !isMenuOpen.value
+      isLanguagePanelOpen.value = false
+      toggleBodyOverflow(isMenuOpen.value)
+      if (isMenuOpen.value) isLanguageDropdownOpen.value = false
+    }
+
+    const toggleLanguagePanel = () => {
+      isLanguagePanelOpen.value = !isLanguagePanelOpen.value
+      isMenuOpen.value = false
+      toggleBodyOverflow(isLanguagePanelOpen.value)
+      if (isLanguagePanelOpen.value) isLanguageDropdownOpen.value = false
+    }
+
+    const closeAll = () => {
+      isMenuOpen.value = false
+      isLanguagePanelOpen.value = false
+      isLanguageDropdownOpen.value = false
+      toggleBodyOverflow(false)
+    }
+
+    const toggleBodyOverflow = (open) => {
       document.body.classList.toggle('menu-open', open)
       if (open) {
         document.documentElement.style.position = 'fixed'
       } else {
         document.documentElement.style.position = ''
       }
-    },
-    changeLanguage(lang) {
-      // Dil dosyası kontrolü
-      if (!this.$i18n.availableLocales.includes(lang)) {
-        console.error('Dil dosyası bulunamadı:', lang)
-        return
-      }
+    }
+
+    const changeLanguage = (langCode) => {
       try {
-        // Dil değişikliğini uygula ve kayıt et
-        this.$i18n.locale = lang
-        localStorage.setItem('lang', lang)
-        document.documentElement.lang = lang
-
-        // Açık menüleri kapat
-        this.closeAll()
-
-        // Sayfayı yeniden yükle
-        window.location.reload()
+        i18n.locale.value = langCode
+        localStorage.setItem('language', langCode)
+        document.documentElement.lang = langCode
+        closeAll()
       } catch (error) {
         console.error('Dil değiştirme hatası:', error)
-        this.$i18n.locale = 'en'
+        i18n.locale.value = 'en'
       }
-    },
-    handleClickOutside(event) {
-      const headerElement = document.querySelector('.fehu-header')
-      if (!headerElement.contains(event.target)) {
-        this.closeAll()
-      }
-    },
-  },
-  mounted() {
-    const savedLang = localStorage.getItem('lang')
-    if (savedLang && this.$i18n.availableLocales.includes(savedLang)) {
-      this.$i18n.locale = savedLang
     }
-    document.addEventListener('click', this.handleClickOutside)
-    document.addEventListener('keyup', (e) => {
-      if (e.key === 'Escape') this.closeAll()
-    })
-  },
-  beforeUnmount() {
-    document.removeEventListener('click', this.handleClickOutside)
-  },
+
+    // Load saved language on mount
+    const savedLanguage = localStorage.getItem('language')
+    if (savedLanguage) {
+      i18n.locale.value = savedLanguage
+    }
+
+    return {
+      t,
+      isMenuOpen,
+      isLanguageDropdownOpen,
+      isLanguagePanelOpen,
+      availableLanguages,
+      currentLanguage,
+      toggleLanguageDropdown,
+      toggleMenu,
+      toggleLanguagePanel,
+      closeAll,
+      changeLanguage
+    }
+  }
 }
 </script>
 

@@ -7,62 +7,51 @@
     <div class="footer-content">
       <!-- Logo ve İletişim -->
       <div class="footer-section">
-        <h3 class="logo-text">FEHU.POPULATION</h3>
+        <h3 class="logo-text">{{ $t('header.logo') }}</h3>
       </div>
 
       <!-- İletişim -->
       <div class="footer-section contact-section">
-        <h4>İLETİŞİM</h4>
+        <h4>{{ $t('contact.title') }}</h4>
         <ul>
           <li>
-            <a href="mailto:ahmett.karadas@icloud.com" class="no-style-link">Email</a>
+            <a href="mailto:ahmett.karadas@icloud.com" class="no-style-link">{{ $t('contact.email') }}</a>
           </li>
           <li>
-            <a href="https://wa.me/905078774897" class="no-style-link">Telefon</a>
+            <a href="https://wa.me/905078774897" class="no-style-link">{{ $t('contact.phone') }}</a>
           </li>
         </ul>
       </div>
 
       <!-- Linkler -->
       <div class="footer-section">
-        <h4>LİNKLER</h4>
+        <h4>{{ $t('menu.links') }}</h4>
         <ul>
           <li>
-            <router-link to="/" class="no-style-link">Anasayfa</router-link>
+            <router-link to="/" class="no-style-link">{{ $t('menu.home') }}</router-link>
           </li>
           <li>
-            <router-link to="/world-data" class="no-style-link">Dünya Bazlı Veriler</router-link>
+            <router-link to="/world-data" class="no-style-link">{{ $t('menu.worldData') }}</router-link>
           </li>
           <li>
-            <router-link to="/country-data" class="no-style-link">Ülke Bazlı Veriler</router-link>
+            <router-link to="/country-data" class="no-style-link">{{ $t('menu.countryData') }}</router-link>
           </li>
           <li>
-            <router-link to="/open-source" class="no-style-link">Açık Kaynak</router-link>
+            <router-link to="/open-source" class="no-style-link">{{ $t('menu.openSource') }}</router-link>
           </li>
         </ul>
       </div>
 
       <!-- Hakkımızda ve Kaynaklar -->
       <div class="footer-section about-section">
-        <h4>HAKKIMIZDA VE KAYNAKLAR</h4>
-        <p>
-          Bu proje, Worldometer'in sağladığı güncel nüfus verilerini kullanarak dünya ve ülke bazlı
-          analizler sunar. Açık kaynak olarak geliştirilen projemize katkıda bulunmak için bizimle
-          iletişime geçebilirsiniz!
-        </p>
-        <!-- Sosyal İkonlar (Üst kısımda, istersen buraya da ekleyebilirsin) -->
+        <h4>{{ $t('about.title') }}</h4>
+        <p>{{ $t('about.description') }}</p>
       </div>
     </div>
 
     <!-- Alt Kısım (Metin ve İkonlar) -->
     <div class="footer-bottom">
-      <p class="footer-text">
-        2025 ©
-        <a href="https://www.linkedin.com/in/ahmetkaradas/" class="no-style-link" target="_blank"
-          >Ahmet Karadaş</a
-        >
-        | Tüm Hakları Saklıdır | Bu Site Ticari Amaç Gütmez
-      </p>
+      <p class="footer-text">{{ $t('footer.copyright') }}</p>
       <div class="footer-bottom-icons">
         <a href="https://www.linkedin.com/in/ahmetkaradas/" class="icon-bottom" target="_blank">
           <i class="fa-brands fa-linkedin-in"></i>

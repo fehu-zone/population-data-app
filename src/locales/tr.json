@@ -1,6 +1,6 @@
 {
   "home": {
-    "title": "GERÇEK ZAMANLI DÜNYA NÜFUS VERİLERİ",
+    "title": "GERÇEK ZAMANLI\nDÜNYA NÜFUS VERİLERİ",
     "subtitle": "İnteraktif Panelleri Keşfedin",
     "description": "Dünya nüfus verilerini dakikalar önce güncellenen en yeni verilerle keşfedin. Doğumlar, ölümler ve göç hareketlerini interaktif grafiklerle detaylı inceleyin."
   },
@@ -9,7 +9,8 @@
     "countryData": "Ülke Bazlı Veriler",
     "worldData": "Dünya Bazlı Veriler",
     "openSource": "Açık Kaynak",
-    "openSourceStatement": "Açık Kaynak Bildirimi"
+    "openSourceStatement": "Açık Kaynak Bildirimi",
+    "links": "LİNKLER"
   },
   "livePopulation": {
     "title": "ANLIK DÜNYA NÜFUS AKIŞI",
@@ -19,7 +20,7 @@
     "countryData": "Ülke Bazlı Nüfus Verileri"
   },
   "opensource": {
-    "title": "AÇIK KAYNAK BİLDİRİMİ",
+    "title": "ÖZGÜR VE AÇIK KAYNAK BİLDİRİMİ",
     "description": "Projemizde kullandığımız açık kaynak teknolojiler ile dünya nüfus verilerini gerçek zamanlı takip ediyoruz.",
     "technologies": [
       "Worldometer dünya nüfus verilerini, gerçek zamanlı ve güvenilir şekilde sürekli olarak sunmaktadır.",
@@ -32,7 +33,9 @@
     "viewSource": "Açık Kaynak Kodları İncelemek İçin Tıklayın"
   },
   "faq": {
-    "title": "Sıkça Sorulan Sorular",
+    "title": "PROJE HAKKINDA BİLMENİZ GEREKENLER",
+    "subtitle": "Nüfus verileri ve proje hakkında en merak edilen soruların yanıtlarını burada bulabilirsiniz.",
+    "imageAlt": "SSS Görseli",
     "questions": {
       "technologies": "Proje hangi teknolojileri kullanıyor?",
       "security": "Veri güvenliği nasıl sağlanıyor?",
@@ -50,7 +53,7 @@
   },
   "contact": {
     "title": "İLETİŞİM",
-    "email": "Email",
+    "email": "E-posta",
     "phone": "Telefon"
   },
   "about": {
@@ -59,5 +62,15 @@
   },
   "footer": {
     "copyright": "2025 © Ahmet Karadaş | Tüm Hakları Saklıdır | Bu Site Ticari Amaç Gütmez"
+  },
+  "header": {
+    "logo": "FEHU.POPULATION",
+    "home": "Anasayfa",
+    "countryData": "Ülke Bazlı Veriler",
+    "worldData": "Dünya Bazlı Veriler",
+    "openSource": "Açık Kaynak",
+    "selectLanguage": "Dil Seçin",
+    "toggleMenu": "Menüyü Aç/Kapat",
+    "close": "Kapat"
   }
 }
