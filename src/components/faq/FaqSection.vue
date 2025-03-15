@@ -3,14 +3,14 @@
     <div class="faq-container">
       <!-- Üst Kısım: Başlık & Açıklama -->
       <div class="faq-header-row">
-        <h1 class="faq-title">{{ title }}</h1>
-        <p class="faq-subtitle">{{ subtitle }}</p>
+        <h1 class="faq-title">{{ $t('faq.title') }}</h1>
+        <p class="faq-subtitle">{{ $t('faq.subtitle') }}</p>
       </div>
       <!-- Alt Kısım: FAQ Listesi & Görsel -->
       <div class="faq-content-row">
-        <FaqList :faqs="faqs" />
+        <FaqList :faqs="localizedFaqs" />
         <div class="faq-right">
-          <img :src="faqImage" alt="SSS Görseli" class="faq-image" />
+          <img :src="faqImage" :alt="$t('faq.imageAlt')" class="faq-image" />
         </div>
       </div>
     </div>
@@ -26,15 +26,6 @@ export default {
     FaqList,
   },
   props: {
-    title: {
-      type: String,
-      default: 'PROJE HAKKINDA BİLMENİZ GEREKENLER',
-    },
-    subtitle: {
-      type: String,
-      default:
-        'Nüfus verileri ve proje hakkında en merak edilen soruların yanıtlarını burada bulabilirsiniz.',
-    },
     faqs: {
       type: Array,
       required: true,
@@ -44,6 +35,15 @@ export default {
       default: '@/img/Faq-img.png',
     },
   },
+  computed: {
+    localizedFaqs() {
+      return this.faqs.map(faq => ({
+        question: this.$t(`faq.questions.${faq.key}`),
+        answer: this.$t(`faq.answers.${faq.key}`),
+        key: faq.key
+      }));
+    }
+  }
 }
 </script>
 

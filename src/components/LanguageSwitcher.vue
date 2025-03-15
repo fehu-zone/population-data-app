@@ -13,7 +13,7 @@ export default {
   name: 'LanguageSwitcher',
   data() {
     return {
-      selectedLanguage: this.$i18n.locale,
+      selectedLanguage: this.$i18n.global.locale.value,
       availableLanguages: [
         { code: 'en', name: 'English' },
         { code: 'tr', name: 'Türkçe' },
@@ -28,15 +28,17 @@ export default {
   },
   methods: {
     changeLanguage() {
-      this.$i18n.locale = this.selectedLanguage
-      localStorage.setItem('lang', this.selectedLanguage)
+      console.log('Changing language to:', this.selectedLanguage);
+      this.$i18n.global.locale.value = this.selectedLanguage;
+      localStorage.setItem('lang', this.selectedLanguage);
 
       // Sayfayı yenile (isteğe bağlı)
       if (this.$route.path !== '/') {
-        this.$router.push('/')
+        console.log('Redirecting to home and reloading page.');
+        this.$router.push('/');
         setTimeout(() => {
-          window.location.reload()
-        }, 50)
+          window.location.reload();
+        }, 50);
       }
     },
   },
@@ -45,7 +47,7 @@ export default {
     const savedLang = localStorage.getItem('lang')
     if (savedLang && this.availableLanguages.some((lang) => lang.code === savedLang)) {
       this.selectedLanguage = savedLang
-      this.$i18n.locale = savedLang
+      this.$i18n.global.locale.value = savedLang
     }
   },
 }

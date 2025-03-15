@@ -4,14 +4,13 @@
     <section class="hero" v-fade>
       <div class="hero-left">
         <h1 class="hero-title" v-fade>
-          GERÇEK ZAMANLI <br />
-          DÜNYA NÜFUS VERİLERİ
+          {{ $t('home.title') }}
         </h1>
         <div class="hero-map-img-container" v-fade>
           <img class="hero-map" src="/img/deneme.svg" alt="Dünya Haritası" loading="lazy" />
         </div>
         <!-- Görselin hemen altında yer alacak başlık -->
-        <h2 class="interactive-panels-title" v-fade>İnteraktif Panelleri Keşfedin</h2>
+        <h2 class="interactive-panels-title" v-fade>{{ $t('home.subtitle') }}</h2>
       </div>
       <div class="hero-right">
         <div class="social-icons" v-fade>
@@ -27,12 +26,11 @@
         </div>
         <!-- İkonlar ile butonlar arasında yer alan metin -->
         <p class="hero-text" v-fade>
-          Dünya nüfus verilerini dakikalar önce güncellenen en yeni verilerle keşfedin. Doğumlar,
-          ölümler ve göç hareketlerini interaktif grafiklerle detaylı inceleyin.
+          {{ $t('home.description') }}
         </p>
         <div class="button-group" v-fade>
-          <button class="primary-btn" @click="goToCountryData">Ülke Bazlı Nüfus Verileri</button>
-          <button class="secondary-btn" @click="goToWorldData">Dünya Bazlı Nüfus Verileri</button>
+          <button class="primary-btn" @click="goToCountryData">{{ $t('livePopulation.countryData') }}</button>
+          <button class="secondary-btn" @click="goToWorldData">{{ $t('menu.worldData') }}</button>
         </div>
       </div>
     </section>
@@ -40,10 +38,9 @@
     <!-- ================== ANLIK DÜNYA NÜFUS AKIŞI SECTION ================== -->
     <section class="equal-boxes" v-fade>
       <div class="section-header" v-fade>
-        <h1>ANLIK DÜNYA NÜFUS AKIŞI</h1>
+        <h1>{{ $t('livePopulation.title') }}</h1>
         <p class="section-description">
-          Dakikalar önce güncellenen en güncel verilerimizle, dünya genelindeki nüfus dinamiklerini
-          anlık olarak takip edin.
+          {{ $t('livePopulation.description') }}
         </p>
       </div>
       <div class="boxes-grid">
@@ -52,27 +49,27 @@
           <div class="box-icon-box">
             <i class="fa-solid fa-globe"></i>
           </div>
-          <h3>Küresel Veri</h3>
-          <p>Dünya nüfus değişimlerini anlık olarak takip edin ve analiz edin.</p>
-          <button class="box-button" @click="goToWorldData">Dünya Bazlı Nüfus Verileri</button>
+          <h3>{{ $t('livePopulation.globalData') }}</h3>
+          <p>{{ $t('home.description') }}</p>
+          <button class="box-button" @click="goToWorldData">{{ $t('menu.worldData') }}</button>
         </div>
         <!-- Kutucuk 2 -->
         <div class="box" v-fade>
           <div class="box-icon-box">
             <i class="fa-solid fa-chart-line"></i>
           </div>
-          <h3>Ülke Analizi</h3>
-          <p>Her ülkenin nüfus değişimlerini detaylı grafiklerle inceleyin.</p>
-          <button class="box-button" @click="goToCountryData">Ülke Bazlı Nüfus Verileri</button>
+          <h3>{{ $t('livePopulation.countryAnalysis') }}</h3>
+          <p>{{ $t('about.description') }}</p>
+          <button class="box-button" @click="goToCountryData">{{ $t('livePopulation.countryData') }}</button>
         </div>
         <!-- Kutucuk 3 -->
         <div class="box" v-fade>
           <div class="box-icon-box">
             <i class="fa-solid fa-code"></i>
           </div>
-          <h3>Açık Kaynak Kod</h3>
-          <p>Açık kaynak kodlarını inceleyin ve projeye katkıda bulunun.</p>
-          <button class="box-button" @click="goToOpenSource">Açık Kaynak Kod</button>
+          <h3>{{ $t('menu.openSource') }}</h3>
+          <p>{{ $t('opensource.description') }}</p>
+          <button class="box-button" @click="goToOpenSource">{{ $t('menu.openSource') }}</button>
         </div>
       </div>
     </section>
@@ -80,10 +77,9 @@
     <!-- ================== AÇIK KAYNAK BİLDİRİMİ SECTION ================== -->
     <section class="open-source-section" id="open-source-id" v-fade>
       <div class="open-source-header" v-fade>
-        <h1>ÖZGÜR VE AÇIK KAYNAK BİLDİRİMİ</h1>
+        <h1>{{ $t('opensource.title') }}</h1>
         <p class="open-source-description">
-          Projemizde kullandığımız açık kaynak teknolojiler ile dünya nüfus verilerini gerçek
-          zamanlı takip ediyoruz.
+          {{ $t('opensource.description') }}
         </p>
       </div>
       <div class="open-source-grid">
@@ -93,10 +89,7 @@
             <img src="/img/Worldometer.svg" alt="Worldometer" width="64" height="64" />
           </div>
           <h3>Worldometer</h3>
-          <p>
-            Worldometer dünya nüfus verilerini, gerçek zamanlı ve güvenilir şekilde sürekli olarak
-            sunmaktadır.
-          </p>
+          <p>{{ $t('opensource.technologies[0]') }}</p>
         </div>
         <!-- Kutucuk 2: Elasticsearch -->
         <div class="open-source-box" v-fade>
@@ -104,10 +97,7 @@
             <img src="/img/Elasticsearch.svg" alt="Elasticsearch" width="64" height="64" />
           </div>
           <h3>Elasticsearch</h3>
-          <p>
-            Veri sorgulama ve analiz süreçlerinde Elasticsearch olağanüstü yüksek performans ile
-            süreklilik sağlamaktadır.
-          </p>
+          <p>{{ $t('opensource.technologies[1]') }}</p>
         </div>
         <!-- Kutucuk 3: Kibana -->
         <div class="open-source-box" v-fade>
@@ -115,10 +105,7 @@
             <img src="/img/Kibana.svg" alt="Kibana" width="64" height="64" />
           </div>
           <h3>Kibana</h3>
-          <p>
-            Kibana, nüfus verilerinin dinamik görselleştirilmesinde ve interaktif grafiklerin
-            oluşturulmasında titizlikle kullanılmıştır.
-          </p>
+          <p>{{ $t('opensource.technologies[2]') }}</p>
         </div>
         <!-- Kutucuk 4: Docker -->
         <div class="open-source-box" v-fade>
@@ -126,10 +113,7 @@
             <img src="/img/Dockerr.svg" alt="Docker" width="64" height="64" />
           </div>
           <h3>Docker</h3>
-          <p>
-            Projenin dağıtım ve izolasyon süreci, Docker ile başarıyla sağlanarak ortam bağımsızlığı
-            garantilenmiştir.
-          </p>
+          <p>{{ $t('opensource.technologies[3]') }}</p>
         </div>
         <!-- Kutucuk 5: Vue -->
         <div class="open-source-box" v-fade>
@@ -137,7 +121,7 @@
             <img src="/img/Vue.svg" alt="Vue" width="64" height="64" />
           </div>
           <h3>Vue</h3>
-          <p>Bu web sitesi, modern JavaScript çerçevesi Vue ile geliştirilmiştir.</p>
+          <p>{{ $t('opensource.technologies[4]') }}</p>
         </div>
         <!-- Kutucuk 6: Python -->
         <div class="open-source-box" v-fade>
@@ -145,10 +129,7 @@
             <img src="/img/Python.svg" alt="Python" width="64" height="64" />
           </div>
           <h3>Python</h3>
-          <p>
-            Veri işleme ve analiz süreçleri, Python'un güçlü kütüphane desteğiyle etkin şekilde
-            desteklenmektedir.
-          </p>
+          <p>{{ $t('opensource.technologies[5]') }}</p>
         </div>
       </div>
       <div class="open-source-button-wrapper" v-fade>
@@ -157,15 +138,13 @@
           target="_blank"
           class="open-source-button no-style-link"
         >
-          Açık Kaynak Kodları İncelemek İçin Tıklayın
+          {{ $t('opensource.viewSource') }}
         </a>
       </div>
     </section>
 
     <!-- ================== FAQ SECTION ================== -->
     <FaqSection
-      title="PROJE HAKKINDA BİLMENİZ GEREKENLER"
-      subtitle="Nüfus verileri ve proje hakkında en merak edilen soruların yanıtlarını burada bulabilirsiniz."
       :faqs="faqs"
       faqImage="/img/Faq-img.png"
       v-fade

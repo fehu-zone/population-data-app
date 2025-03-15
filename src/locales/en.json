@@ -1,25 +1,26 @@
 {
   "home": {
-    "title": "REAL-TIME WORLD POPULATION DATA",
+    "title": "REAL-TIME\nWORLD POPULATION DATA",
     "subtitle": "Explore Interactive Dashboards",
     "description": "Discover global population data with updates from minutes ago. Analyze births, deaths, and migration trends through interactive charts."
   },
   "menu": {
     "home": "Home",
-    "countryData": "Country-Specific Data",
-    "worldData": "Global Data",
+    "countryData": "Country Data",
+    "worldData": "World Data",
     "openSource": "Open Source",
-    "openSourceStatement": "Open Source Statement"
+    "openSourceStatement": "Open Source Statement",
+    "links": "LINKS"
   },
   "livePopulation": {
     "title": "LIVE WORLD POPULATION FLOW",
     "description": "Track global population dynamics in real-time with our data updated minutes ago.",
     "globalData": "Global Data",
     "countryAnalysis": "Country Analysis",
-    "countryData": "Country-Specific Population Data"
+    "countryData": "Country Population Data"
   },
   "opensource": {
-    "title": "OPEN SOURCE DECLARATION",
+    "title": "FREE AND OPEN SOURCE DECLARATION",
     "description": "We track world population data in real-time using open-source technologies.",
     "technologies": [
       "Worldometer provides real-time and reliable world population data continuously.",
@@ -32,7 +33,9 @@
     "viewSource": "Click to View Source Code"
   },
   "faq": {
-    "title": "Frequently Asked Questions",
+    "title": "WHAT YOU NEED TO KNOW ABOUT THE PROJECT",
+    "subtitle": "Find answers to the most frequently asked questions about population data and the project here.",
+    "imageAlt": "FAQ Image",
     "questions": {
       "technologies": "What technologies does the project use?",
       "security": "How is data security ensured?",
@@ -55,17 +58,20 @@
   },
   "about": {
     "title": "ABOUT & RESOURCES",
-    "description": "This project uses Worldometer's population data for global/country analysis. Contact us to contribute!"
+    "description": "This project uses Worldometer's population data for global/country analysis. Contact us to contribute to our open-source project!"
   },
   "footer": {
     "copyright": "© 2025 Ahmet Karadaş | All Rights Reserved | Non-Commercial Project"
   },
   "header": {
-    "title": "FEHU.POPULATION",
+    "logo": "FEHU.POPULATION",
     "home": "Home",
     "countryData": "Country Data",
     "worldData": "World Data",
-    "openSource": "Open Source"
+    "openSource": "Open Source",
+    "selectLanguage": "Select Language",
+    "toggleMenu": "Toggle Menu",
+    "close": "Close"
   },
   "languages": {
     "tr": "Turkish",
