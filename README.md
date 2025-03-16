@@ -39,9 +39,9 @@ Bu projede **Vue.js (Pinia ile birlikte), Elasticsearch, Kibana ve Python** tekn
 ### 🔧 Özelleştirme ve Genişletilebilirlik  
 
 Projenin ihtiyaçlarına bağlı olarak:  
-- **Elasticsearch yerine farklı bir arama ve analiz teknolojisi** entegre edebilirim.  
-- Veri akışını optimize ederek sistem performansını artırabilirim.  
-- Diğer bileşenleri özelleştirerek projenin gereksinimlerine uygun hale getirebilirim.  
+- **Elasticsearch yerine farklı bir arama ve analiz teknolojisi** entegre edebilirsiniz.  
+- Veri akışını optimize ederek sistem performansını artırabilirsiniz.  
+- Diğer bileşenleri özelleştirerek projenin gereksinimlerine uygun hale getirebilirsiniz.  
 
 Esneklik ve sürdürülebilirlik odaklı bu mimari, gelecekteki genişlemelere ve ölçeklenebilir çözümlere açık olacak şekilde tasarlandı.  
 
