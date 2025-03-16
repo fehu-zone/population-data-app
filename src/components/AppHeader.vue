@@ -11,7 +11,9 @@
         <!-- Masaüstü Menü -->
         <div class="fehu-desktop-links desktop-only">
           <router-link to="/" exact class="fehu-link">{{ t('menu.home') }}</router-link>
-          <router-link to="/country-data" class="fehu-link">{{ t('menu.countryData') }}</router-link>
+          <router-link to="/country-data" class="fehu-link">{{
+            t('menu.countryData')
+          }}</router-link>
           <router-link to="/world-data" class="fehu-link">{{ t('menu.worldData') }}</router-link>
           <router-link to="/open-source" class="fehu-link">{{ t('menu.openSource') }}</router-link>
         </div>
@@ -19,7 +21,9 @@
         <!-- Masaüstü Dil Seçici -->
         <div class="fehu-language-dropdown desktop-only">
           <button aria-label="Select Language" @click="toggleLanguageDropdown">
-            <span class="globe-icon">{{ currentLanguage.flag }}</span>
+            <!-- FontAwesome Globe ikonu kullanımı -->
+            <i class="fa fa-globe" style="color: white"></i>
+            <!-- Beyaz globe ikonu -->
             <span class="arrow" :class="{ open: isLanguageDropdownOpen }"></span>
           </button>
           <ul v-if="isLanguageDropdownOpen" class="fehu-language-menu">
@@ -55,22 +59,33 @@
         </button>
       </div>
 
-      <!-- Overlay'lar -->
-      <div class="fehu-nav-overlay" v-if="isMenuOpen" @click="closeAll"></div>
-      <div class="fehu-lang-overlay" v-if="isLanguagePanelOpen" @click="closeAll"></div>
-
-      <!-- Mobil Menü -->
       <div class="fehu-nav-links mobile-only" :class="{ active: isMenuOpen }">
-        <button class="fehu-close-btn" @click="closeAll">{{ t('header.close') }}</button>
-        <router-link to="/" exact class="fehu-link" @click="closeAll">{{ t('menu.home') }}</router-link>
-        <router-link to="/country-data" class="fehu-link" @click="closeAll">{{ t('menu.countryData') }}</router-link>
-        <router-link to="/world-data" class="fehu-link" @click="closeAll">{{ t('menu.worldData') }}</router-link>
-        <router-link to="/open-source" class="fehu-link" @click="closeAll">{{ t('menu.openSource') }}</router-link>
+        <!-- FontAwesome X ikonu ile close butonu -->
+        <button class="fehu-close-btn" @click="closeAll">
+          <i class="fa fa-times"></i>
+          <!-- FontAwesome X ikonu -->
+        </button>
+        <router-link to="/" exact class="fehu-link" @click="closeAll">{{
+          t('menu.home')
+        }}</router-link>
+        <router-link to="/country-data" class="fehu-link" @click="closeAll">{{
+          t('menu.countryData')
+        }}</router-link>
+        <router-link to="/world-data" class="fehu-link" @click="closeAll">{{
+          t('menu.worldData')
+        }}</router-link>
+        <router-link to="/open-source" class="fehu-link" @click="closeAll">{{
+          t('menu.openSource')
+        }}</router-link>
       </div>
 
       <!-- Mobil Dil Paneli -->
       <div class="fehu-language-panel mobile-only" :class="{ active: isLanguagePanelOpen }">
-        <button class="fehu-close-btn" @click="closeAll">{{ t('header.close') }}</button>
+        <!-- FontAwesome X ikonu ile close butonu -->
+        <button class="fehu-close-btn" @click="closeAll">
+          <i class="fa fa-times"></i>
+          <!-- FontAwesome X ikonu -->
+        </button>
         <div
           v-for="lang in availableLanguages"
           :key="lang.code"
@@ -107,11 +122,13 @@ export default {
       { code: 'nl', flag: '🇳🇱' },
       { code: 'ja', flag: '🇯🇵' },
       { code: 'zh', flag: '🇨🇳' },
-      { code: 'ru', flag: '🇷🇺' }
+      { code: 'ru', flag: '🇷🇺' },
     ]
 
     const currentLanguage = computed(() => {
-      return availableLanguages.find(lang => lang.code === i18n.locale.value) || availableLanguages[0]
+      return (
+        availableLanguages.find((lang) => lang.code === i18n.locale.value) || availableLanguages[0]
+      )
     })
 
     const toggleLanguageDropdown = () => {
@@ -181,9 +198,9 @@ export default {
       toggleMenu,
       toggleLanguagePanel,
       closeAll,
-      changeLanguage
+      changeLanguage,
     }
-  }
+  },
 }
 </script>
 
