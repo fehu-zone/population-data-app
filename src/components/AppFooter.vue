@@ -15,7 +15,9 @@
         <h4>{{ $t('contact.title') }}</h4>
         <ul>
           <li>
-            <a href="mailto:ahmett.karadas@icloud.com" class="no-style-link">{{ $t('contact.email') }}</a>
+            <a href="mailto:ahmett.karadas@icloud.com" class="no-style-link">{{
+              $t('contact.email')
+            }}</a>
           </li>
           <li>
             <a href="https://wa.me/905078774897" class="no-style-link">{{ $t('contact.phone') }}</a>
@@ -31,13 +33,19 @@
             <router-link to="/" class="no-style-link">{{ $t('menu.home') }}</router-link>
           </li>
           <li>
-            <router-link to="/world-data" class="no-style-link">{{ $t('menu.worldData') }}</router-link>
+            <router-link to="/world-data" class="no-style-link">{{
+              $t('menu.worldData')
+            }}</router-link>
           </li>
           <li>
-            <router-link to="/country-data" class="no-style-link">{{ $t('menu.countryData') }}</router-link>
+            <router-link to="/country-data" class="no-style-link">{{
+              $t('menu.countryData')
+            }}</router-link>
           </li>
           <li>
-            <router-link to="/open-source" class="no-style-link">{{ $t('menu.openSource') }}</router-link>
+            <router-link to="/open-source" class="no-style-link">{{
+              $t('menu.openSource')
+            }}</router-link>
           </li>
         </ul>
       </div>
