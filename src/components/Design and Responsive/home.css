@@ -274,253 +274,152 @@ body {
 /* ================== RESPONSİVE AYARLARI  ================== */
 
 /* ========= Mobil Responsive Ayarlamaları (max-width: 768px) ========= */
-/* ---------- Extra Small Devices (max-width: 360px) ---------- */
+/* ---------- 0px - 360px (Küçük Mobil) ---------- */
 @media only screen and (max-width: 360px) {
   .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: 0 auto;
+    padding: 0 1rem;
+    margin-top: 8vh !important;
   }
+  .hero-title {
+    font-size: 3.2rem;
+    line-height: 1.1;
+    margin: 2rem 0 1rem 0;
+  }
+  .hero-text {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 auto 1.5rem;
+    padding: 0 0.5rem;
+    max-width: 90%;
+  }
+  .button-group {
+    max-width: 240px !important;
+    gap: 0.6rem !important;
+  }
+  .button-group button {
+    padding: 10px 15px !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+/* ---------- 361px - 414px (Orta Mobil) ---------- */
+@media only screen and (min-width: 361px) and (max-width: 414px) {
   .hero-title {
     font-size: 3.8rem;
-    line-height: 1.1;
-    font-weight: 700;
-    margin-top: 8vh;
-  }
-  .hero-map-img-container,
-  .hero-map,
-  .social-icons {
-    display: none;
+    margin-top: 10vh !important;
   }
   .hero-text {
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.3;
-    margin-bottom: 1rem;
-    margin-right: 2rem;
-  }
-  .button-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem 1rem;
-    position: relative;
-    margin-right: 2rem;
-  }
-  .button-group button {
-    font-size: 1rem;
-    margin: 0 0.5rem;
-  }
-  .equal-boxes {
-    padding: 2rem 1rem;
-    margin-top: 4rem;
-  }
-  .equal-boxes .section-header h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  .equal-boxes .section-header .section-description {
-    font-size: 1rem;
-    max-width: 100%;
-    margin-bottom: 2rem;
-  }
-  .boxes-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-  .box {
-    padding: 1.2rem;
-  }
-  .box h3 {
-    font-size: 1rem;
-  }
-  .box p,
-  .box-button {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
+    padding: 0 1rem;
+    margin-left: 1.2rem;
   }
 }
 
-/* ---------- Small Devices (361px - 480px) ---------- */
-/* ==================================================
-
-
-/* ---------- Küçük Mobil Cihazlar (361px - 480px) ---------- */
-@media only screen and (max-width: 767px) {
-  /* Mobilde gizlenecek öğeler */
-  .hero-map-img-container,
-  .hero-map,
-  .social-icons {
-    display: none !important;
+/* ---------- 415px - 480px (Büyük Mobil) ---------- */
+@media only screen and (min-width: 415px) and (max-width: 480px) {
+  .hero-title {
+    font-size: 4.2rem;
   }
+  .hero-text {
+    font-size: 1.15rem;
+    max-width: 85%;
+  }
+}
 
-  /* GENEL MOBİL STİLLERİ */
+/* ---------- 481px - 767px (Tablet/Yatay Mobil) ---------- */
+@media only screen and (min-width: 481px) and (max-width: 767px) {
   .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 1rem;
-    min-height: 80vh;
+    padding-top: 15vh !important;
   }
-
   .hero-title {
-    line-height: 1.1;
-    font-weight: 700;
-    margin: 2rem 0;
-    word-break: keep-all;
+    font-size: 4.8rem;
   }
-
   .hero-text {
-    margin: 1.5rem 0;
-    max-width: 100%;
-    padding: 0 1rem;
+    font-size: 1.25rem;
+    max-width: 75%;
   }
-
   .button-group {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    width: 100%;
-    margin: 2rem auto;
-    flex-wrap: wrap;
-  }
-
-  .button-group button {
-    flex: 1 1 45%;
-    min-width: 140px;
-    padding: 12px 20px;
-    white-space: nowrap;
-    font-size: calc(14px + 0.3vw);
-  }
-
-  /* ---------- 480px - 767px (Yatık Mobil/Tablet) ---------- */
-  @media only screen and (min-width: 480px) {
-    .hero-title {
-      font-size: 4.5rem;
-    }
-    .hero-text {
-      font-size: 1.2rem;
-    }
-    .button-group {
-      max-width: 500px;
-    }
-  }
-
-  /* ---------- 361px - 479px (Dikey Mobil) ---------- */
-  @media only screen and (max-width: 479px) {
-    .hero-title {
-      font-size: 3.8rem;
-    }
-    .hero-text {
-      font-size: 1.1rem;
-    }
-    .button-group button {
-      flex-basis: 100%;
-    }
-  }
-
-  /* ---------- 0px - 360px (Küçük Mobil) ---------- */
-  @media only screen and (max-width: 360px) {
-    .hero-title {
-      font-size: 3.2rem;
-      margin-top: 5vh;
-    }
-    .hero-text {
-      font-size: 1rem;
-    }
-    .button-group {
-      gap: 0.8rem;
-    }
-  }
-
-  /* ---------- LANDSCAPE MODE ---------- */
-  @media only screen and (max-width: 767px) and (orientation: landscape) {
-    .hero {
-      min-height: 90vh;
-    }
-    .hero-title {
-      margin-top: 5vh;
-    }
-    .button-group {
-      margin: 1.5rem auto;
-    }
+    margin-top: 2.5rem !important;
   }
 }
 
-/* EKSTRA KÜÇÜK CİHAZLAR (0px - 320px) */
-
-@media only screen and (max-width: 320px) {
-  .hero-title {
-    font-size: 2.8rem !important;
-    line-height: 1.2 !important;
+/* ---------- LANDSCAPE MODE ---------- */
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .hero {
+    padding-top: 5vh !important;
+    min-height: 100vh;
   }
-  .button-group button {
-    font-size: 0.9rem !important;
-    padding: 10px 15px !important;
+  .hero-title {
+    margin: 1rem 0 !important;
+  }
+
+  .button-group {
+    max-width: 220px !important;
+    margin: 1.5rem auto !important;
   }
 }
 
 /* ================== RESPONSİVE AYARLARI BÜYÜK CİHAZLAR ================== */
 
 /* ================== BASE TASARIM (Büyük Masaüstü: 1600px – 1920px) ================== */
-.hero {
-  display: grid;
-  grid-template-columns: 58% 40%;
-  color: #fff;
-  background: #000;
-  height: 100vh;
-  padding: 2.8rem;
-  margin-left: 2rem;
-}
+@media only screen and (min-width: 1600px) and (max-width: 1920px) {
+  .hero {
+    display: grid;
+    grid-template-columns: 58% 40%;
+    color: #fff;
+    background: #000;
+    height: 100vh;
+    padding: 2.8rem;
+    margin-left: 2rem;
+  }
 
-.hero-left,
-.hero-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+  .hero-left,
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-.hero-left {
-  align-items: flex-start;
-  margin-bottom: 3rem;
-}
+  .hero-left {
+    align-items: flex-start;
+    margin-bottom: 3rem;
+  }
 
-.hero-right {
-  align-items: flex-end;
-  margin-left: 6rem;
-  margin-bottom: 4rem;
-}
+  .hero-right {
+    align-items: flex-end;
+    margin-left: 6rem;
+    margin-bottom: 4rem;
+  }
 
-.hero-title {
-  font-size: 4rem;
-  font-weight: bold;
-  text-align: left;
-  letter-spacing: 0.2px;
-  line-height: 1.3;
-}
+  .hero-title {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: left;
+    letter-spacing: 0.2px;
+    line-height: 1.3;
+  }
 
-.hero-map-img-container {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  margin-right: 1.5rem;
-}
+  .hero-map-img-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-right: 1.5rem;
+  }
 
-.hero-map {
-  width: 40rem;
-  height: auto;
-  object-fit: contain;
-}
+  .hero-map {
+    width: 40rem;
+    height: auto;
+    object-fit: contain;
+  }
 
-.button-group {
-  display: flex;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
+  .button-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
 }
 
 /* ================== RESPONSIVE AYARLAR ================== */
