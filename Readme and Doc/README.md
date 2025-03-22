@@ -37,6 +37,7 @@ This project provides a robust and flexible infrastructure using modern web tech
 ## Proje Açıklaması / Project Description 📌
 
 ### 🚀 Proje Teknolojileri ve Altyapı / Project Technologies & Infrastructure
+
 **Türkçe**  
 Bu projede, **Vue.js (Pinia ile birlikte)**, **Elasticsearch**, **Kibana** ve **Python** teknolojilerini bir araya getirerek güçlü bir altyapı oluşturdum. **Docker** kullanarak uygulama ortamını standartlaştırdım, böylece kurulum ve yönetimi kolaylaştırdım. Sunucu tarafında **AWS** altyapısını kullanarak güvenilir ve yüksek performanslı bir sistem sundum.
 
@@ -44,42 +45,49 @@ Bu projede, **Vue.js (Pinia ile birlikte)**, **Elasticsearch**, **Kibana** ve **
 In this project, I combined **Vue.js (with Pinia)**, **Elasticsearch**, **Kibana**, and **Python** to create a powerful infrastructure. By using **Docker**, I standardized the application environment, simplifying setup and management. The server-side leverages **AWS** infrastructure for reliability and high performance.
 
 ### 🔧 Özelleştirme ve Genişletilebilirlik / Customization & Extensibility
+
 **Türkçe**  
 Projenin ihtiyaçlarına bağlı olarak:
+
 - **Elasticsearch yerine farklı bir arama ve analiz teknolojisi** entegre edebilirsiniz.
 - Veri akışını optimize ederek sistem performansını artırabilirsiniz.
 - Diğer bileşenleri özelleştirerek projenin gereksinimlerine uygun hale getirebilirsiniz.
 
 **English**  
 Depending on project needs:
+
 - You can integrate **alternative search/analytics tools instead of Elasticsearch**.
 - Optimize data flow to enhance system performance.
 - Customize other components to meet specific requirements.
 
 **Türkçe**  
-Bu proje, [bu Python kodunu](https://github.com/fehu-zone/population_scraper) kullanarak **Worldometer** sitesinden veri çeker, **Elasticsearch**'e gönderir ve **Kibana**'da interaktif grafikler elde edilir. **Vue** tabanlı web arayüzünde sunulur. İki ana bileşenden oluşur:  
-1. **Veri İşleme:** [Bu repoda](https://github.com/fehu-zone/population_scraper) yürütülür.  
-2. **Web Arayüzü:** Bu repoda yönetilir.  
+Bu proje, [bu Python kodunu](https://github.com/fehu-zone/population_scraper) kullanarak **Worldometer** sitesinden veri çeker, **Elasticsearch**'e gönderir ve **Kibana**'da interaktif grafikler elde edilir. **Vue** tabanlı web arayüzünde sunulur. İki ana bileşenden oluşur:
+
+1. **Veri İşleme:** [Bu repoda](https://github.com/fehu-zone/population_scraper) yürütülür.
+2. **Web Arayüzü:** Bu repoda yönetilir.
 
 **English**  
-This project uses [this Python script](https://github.com/fehu-zone/population_scraper) to scrape data from **Worldometer**, send it to **Elasticsearch**, and visualize interactive dashboards in **Kibana**. The **Vue**-based web interface displays the results. It consists of two core components:  
-1. **Data Processing:** Handled in [this repository](https://github.com/fehu-zone/population_scraper).  
-2. **Web Interface:** Managed in this repository.  
+This project uses [this Python script](https://github.com/fehu-zone/population_scraper) to scrape data from **Worldometer**, send it to **Elasticsearch**, and visualize interactive dashboards in **Kibana**. The **Vue**-based web interface displays the results. It consists of two core components:
+
+1. **Data Processing:** Handled in [this repository](https://github.com/fehu-zone/population_scraper).
+2. **Web Interface:** Managed in this repository.
 
 **Türkçe**  
 Özel olarak **Worldometer**'i onore etmek istiyorum! ❤️  
-📩 **İletişim:** ahmett.karadas@icloud.com  
+📩 **İletişim:** ahmett.karadas@icloud.com
 
 **English**  
 A special shoutout to **Worldometer** for their incredible service! ❤️  
-📩 **Contact:** ahmett.karadas@icloud.com  
+📩 **Contact:** ahmett.karadas@icloud.com
 
 ---
 
 ## Kurulum Talimatları / Installation Instructions 🔧
 
-**Türkçe**  
-### 📌 Geliştirme Ortamını Kurma  
+**Türkçe**
+
+### 📌 Geliştirme Ortamını Kurma
+
 ```bash
 # Gerekli paketlerin kurulumu:
 npm install
@@ -102,3 +110,4 @@ npm run test:e2e
 
 # Kod kalitesini kontrol etmek için (ESLint):
 npm run lint
+```
