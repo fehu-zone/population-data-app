@@ -43,6 +43,7 @@ body {
   height: 100vh;
   padding: 2.8rem;
   margin-left: 2rem;
+  position: relative;
 }
 
 .hero-left,
@@ -273,92 +274,155 @@ body {
 
 /* ================== RESPONSİVE AYARLARI  ================== */
 
-/* ========= Mobil Responsive Ayarlamaları (max-width: 768px) ========= */
-/* ---------- 0px - 360px (Küçük Mobil) ---------- */
-@media only screen and (max-width: 360px) {
+/* ========= Mobil Responsive Ayarlamaları ========= */
+@media only screen and (max-width: 768px) {
   .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 1rem;
-    margin-top: 8vh !important;
+    padding: 1rem;
+    margin: 0;
+    min-height: 100vh;
+    height: auto;
+    gap: 2rem;
   }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+    align-items: center;
+    margin: 0;
+    text-align: center;
+  }
+
   .hero-title {
-    font-size: 3.2rem;
-    line-height: 1.1;
-    margin: 2rem 0 1rem 0;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin: 1rem 0;
+    text-align: center;
   }
+
   .hero-text {
     font-size: 1rem;
     text-align: center;
-    margin: 0 auto 1.5rem;
-    padding: 0 0.5rem;
+    margin: 1rem auto;
+    padding: 0 1rem;
     max-width: 90%;
   }
+
+  .hero-map-img-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+
+  .hero-map {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .social-icons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
   .button-group {
-    max-width: 240px !important;
-    gap: 0.6rem !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    width: 100%;
+    max-width: 300px;
   }
-  .button-group button {
-    padding: 10px 15px !important;
-    font-size: 0.95rem !important;
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    max-width: 250px;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .interactive-panels-title {
+    font-size: 1.8rem;
+    margin: 2rem 0;
+    text-align: center;
   }
 }
 
-/* ---------- 361px - 414px (Orta Mobil) ---------- */
-@media only screen and (min-width: 361px) and (max-width: 414px) {
-  .hero-title {
-    font-size: 3.8rem;
-    margin-top: 10vh !important;
-  }
-  .hero-text {
-    font-size: 1.1rem;
-    padding: 0 1rem;
-    margin-left: 1.2rem;
-  }
-}
-
-/* ---------- 415px - 480px (Büyük Mobil) ---------- */
-@media only screen and (min-width: 415px) and (max-width: 480px) {
-  .hero-title {
-    font-size: 4.2rem;
-  }
-  .hero-text {
-    font-size: 1.15rem;
-    max-width: 85%;
-  }
-}
-
-/* ---------- 481px - 767px (Tablet/Yatay Mobil) ---------- */
-@media only screen and (min-width: 481px) and (max-width: 767px) {
+/* Tablet için özel ayarlar */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
   .hero {
-    padding-top: 15vh !important;
-  }
-  .hero-title {
-    font-size: 4.8rem;
-  }
-  .hero-text {
-    font-size: 1.25rem;
-    max-width: 75%;
-  }
-  .button-group {
-    margin-top: 2.5rem !important;
-  }
-}
-
-/* ---------- LANDSCAPE MODE ---------- */
-@media only screen and (max-width: 767px) and (orientation: landscape) {
-  .hero {
-    padding-top: 5vh !important;
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    margin: 0;
+    height: auto;
     min-height: 100vh;
+    gap: 2rem;
   }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+    align-items: center;
+    margin: 0;
+  }
+
   .hero-title {
-    margin: 1rem 0 !important;
+    font-size: 3.5rem;
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  .hero-text {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 1rem auto;
+    max-width: 80%;
+  }
+
+  .hero-map-img-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+
+  .hero-map {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  .social-icons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
   }
 
   .button-group {
-    max-width: 220px !important;
-    margin: 1.5rem auto !important;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+  }
+
+  .interactive-panels-title {
+    font-size: 2.2rem;
+    margin: 2rem 0;
+    text-align: center;
   }
 }
 
@@ -464,7 +528,7 @@ body {
     margin-top: 3rem;
     margin-left: 5rem;
   }
-  /* Box grid’leri alt alta */
+  /* Box grid'leri alt alta */
   .boxes-grid {
     grid-template-columns: 1fr;
   }
