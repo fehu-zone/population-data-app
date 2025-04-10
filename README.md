@@ -47,15 +47,28 @@ npm install
 node server.js
 ```
 
-##📊 Data Flow
+## 📊 Data Flow
+
 ### 5. Sequence Diagram
 ```mermaid
 sequenceDiagram
-    Scraper->>Worldometers: Fetch Data
-    Scraper->>ElasticSearch: Save Data
-    Kibana->>ElasticSearch: Read Data
-    Frontend->>Kibana: Embed via Iframe
-    Frontend->>Backend: API Request
+    participant S as Scraper
+    participant W as Worldometers
+    participant ES as ElasticSearch
+    participant K as Kibana
+    participant FE as Frontend (Vue)
+    participant BE as Backend API
+    participant H as Homepage (Figma)
+    participant OS as Open Source (Figma)
+    
+    S->>W: Fetch Data
+    S->>ES: Save Data
+    K->>ES: Read Data
+    FE->>K: Embed iframes for World/Country Data
+    FE->>BE: API Request for additional content
+    H-->>FE: Load Homepage Layout
+    OS-->>FE: Load Open Source Page Layout
+
 ```
 ## 🌐 Use
 1. Run the scraper:
