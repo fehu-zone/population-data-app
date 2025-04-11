@@ -1,10 +1,11 @@
 <template>
   <div class="world-data-container">
     <iframe
-      src="http://localhost:5601/app/dashboards#/view/d123e24c-38a6-46ab-8036-65018c50ed7b?embed=true&_g=(refreshInterval%3A(pause%3A!t%2Cvalue%3A60000)%2Ctime%3A(from%3Anow-3d%2Cto%3Anow))"
+      src="https://3.93.195.189:5601/app/dashboards#/view/b1fc84e0-12f1-11f0-9d66-4defeddf9119?embed=true&_g=(refreshInterval:(pause:!f,value:10000),time:(from:now-15m,to:now))&_a=(viewMode:view)&hide-filter-bar=true"
       height="600"
       width="800"
-    ></iframe>
+    >
+    </iframe>
   </div>
 </template>
 
