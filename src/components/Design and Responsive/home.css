@@ -285,11 +285,14 @@ body {
     min-height: 100vh;
     height: auto;
     gap: 2rem;
+    text-align: center;
   }
 
   .hero-left,
   .hero-right {
     width: 100%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     margin: 0;
     text-align: center;
@@ -298,15 +301,16 @@ body {
   .hero-title {
     font-size: 2.5rem;
     line-height: 1.2;
-    margin: 1rem 0;
+    margin: 1rem auto;
     text-align: center;
+    width: 90%;
   }
 
   .hero-text {
     font-size: 1rem;
     text-align: center;
-    margin: 1rem auto;
-    padding: 0 1rem;
+    margin: 1.5rem auto;
+    width: 90%;
     max-width: 90%;
   }
 
@@ -328,15 +332,17 @@ body {
     justify-content: center;
     gap: 1rem;
     margin: 1rem 0;
+    align-self: center;
   }
 
   .button-group {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    margin: 1rem 0;
-    width: 100%;
+    margin: 1.5rem auto;
+    width: 90%;
     max-width: 300px;
+    align-self: center;
   }
 
   .primary-btn,
@@ -356,17 +362,21 @@ body {
 /* Tablet için özel ayarlar */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .hero {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     padding: 2rem;
     margin: 0;
     height: auto;
     min-height: 100vh;
     gap: 2rem;
+    text-align: center;
   }
 
   .hero-left,
   .hero-right {
     width: 100%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     margin: 0;
   }
@@ -374,14 +384,17 @@ body {
   .hero-title {
     font-size: 3.5rem;
     text-align: center;
-    margin: 1rem 0;
+    margin: 1.5rem auto;
+    width: 90%;
+    max-width: 800px;
   }
 
   .hero-text {
-    font-size: 1.2rem;
-    text-align: center;
-    margin: 1rem auto;
-    max-width: 80%;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    margin-right: 2rem;
   }
 
   .hero-map-img-container {
@@ -402,15 +415,17 @@ body {
     justify-content: center;
     gap: 1.5rem;
     margin: 2rem 0;
+    align-self: center;
   }
 
   .button-group {
     flex-direction: row;
     justify-content: center;
     gap: 1.5rem;
-    margin: 2rem 0;
-    width: 100%;
+    margin: 2rem auto;
+    width: 90%;
     max-width: 500px;
+    align-self: center;
   }
 
   .primary-btn,
@@ -490,48 +505,68 @@ body {
 
 @media (min-width: 1024px) and (max-width: 1280px) {
   .hero {
-    grid-template-columns: 1fr; /* İki sütun yerine alt alta */
-    margin-top: -8rem;
-    margin-left: 1rem;
-    height: auto; /* İçeriğe göre yükseklik */
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    margin-left: 0;
+    padding: 2rem;
+    height: auto;
+    text-align: center;
   }
+  
   .hero-left,
   .hero-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     margin: 1rem 0;
   }
+  
   .hero-title {
     font-size: 4rem;
     text-align: center;
-    margin-bottom: 3rem;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 900px;
   }
+  
   .hero-text {
     font-size: 1.4rem;
     font-weight: 500;
     line-height: 1.3;
-    margin-bottom: 3rem;
-    margin-top: 2.3rem;
-    margin-right: 2.5rem;
-    margin-left: 4rem;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
   }
+  
   .hero-map-img-container {
+    width: 100%;
+    display: flex;
     justify-content: center;
-    margin-right: 0;
+    margin: 2rem 0;
   }
+  
   .hero-map {
     width: 100%;
     max-width: 35rem;
   }
+  
   .button-group {
+    display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
-    margin-top: 3rem;
-    margin-left: 5rem;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 500px;
+    gap: 1.5rem;
   }
+  
   /* Box grid'leri alt alta */
   .boxes-grid {
     grid-template-columns: 1fr;
   }
+  
   .equal-boxes {
     padding: 2rem 1rem;
   }
@@ -673,4 +708,265 @@ body {
     font-size: 1.3rem;
     padding: 0.8rem 1.5rem;
   }
+}
+
+/* Ekstra küçük ekranlar için (360px ve altı) */
+@media only screen and (max-width: 360px) {
+  /* Ortak Başlık Ayarları */
+  .equal-boxes .section-header,
+  .open-source-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Hero Bölümü */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .hero-left,
+  .hero-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    font-weight: 700;
+    margin: 2rem auto 1rem;
+    width: 90%;
+    text-align: center;
+  }
+  
+  .hero-map-img-container,
+  .interactive-panels-title,
+  .social-icons {
+    display: none;
+  }
+  
+  .hero-text {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.3;
+    margin: 1rem auto;
+    width: 90%;
+    text-align: center;
+  }
+  
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem auto;
+    width: 90%;
+    max-width: 280px;
+    gap: 0.8rem;
+    align-self: center;
+  }
+  
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
+  }
+
+  /* Equal Boxes Bölümü */
+  .equal-boxes {
+    padding: 2rem 1rem;
+    margin-top: 4rem;
+  }
+  .equal-boxes .section-header h1 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+  }
+  .equal-boxes .section-header .section-description {
+    font-size: 1rem;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  .boxes-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .box {
+    padding: 1.2rem;
+  }
+  .box h3 {
+    font-size: 1rem;
+  }
+  .box p,
+  .box-button {
+    font-size: 0.9rem;
+  }
+
+  /* Open-Source Bölümü */
+  .open-source-header h1 {
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
+  }
+  .open-source-description {
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  .open-source-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .open-source-box {
+    padding: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .open-source-box h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .open-source-box p,
+  .open-source-button {
+    font-size: 0.9rem;
+  }
+  .open-source-icon-box {
+    margin-bottom: 1rem;
+  }
+  .open-source-button-wrapper {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
+
+/* F12'den elde edilen özel düzenlemeler (360px - 480px arası) */
+@media only screen and (min-width: 360px) and (max-width: 480px) {
+    /* Hero Bölümü */
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0 auto;
+        padding: 1.2rem 0;
+        min-height: 100vh;
+    }
+    
+    .hero-left,
+    .hero-right {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .hero-title {
+        font-size: 2.4rem;
+        line-height: 1.2;
+        font-weight: 700;
+        margin: 2rem auto 1.2rem;
+        width: 90%;
+        text-align: center;
+    }
+    
+    .hero-text {
+        font-size: 1.1rem;
+        font-weight: 500;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+        margin-right: 0rem;
+        width: 90%;
+        text-align: center;
+    }
+    
+    .button-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2.5rem 1rem;
+        position: relative;
+        margin-right: 1rem;
+        width: 90%;
+        max-width: 320px;
+    }
+    
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+        font-size: 0.95rem;
+        padding: 0.75rem 1.3rem;
+    }
+    
+    .hero-map-img-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 1.2rem 0;
+    }
+    
+    .hero-map {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+    }
+    
+    .interactive-panels-title {
+        font-size: 1.9rem;
+        margin: 1.8rem 0;
+        text-align: center;
+    }
+    
+    /* Equal Boxes Bölümü */
+    .equal-boxes {
+        padding: 2rem 1rem;
+    }
+    
+    .equal-boxes .section-header h1 {
+        font-size: 2.3rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .boxes-grid {
+        grid-template-columns: 1fr;
+        gap: 1.6rem;
+        margin-top: 2rem;
+    }
+    
+    .box {
+        padding: 1.4rem;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .hero-text {
+        font-size: 1.2rem;
+        font-weight: 500;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+        margin-right: 2rem;
+    }
+
+    .button-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 3rem 1rem;
+        position: relative;
+        margin-right: 0rem;
+    }
 }
