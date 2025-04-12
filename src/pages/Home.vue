@@ -29,7 +29,9 @@
           {{ $t('home.description') }}
         </p>
         <div class="button-group" v-fade>
-          <button class="primary-btn" @click="goToCountryData">{{ $t('livePopulation.countryData') }}</button>
+          <button class="primary-btn" @click="goToCountryData">
+            {{ $t('livePopulation.countryData') }}
+          </button>
           <button class="secondary-btn" @click="goToWorldData">{{ $t('menu.worldData') }}</button>
         </div>
       </div>
@@ -60,7 +62,9 @@
           </div>
           <h3>{{ $t('livePopulation.countryAnalysis') }}</h3>
           <p>{{ $t('about.description') }}</p>
-          <button class="box-button" @click="goToCountryData">{{ $t('livePopulation.countryData') }}</button>
+          <button class="box-button" @click="goToCountryData">
+            {{ $t('livePopulation.countryData') }}
+          </button>
         </div>
         <!-- Kutucuk 3 -->
         <div class="box" v-fade>
@@ -144,11 +148,7 @@
     </section>
 
     <!-- ================== FAQ SECTION ================== -->
-    <FaqSection
-      :faqs="faqs"
-      faqImage="/img/Faq-img.png"
-      v-fade
-    />
+    <FaqSection :faqs="faqs" faqImage="/img/Faq-img.png" v-fade />
   </div>
 </template>
 
@@ -174,7 +174,6 @@ export default {
       faqs,
     }
   },
-  // SEO: useHead ile meta etiketlerini ayarlıyoruz:
   setup() {
     useHead({
       title: 'Gerçek Zamanlı Dünya Nüfus Verileri',
@@ -226,7 +225,7 @@ export default {
   },
   mounted() {
     // Set lang attribute on html element
-    document.documentElement.setAttribute('lang', this.$i18n.locale);
+    document.documentElement.setAttribute('lang', this.$i18n.locale)
 
     const shareButton = document.getElementById('shareButton')
     if (shareButton) {
@@ -235,8 +234,8 @@ export default {
 
     // Listen for language changes
     this.$watch('$i18n.locale', (newLocale) => {
-      document.documentElement.setAttribute('lang', newLocale);
-    });
+      document.documentElement.setAttribute('lang', newLocale)
+    })
   },
 }
 </script>

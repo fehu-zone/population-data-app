@@ -75,7 +75,7 @@
 }
 
 .open-source-header h1 {
-  font-size: 2rem;
+  font-size: 4rem;
   font-weight: 700;
   color: #fff;
   max-width: 12ch;
@@ -88,6 +88,7 @@
   font-size: 1rem;
   font-weight: 600;
   color: #fbfbff;
+  max-width: 400px;
   line-height: 1.6;
   margin-bottom: 3rem;
 }
@@ -169,7 +170,33 @@
 /* ==================================================
    Responsive Open-Source & İlgili Bölüm Stilleri
    ================================================== */
+/* ---------- Çok Küçük Mobil Cihazlar (320px - 360px) ---------- */
+@media only screen and (max-width: 360px) {
+  .boxes-grid,
+  .open-source-grid {
+    grid-template-columns: 1fr !important;
+  }
 
+  .hero-title {
+    font-size: 3.2rem !important;
+  }
+
+  .equal-boxes .section-header h1,
+  .open-source-header h1 {
+    font-size: 2rem !important;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .box,
+  .open-source-box {
+    padding: 1rem !important;
+    margin: 0 0.5rem !important;
+  }
+}
 /* ---------- Küçük Mobil Cihazlar (361px - 480px) ---------- */
 @media only screen and (min-width: 361px) and (max-width: 480px) {
   /* Ortak Başlık Ayarları */

@@ -44,6 +44,7 @@ body {
   padding: 2.8rem;
   margin-left: 2rem;
   position: relative;
+  margin: 0 auto;
 }
 
 .hero-left,
@@ -181,7 +182,7 @@ body {
   font-family: 'Poppins', sans-serif;
   background: #000;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-top: -2.5rem;
 }
 
 .equal-boxes .section-header {
@@ -532,7 +533,7 @@ body {
     height: auto;
     text-align: center;
   }
-  
+
   .hero-left,
   .hero-right {
     width: 100%;
@@ -541,7 +542,7 @@ body {
     align-items: center;
     margin: 1rem 0;
   }
-  
+
   .hero-title {
     font-size: 4rem;
     text-align: center;
@@ -549,7 +550,7 @@ body {
     width: 90%;
     max-width: 900px;
   }
-  
+
   .hero-text {
     font-size: 1.4rem;
     font-weight: 500;
@@ -559,19 +560,19 @@ body {
     max-width: 800px;
     text-align: center;
   }
-  
+
   .hero-map-img-container {
     width: 100%;
     display: flex;
     justify-content: center;
     margin: 2rem 0;
   }
-  
+
   .hero-map {
     width: 100%;
     max-width: 35rem;
   }
-  
+
   .button-group {
     display: flex;
     justify-content: center;
@@ -580,12 +581,12 @@ body {
     max-width: 500px;
     gap: 1.5rem;
   }
-  
+
   /* Box grid'leri alt alta */
   .boxes-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .equal-boxes {
     padding: 2rem 1rem;
   }
@@ -744,6 +745,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-top: -2rem; /* Hero ile ANLIK DÜNYA NÜFUS AKIŞI arasında ekstra boşluğu azaltır */
   }
 
   /* Hero Bölümü */
@@ -756,7 +758,7 @@ body {
     margin: 0 auto;
     padding: 1rem;
   }
-  
+
   .hero-left,
   .hero-right {
     width: 100%;
@@ -764,7 +766,7 @@ body {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .hero-title {
     font-size: 2.2rem;
     line-height: 1.2;
@@ -773,13 +775,13 @@ body {
     width: 90%;
     text-align: center;
   }
-  
+
   .hero-map-img-container,
   .interactive-panels-title,
   .social-icons {
     display: none;
   }
-  
+
   .hero-text {
     font-size: 1rem;
     font-weight: 500;
@@ -788,7 +790,7 @@ body {
     width: 90%;
     text-align: center;
   }
-  
+
   .button-group {
     display: flex;
     flex-direction: column;
@@ -800,7 +802,7 @@ body {
     gap: 0.8rem;
     align-self: center;
   }
-  
+
   .primary-btn,
   .secondary-btn {
     width: 100%;
@@ -878,145 +880,146 @@ body {
 
 /* F12'den elde edilen özel düzenlemeler (360px - 480px arası) */
 @media only screen and (min-width: 360px) and (max-width: 480px) {
-    /* Hero Bölümü */
-    .hero {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        margin: 0 auto;
-        padding: 1.2rem 0;
-        min-height: 100vh;
-    }
-    
-    .hero-left,
-    .hero-right {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-        margin: 0;
-    }
-    
-    .hero-title {
-        font-size: 2.4rem;
-        line-height: 1.2;
-        font-weight: 700;
-        margin: 2rem auto 1.2rem;
-        width: 90%;
-        text-align: center;
-    }
-    
-    .hero-text {
-        font-size: 1.1rem;
-        font-weight: 500;
-        line-height: 1.3;
-        margin-bottom: 1rem;
-        margin-right: 0rem;
-        width: 90%;
-        text-align: center;
-    }
-    
-    .button-group {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 2.5rem 1rem;
-        position: relative;
-        margin-right: 1rem;
-        width: 90%;
-        max-width: 320px;
-    }
-    
-    .primary-btn,
-    .secondary-btn {
-        width: 100%;
-        font-size: 0.95rem;
-        padding: 0.75rem 1.3rem;
-    }
-    
-    .hero-map-img-container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin: 1.2rem 0;
-    }
-    
-    .hero-map {
-        width: 100%;
-        max-width: 320px;
-        height: auto;
-    }
-    
-    .interactive-panels-title {
-        font-size: 1.9rem;
-        margin: 1.8rem 0;
-        text-align: center;
-    }
-    
-    /* Equal Boxes Bölümü */
-    .equal-boxes {
-        padding: 2rem 1rem;
-    }
-    
-    .equal-boxes .section-header h1 {
-        font-size: 2.3rem;
-        margin-bottom: 1.2rem;
-    }
-    
-    .boxes-grid {
-        grid-template-columns: 1fr;
-        gap: 1.6rem;
-        margin-top: 2rem;
-    }
-    
-    .box {
-        padding: 1.4rem;
-    }
+  /* Hero Bölümü */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 1.2rem 0;
+    min-height: 100vh;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .hero-title {
+    font-size: 2.4rem;
+    line-height: 1.2;
+    font-weight: 700;
+    margin: 2rem auto 1.2rem;
+    width: 90%;
+    text-align: center;
+  }
+
+  .hero-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    margin-right: 0rem;
+    width: 90%;
+    text-align: center;
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2.5rem 1rem;
+    position: relative;
+    margin-right: 1rem;
+    width: 90%;
+    max-width: 320px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 0.75rem 1.3rem;
+  }
+
+  .hero-map-img-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 1.2rem 0;
+  }
+
+  .hero-map {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .interactive-panels-title {
+    font-size: 1.9rem;
+    margin: 1.8rem 0;
+    text-align: center;
+  }
+
+  /* Equal Boxes Bölümü */
+  .equal-boxes {
+    padding: 2rem 1rem;
+    margin-top: -1rem; /* Hero ile ANLIK DÜNYA NÜFUS AKIŞI arasında ekstra boşluğu azaltır */
+  }
+
+  .equal-boxes .section-header h1 {
+    font-size: 2.3rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .boxes-grid {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+    margin-top: 2rem;
+  }
+
+  .box {
+    padding: 1.4rem;
+  }
 }
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-    .hero-text {
-        font-size: 1.2rem;
-        font-weight: 500;
-        line-height: 1.3;
-        margin-bottom: 1rem;
-        margin-right: 2rem;
-    }
+  .hero-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+  }
 
-    .button-group {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 3rem 1rem;
-        position: relative;
-        margin-right: 0rem;
-    }
+  .button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 1rem;
+    position: relative;
+    margin-right: 0rem;
+  }
 }
 
 /* Additional language-specific adjustments */
-html[lang="en"] .hero-title {
+html[lang='en'] .hero-title {
   font-size: clamp(3rem, 5vw, 4rem);
 }
 
-html[lang="en"] .box h3 {
+html[lang='en'] .box h3 {
   font-size: clamp(1.2rem, 3vw, 1.5rem);
 }
 
 @media (max-width: 480px) {
-  html[lang="en"] .hero-title {
+  html[lang='en'] .hero-title {
     font-size: clamp(2rem, 8vw, 2.4rem);
   }
-  
-  html[lang="en"] .primary-btn,
-  html[lang="en"] .secondary-btn {
+
+  html[lang='en'] .primary-btn,
+  html[lang='en'] .secondary-btn {
     font-size: 0.85rem;
     padding: 0.75rem 1rem;
   }
-  
-  html[lang="en"] .box h3 {
+
+  html[lang='en'] .box h3 {
     font-size: 1rem;
   }
 }
