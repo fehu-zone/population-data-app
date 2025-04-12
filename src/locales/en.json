@@ -1,23 +1,23 @@
 {
   "home": {
-    "title": "REAL-TIME \n WORLD POPULATION DATA",
-    "subtitle": "Explore Interactive Dashboards",
-    "description": "Discover global population data with updates from minutes ago. Analyze births, deaths, and migration trends through interactive charts."
+    "title": "REAL-TIME\nWORLD POPULATION DATA",
+    "subtitle": "Interactive Dashboards",
+    "description": "Explore global population with real-time updates. Analyze births, deaths and migration trends through interactive charts."
   },
   "menu": {
     "home": "Home",
     "countryData": "Country Data",
     "worldData": "World Data",
     "openSource": "Open Source",
-    "openSourceStatement": "Open Source Statement",
+    "openSourceStatement": "Open Source",
     "links": "LINKS"
   },
   "livePopulation": {
-    "title": "LIVE WORLD POPULATION FLOW",
-    "description": "Track global population dynamics in real-time with our data updated minutes ago.",
+    "title": "LIVE POPULATION FLOW",
+    "description": "Track global population dynamics with real-time data updated minutes ago.",
     "globalData": "Global Data",
     "countryAnalysis": "Country Analysis",
-    "countryData": "Country Population Data"
+    "countryData": "Country Data"
   },
   "opensource": {
     "title": "FREE AND OPEN SOURCE DECLARATION",
