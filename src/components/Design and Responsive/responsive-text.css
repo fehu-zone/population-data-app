@@ -1,0 +1,89 @@
+/* Responsive Text Utilities */
+
+/* Text that adapts to available space */
+.responsive-text {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Text that scales with viewport */
+.fluid-text {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  line-height: 1.4;
+}
+
+.fluid-title {
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.2;
+}
+
+/* Text truncation utilities */
+.truncate-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.truncate-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Language-specific adjustments */
+/* English */
+html[lang="en"] .fit-content {
+  width: fit-content;
+  max-width: 100%;
+}
+
+html[lang="en"] .flexible-button {
+  white-space: normal;
+  height: auto;
+  min-height: 2.5rem;
+  padding: 0.5rem 1rem;
+}
+
+html[lang="en"] .compact-text {
+  font-size: 0.9em;
+  letter-spacing: -0.01em;
+}
+
+/* Container that adjusts to content */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Grid that adapts to content */
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+/* Media queries for extreme cases */
+@media (max-width: 360px) {
+  html[lang="en"] .shrink-tiny {
+    font-size: 80%;
+    letter-spacing: -0.02em;
+  }
+}
+
+@media (min-width: 1400px) {
+  html[lang="en"] .grow-large {
+    font-size: 120%;
+  }
+} 

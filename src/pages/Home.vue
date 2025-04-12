@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="[$i18n.locale]">
     <!-- ================== HERO SECTION ================== -->
     <section class="hero" v-fade>
       <div class="hero-left">
@@ -225,14 +225,42 @@ export default {
     },
   },
   mounted() {
+    // Set lang attribute on html element
+    document.documentElement.setAttribute('lang', this.$i18n.locale);
+
     const shareButton = document.getElementById('shareButton')
     if (shareButton) {
       shareButton.addEventListener('click', handleShare)
     }
+
+    // Listen for language changes
+    this.$watch('$i18n.locale', (newLocale) => {
+      document.documentElement.setAttribute('lang', newLocale);
+    });
   },
 }
 </script>
 
 <style scoped>
-/* Ekstra yerel stil tanımlamaları eklenebilir */
+/* Dynamic font sizing for titles based on language */
+.en .hero-title {
+  font-size: clamp(3.2rem, 5vw, 4rem);
+}
+
+@media (max-width: 768px) {
+  .en .hero-title {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+
+  .en .button-group {
+    flex-direction: column;
+  }
+}
+
+/* Make buttons fit content */
+.en .primary-btn,
+.en .secondary-btn {
+  max-width: fit-content;
+  min-width: 120px;
+}
 </style>
