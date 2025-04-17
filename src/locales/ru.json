@@ -48,7 +48,7 @@
       "dashboards": "Kibana визуализирует данные Elasticsearch."
     }
   },
-  "contact": { "title": "КОНТАКТЫ", "email": "Эл. почта", "phone": "Телефон" },
+  "contact": { "title": "КОНТАКТЫ", "email": "Эл. почта", "phone": "Телефон", "website": "Сайт" },
   "about": {
     "title": "О ПРОЕКТЕ & РЕСУРСЫ",
     "description": "Использует данные Worldometer. Присоединяйтесь!"

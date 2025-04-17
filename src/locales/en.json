@@ -54,7 +54,8 @@
   "contact": {
     "title": "CONTACT",
     "email": "Email",
-    "phone": "Phone"
+    "phone": "Phone",
+    "website": "Website"
   },
   "about": {
     "title": "ABOUT & RESOURCES",

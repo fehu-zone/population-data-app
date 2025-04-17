@@ -22,6 +22,11 @@
           <li>
             <a href="https://wa.me/905078774897" class="no-style-link">{{ $t('contact.phone') }}</a>
           </li>
+          <li>
+            <a href="https://ahmetkaradas.site" class="no-style-link">
+              {{ $t('contact.website') }}
+            </a>
+          </li>
         </ul>
       </div>
 

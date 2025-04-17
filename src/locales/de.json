@@ -48,7 +48,7 @@
       "dashboards": "Kibana visualisiert Elasticsearch-Daten interaktiv."
     }
   },
-  "contact": { "title": "KONTAKT", "email": "E-Mail", "phone": "Telefon" },
+  "contact": { "title": "KONTAKT", "email": "E-Mail", "phone": "Telefon", "website": "Webseite" },
   "about": {
     "title": "ÜBER UNS & QUELLEN",
     "description": "Projekt verwendet Worldometer-Daten. Beiträge willkommen!"

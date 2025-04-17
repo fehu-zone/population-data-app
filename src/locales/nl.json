@@ -48,7 +48,7 @@
       "dashboards": "Kibana maakt interactieve visualisaties."
     }
   },
-  "contact": { "title": "CONTACT", "email": "E-mail", "phone": "Telefoon" },
+  "contact": { "title": "CONTACT", "email": "E-mail", "phone": "Telefoon", "website": "Website" },
   "about": {
     "title": "OVER ONS & BRONNEN",
     "description": "Gebruikt Worldometer-data. Bijdragen welkom!"

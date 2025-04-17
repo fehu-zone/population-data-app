@@ -54,7 +54,8 @@
   "contact": {
     "title": "İLETİŞİM",
     "email": "E-posta",
-    "phone": "Telefon"
+    "phone": "Telefon",
+    "website": "Web Sitesi"
   },
   "about": {
     "title": "HAKKIMIZDA VE KAYNAKLAR",

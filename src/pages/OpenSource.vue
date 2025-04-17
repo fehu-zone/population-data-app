@@ -58,7 +58,7 @@
     </div>
     <div class="open-source-button-wrapper" v-fade>
       <a
-        href="https://github.com/fehu-zone/population_scraper"
+        href="https://github.com/fehu-zone/population-scraper-node"
         target="_blank"
         class="open-source-button no-style-link"
       >

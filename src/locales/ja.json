@@ -48,7 +48,7 @@
       "dashboards": "KibanaがElasticsearchデータを可視化。"
     }
   },
-  "contact": { "title": "連絡先", "email": "メール", "phone": "電話" },
+  "contact": { "title": "連絡先", "email": "メール", "phone": "電話", "website": "ウェブサイト" },
   "about": {
     "title": "概要とリソース",
     "description": "Worldometerデータを使用。貢献をお待ちしています！"

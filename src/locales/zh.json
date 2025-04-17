@@ -48,7 +48,7 @@
       "dashboards": "Kibana从Elasticsearch创建可视化。"
     }
   },
-  "contact": { "title": "联系方式", "email": "电子邮件", "phone": "电话" },
+  "contact": { "title": "联系方式", "email": "电子邮件", "phone": "电话", "website": "网站" },
   "about": {
     "title": "关于与资源",
     "description": "使用Worldometer数据。欢迎贡献！"

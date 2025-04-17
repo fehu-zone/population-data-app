@@ -48,7 +48,12 @@
       "dashboards": "Kibana crea visualizaciones interactivas."
     }
   },
-  "contact": { "title": "CONTACTO", "email": "Correo", "phone": "Teléfono" },
+  "contact": {
+    "title": "CONTACTO",
+    "email": "Correo",
+    "phone": "Teléfono",
+    "website": "Sitio web"
+  },
   "about": {
     "title": "ACERCA DE & RECURSOS",
     "description": "Usa datos de Worldometer. ¡Contribuciones bienvenidas!"
