@@ -52,22 +52,22 @@ node server.js
 ### 5. Sequence Diagram
 ```mermaid
 sequenceDiagram
-    participant S as Scraper
-    participant W as Worldometers
-    participant ES as ElasticSearch
-    participant K as Kibana
-    participant FE as Frontend (Vue)
-    participant BE as Backend API
-    participant H as Homepage (Figma)
-    participant OS as Open Source (Figma)
-    
-    S->>W: Fetch Data
-    S->>ES: Save Data
-    K->>ES: Read Data
-    FE->>K: Embed iframes for World/Country Data
-    FE->>BE: API Request for additional content
-    H-->>FE: Load Homepage Layout
-    OS-->>FE: Load Open Source Page Layout
+    participant Scraper as  Scraper (Node.js)
+    participant Worldometers as  Worldometers.com
+    participant ES as  Elasticsearch
+    participant Kibana as  Kibana Dashboards
+    participant Frontend as  Vue Frontend
+
+    Scraper->>Worldometers: 📥 Fetch dynamic & fallback data
+    Scraper->>ES: 💾 Index country & world documents
+
+    Kibana->>ES: 🔍 Query world data for dashboard
+    Kibana->>ES: 🔍 Query country data for dashboard
+
+    Frontend->>Kibana: 🔗 Embed World Dashboard on `/world`
+    Frontend->>Kibana: 🔗 Embed Country Dashboard on `/country`
+    Frontend-->>Frontend: 🏠 Render Home page (intro)
+
 
 ```
 ## 🌐 Use
